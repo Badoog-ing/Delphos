@@ -2,90 +2,163 @@
     Layout = "~/Views/Shared/_LayoutCaja.cshtml";
 }
 
+
+@*Script de FontAwesome*@
+
+<script src="https://kit.fontawesome.com/1204f88754.js" crossorigin="anonymous"></script>
+
 <h1>Vista Caja</h1>
 
 <div class="container">
-    <div class="col-md-6">
-        <input type="search" name="buscar" value="" />
-        <button class="btn btn-primary">Buscar</button>
-    </div>
-    <div class="col-md-6">
-        <button class="btn btn-primary">Agregar</button>
-    </div>
-    <div class="col-md-6">
-        <label for="pago">Forma de pago</label>
-        <div class="">
-            <select id="pago" name="">
-                <option>Debito</option>
-                <option>Efectivo</option>
-
-            </select>
-
-        </div>
-    </div>
-
-    <hr />
 
     <div class="container">
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Producto</th>
-                    <th scope="col">SKU</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Precio Unitario</th>
-                    <th scope="col">Subtotal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Bebida CCU. 2.5 lt</td>
-                    <td>15489519</td>
-                    <td>3</td>
-                    <td>2500</td>
-                    <td>7500</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Chocolate Trencito 250 g</td>
-                    <td>254897</td>
-                    <td>1</td>
-                    <td>500</td>
-                    <td>500</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Pan de Molde Bimbo</td>
-                    <td>35978897</td>
-                    <td>2</td>
-                    <td>1250</td>
-                    <td>2500</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
 
-    <hr />
 
-    <div class="col-md-3">
-        <button class="btn btn-danger">Aceptar</button>
-        <button class="btn btn-danger">Cancelar</button>
-    </div>
-
-    <br /> <br />
-
-    <div class="col-md-3">
-        <div class="input-group input-group-lg">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="total">Total</span>
-            </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+        <div class="col-md-6">
+            <input type="search" name="buscar" value="" />
+            <button class="btn btn-primary">Buscar</button>
         </div>
-    </div>
+
+        <br />
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <label>Nombre del Producto</label>
+
+
+                </div>
+
+                <div class="col-md-4">
+                    <label>SKU                </label>
+                </div>
+                <div class="col-md-4">
+                    <label>Precio Unitario</label>
+
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4">
+
+                    <input type="search" name="NombreProducto" value="" />
+
+                </div>
+                <div class="col-md-4">
+                    <input type="search" name="SKU" value="" />
+                </div>
+                <div class="col-md-4">
+
+                    <input type="search" name="PrecioUnitario" value="" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <label>Cantidad</label>
+
+                </div>
+
+
+            </div>
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <input type="search" name="Cantidad" value="" />
+
+                </div>
+
+                <div class="col-md-6">
+                    <button class="btn btn-primary">Agregar</button>
+                </div>
+
+            </div>
+
+            <br />
+
+            <div class="col-md-6">
+                <label for="pago">Forma de pago</label>
+                <div class="">
+                    <select id="pago" name="">
+                        <option>Debito</option>
+                        <option>Efectivo</option>
+
+                    </select>
+
+                </div>
+            </div>
 
 
 
+            <hr />
 
-</div>
+            <div class="container">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">SKU</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Precio Unitario</th>
+                            <th scope="col">Subtotal</th>
+                            <th scope="col">Remover</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Bebida CCU. 2.5 lt</td>
+                            <td>15489519</td>
+                            <td>3</td>
+                            <td>2500</td>
+                            <td>7500</td>
+                            <td align="center"><a class="fa fa-ban" href=""></a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Chocolate Trencito 250 g</td>
+                            <td>254897</td>
+                            <td>1</td>
+                            <td>500</td>
+                            <td>500</td>
+                            <td align="center"><a class="fa fa-ban" href=""></a></td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Pan de Molde Bimbo</td>
+                            <td>35978897</td>
+                            <td>2</td>
+                            <td>1250</td>
+                            <td>2500</td>
+                            <td align="center"><a class="fa fa-ban" href=""></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr />
+
+            <div class="col-md-3">
+                <button class="btn btn-danger">Aceptar</button>
+                <button class="btn btn-danger">Cancelar</button>
+            </div>
+
+            <br /> <br />
+
+            <div class="col-md-3">
+                <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="total">Total</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                </div>
+            </div>
+
+        </div>
