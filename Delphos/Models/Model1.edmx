@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DelphosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DETALLETRASPASO">
+          <Key>
+            <PropertyRef Name="IDDETALLETRASPASO" />
+            <PropertyRef Name="IDTRASPASO" />
+            <PropertyRef Name="IDPRODUCTO" />
+            <PropertyRef Name="SKU" />
+          </Key>
+          <Property Name="IDDETALLETRASPASO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDTRASPASO" Type="int" Nullable="false" />
+          <Property Name="IDPRODUCTO" Type="int" Nullable="false" />
+          <Property Name="SKU" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="CANTIDAD_DET_TRASPASO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBBODEGA">
+          <Key>
+            <PropertyRef Name="IDBODEGA" />
+          </Key>
+          <Property Name="IDBODEGA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE_B" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBCARGO">
+          <Key>
+            <PropertyRef Name="IDCARGO" />
+          </Key>
+          <Property Name="IDCARGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRECARGO" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBCATEGORIA">
+          <Key>
+            <PropertyRef Name="IDCATEGORIA" />
+          </Key>
+          <Property Name="IDCATEGORIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE_C" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBDETALLEOC">
+          <Key>
+            <PropertyRef Name="IDDETALLEOC" />
+            <PropertyRef Name="IDORDENCOMPRA" />
+            <PropertyRef Name="IDPRODUCTO" />
+            <PropertyRef Name="SKU" />
+          </Key>
+          <Property Name="IDDETALLEOC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDORDENCOMPRA" Type="int" Nullable="false" />
+          <Property Name="IDPRODUCTO" Type="int" Nullable="false" />
+          <Property Name="SKU" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="CANTIDAD_DET_OC" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBDETALLESTOCK">
+          <Key>
+            <PropertyRef Name="IDDETALLESTOCK" />
+            <PropertyRef Name="IDBODEGA" />
+            <PropertyRef Name="IDPRODUCTO" />
+            <PropertyRef Name="SKU" />
+          </Key>
+          <Property Name="IDDETALLESTOCK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDBODEGA" Type="int" Nullable="false" />
+          <Property Name="IDPRODUCTO" Type="int" Nullable="false" />
+          <Property Name="SKU" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="STOCK" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBDETALLEVENTA">
+          <Key>
+            <PropertyRef Name="IDDETALLEVENTA" />
+            <PropertyRef Name="IDVENTA" />
+            <PropertyRef Name="IDPRODUCTO" />
+            <PropertyRef Name="SKU" />
+          </Key>
+          <Property Name="IDDETALLEVENTA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDVENTA" Type="int" Nullable="false" />
+          <Property Name="IDPRODUCTO" Type="int" Nullable="false" />
+          <Property Name="SKU" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="CANTIDAD_VENTA" Type="int" Nullable="false" />
+          <Property Name="PRECIO_D" Type="int" Nullable="false" />
+          <Property Name="SUBTOTAL" Type="int" Nullable="false" />
+          <Property Name="METODO_PAGO" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="IDMETODODEPAGO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBMETODODEPAGO">
+          <Key>
+            <PropertyRef Name="IDMETODODEPAGO" />
+          </Key>
+          <Property Name="IDMETODODEPAGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TIPO" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBMOVIMIENTO">
+          <Key>
+            <PropertyRef Name="IDMOVIMIENTO" />
+            <PropertyRef Name="IDBODEGA" />
+            <PropertyRef Name="IDTRASPASO" />
+          </Key>
+          <Property Name="IDMOVIMIENTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDBODEGA" Type="int" Nullable="false" />
+          <Property Name="IDTRASPASO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBORDENDECOMPRA">
+          <Key>
+            <PropertyRef Name="IDORDENCOMPRA" />
+          </Key>
+          <Property Name="IDORDENCOMPRA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NORDECOMPRA" Type="int" Nullable="false" />
+          <Property Name="DETALLE" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="IDUSUARIO" Type="int" Nullable="false" />
+          <Property Name="RUT_U" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBPRODUCTO">
+          <Key>
+            <PropertyRef Name="IDPRODUCTO" />
+            <PropertyRef Name="SKU" />
+          </Key>
+          <Property Name="IDPRODUCTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SKU" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="NOMBRE_P" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="CATEGORIA_P" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="PRECIO_P" Type="int" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="date" Nullable="false" />
+          <Property Name="IDCATEGORIA" Type="int" Nullable="false" />
+          <Property Name="IDUSUARIO" Type="int" Nullable="false" />
+          <Property Name="RUT_U" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBPROVEEDOR">
+          <Key>
+            <PropertyRef Name="IDPROVEEDOR" />
+            <PropertyRef Name="RUT_PRO" />
+          </Key>
+          <Property Name="IDPROVEEDOR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RUT_PRO" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="NOMBRE_PRO" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="GIRO" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="RAZONSOCIAL" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="TELEFONO" Type="int" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="date" Nullable="false" />
+          <Property Name="IDUSUARIO" Type="int" Nullable="false" />
+          <Property Name="RUT_U" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBRECEPCION">
+          <Key>
+            <PropertyRef Name="IDRECEPCION" />
+          </Key>
+          <Property Name="IDRECEPCION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FACTURA" Type="int" Nullable="false" />
+          <Property Name="NORDENCOMPRA_R" Type="int" Nullable="false" />
+          <Property Name="FECHA_RECEPCION" Type="date" Nullable="false" />
+          <Property Name="IDUSUARIO" Type="int" Nullable="false" />
+          <Property Name="RUT_U" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="IDORDENCOMPRA" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBTRASPASO">
+          <Key>
+            <PropertyRef Name="IDTRASPASO" />
+          </Key>
+          <Property Name="IDTRASPASO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FECHA_TRASPASO" Type="date" Nullable="false" />
+          <Property Name="BODEGA_ORIGEN" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="BODEGA_DESTINO" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="TIPO" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBUSUARIO">
+          <Key>
+            <PropertyRef Name="IDUSUARIO" />
+            <PropertyRef Name="RUT_U" />
+          </Key>
+          <Property Name="IDUSUARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RUT_U" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="NOMBRE_U" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="CARGO_U" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="STATUS" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="IDCARGO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBVENTA">
+          <Key>
+            <PropertyRef Name="IDVENTA" />
+          </Key>
+          <Property Name="IDVENTA" Type="int" Nullable="false" />
+          <Property Name="FECHAVENTA" Type="date" Nullable="false" />
+          <Property Name="TOTAL" Type="int" Nullable="false" />
+          <Property Name="IDUSUARIO" Type="int" Nullable="false" />
+          <Property Name="RUT_U" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DelphosModelStoreContainer">
+          <EntitySet Name="DETALLETRASPASO" EntityType="Self.DETALLETRASPASO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBBODEGA" EntityType="Self.TBBODEGA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBCARGO" EntityType="Self.TBCARGO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBCATEGORIA" EntityType="Self.TBCATEGORIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBDETALLEOC" EntityType="Self.TBDETALLEOC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBDETALLESTOCK" EntityType="Self.TBDETALLESTOCK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBDETALLEVENTA" EntityType="Self.TBDETALLEVENTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBMETODODEPAGO" EntityType="Self.TBMETODODEPAGO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBMOVIMIENTO" EntityType="Self.TBMOVIMIENTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBORDENDECOMPRA" EntityType="Self.TBORDENDECOMPRA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBPRODUCTO" EntityType="Self.TBPRODUCTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBPROVEEDOR" EntityType="Self.TBPROVEEDOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBRECEPCION" EntityType="Self.TBRECEPCION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBTRASPASO" EntityType="Self.TBTRASPASO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBUSUARIO" EntityType="Self.TBUSUARIO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBVENTA" EntityType="Self.TBVENTA" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DelphosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DETALLETRASPASO">
+          <Key>
+            <PropertyRef Name="IDDETALLETRASPASO" />
+            <PropertyRef Name="IDTRASPASO" />
+            <PropertyRef Name="IDPRODUCTO" />
+            <PropertyRef Name="SKU" />
+          </Key>
+          <Property Name="IDDETALLETRASPASO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDTRASPASO" Type="Int32" Nullable="false" />
+          <Property Name="IDPRODUCTO" Type="Int32" Nullable="false" />
+          <Property Name="SKU" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CANTIDAD_DET_TRASPASO" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBBODEGA">
+          <Key>
+            <PropertyRef Name="IDBODEGA" />
+          </Key>
+          <Property Name="IDBODEGA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE_B" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBCARGO">
+          <Key>
+            <PropertyRef Name="IDCARGO" />
+          </Key>
+          <Property Name="IDCARGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRECARGO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TBUSUARIO" Relationship="DelphosModel.TBCARGOTBUSUARIO" FromRole="TBCARGO" ToRole="TBUSUARIO" />
+        </EntityType>
+        <EntityType Name="TBCATEGORIA">
+          <Key>
+            <PropertyRef Name="IDCATEGORIA" />
+          </Key>
+          <Property Name="IDCATEGORIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE_C" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TBPRODUCTO" Relationship="DelphosModel.TBCATEGORIATBPRODUCTO" FromRole="TBCATEGORIA" ToRole="TBPRODUCTO" />
+        </EntityType>
+        <EntityType Name="TBDETALLEOC">
+          <Key>
+            <PropertyRef Name="IDDETALLEOC" />
+            <PropertyRef Name="IDORDENCOMPRA" />
+            <PropertyRef Name="IDPRODUCTO" />
+            <PropertyRef Name="SKU" />
+          </Key>
+          <Property Name="IDDETALLEOC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDORDENCOMPRA" Type="Int32" Nullable="false" />
+          <Property Name="IDPRODUCTO" Type="Int32" Nullable="false" />
+          <Property Name="SKU" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CANTIDAD_DET_OC" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBDETALLESTOCK">
+          <Key>
+            <PropertyRef Name="IDDETALLESTOCK" />
+            <PropertyRef Name="IDBODEGA" />
+            <PropertyRef Name="IDPRODUCTO" />
+            <PropertyRef Name="SKU" />
+          </Key>
+          <Property Name="IDDETALLESTOCK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDBODEGA" Type="Int32" Nullable="false" />
+          <Property Name="IDPRODUCTO" Type="Int32" Nullable="false" />
+          <Property Name="SKU" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="STOCK" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBDETALLEVENTA">
+          <Key>
+            <PropertyRef Name="IDDETALLEVENTA" />
+            <PropertyRef Name="IDVENTA" />
+            <PropertyRef Name="IDPRODUCTO" />
+            <PropertyRef Name="SKU" />
+          </Key>
+          <Property Name="IDDETALLEVENTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDVENTA" Type="Int32" Nullable="false" />
+          <Property Name="IDPRODUCTO" Type="Int32" Nullable="false" />
+          <Property Name="SKU" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CANTIDAD_VENTA" Type="Int32" Nullable="false" />
+          <Property Name="PRECIO_D" Type="Int32" Nullable="false" />
+          <Property Name="SUBTOTAL" Type="Int32" Nullable="false" />
+          <Property Name="METODO_PAGO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDMETODODEPAGO" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBMETODODEPAGO">
+          <Key>
+            <PropertyRef Name="IDMETODODEPAGO" />
+          </Key>
+          <Property Name="IDMETODODEPAGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TIPO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBMOVIMIENTO">
+          <Key>
+            <PropertyRef Name="IDMOVIMIENTO" />
+            <PropertyRef Name="IDBODEGA" />
+            <PropertyRef Name="IDTRASPASO" />
+          </Key>
+          <Property Name="IDMOVIMIENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDBODEGA" Type="Int32" Nullable="false" />
+          <Property Name="IDTRASPASO" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBORDENDECOMPRA">
+          <Key>
+            <PropertyRef Name="IDORDENCOMPRA" />
+          </Key>
+          <Property Name="IDORDENCOMPRA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NORDECOMPRA" Type="Int32" Nullable="false" />
+          <Property Name="DETALLE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDUSUARIO" Type="Int32" Nullable="false" />
+          <Property Name="RUT_U" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBPROVEEDOR">
+          <Key>
+            <PropertyRef Name="IDPROVEEDOR" />
+            <PropertyRef Name="RUT_PRO" />
+          </Key>
+          <Property Name="IDPROVEEDOR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RUT_PRO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOMBRE_PRO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GIRO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RAZONSOCIAL" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONO" Type="Int32" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IDUSUARIO" Type="Int32" Nullable="false" />
+          <Property Name="RUT_U" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBRECEPCION">
+          <Key>
+            <PropertyRef Name="IDRECEPCION" />
+          </Key>
+          <Property Name="IDRECEPCION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FACTURA" Type="Int32" Nullable="false" />
+          <Property Name="NORDENCOMPRA_R" Type="Int32" Nullable="false" />
+          <Property Name="FECHA_RECEPCION" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IDUSUARIO" Type="Int32" Nullable="false" />
+          <Property Name="RUT_U" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDORDENCOMPRA" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBTRASPASO">
+          <Key>
+            <PropertyRef Name="IDTRASPASO" />
+          </Key>
+          <Property Name="IDTRASPASO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FECHA_TRASPASO" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="BODEGA_ORIGEN" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BODEGA_DESTINO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIPO" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBUSUARIO">
+          <Key>
+            <PropertyRef Name="IDUSUARIO" />
+            <PropertyRef Name="RUT_U" />
+          </Key>
+          <Property Name="IDUSUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RUT_U" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOMBRE_U" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CARGO_U" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="STATUS" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDCARGO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TBCARGO" Relationship="DelphosModel.TBCARGOTBUSUARIO" FromRole="TBUSUARIO" ToRole="TBCARGO" />
+        </EntityType>
+        <EntityType Name="TBVENTA">
+          <Key>
+            <PropertyRef Name="IDVENTA" />
+          </Key>
+          <Property Name="IDVENTA" Type="Int32" Nullable="false" />
+          <Property Name="FECHAVENTA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TOTAL" Type="Int32" Nullable="false" />
+          <Property Name="IDUSUARIO" Type="Int32" Nullable="false" />
+          <Property Name="RUT_U" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DelphosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DETALLETRASPASO" EntityType="Self.DETALLETRASPASO" />
+          <EntitySet Name="TBBODEGA" EntityType="Self.TBBODEGA" />
+          <EntitySet Name="TBCARGO" EntityType="Self.TBCARGO" />
+          <EntitySet Name="TBCATEGORIA" EntityType="Self.TBCATEGORIA" />
+          <EntitySet Name="TBDETALLEOC" EntityType="Self.TBDETALLEOC" />
+          <EntitySet Name="TBDETALLESTOCK" EntityType="Self.TBDETALLESTOCK" />
+          <EntitySet Name="TBDETALLEVENTA" EntityType="Self.TBDETALLEVENTA" />
+          <EntitySet Name="TBMETODODEPAGO" EntityType="Self.TBMETODODEPAGO" />
+          <EntitySet Name="TBMOVIMIENTO" EntityType="Self.TBMOVIMIENTO" />
+          <EntitySet Name="TBORDENDECOMPRA" EntityType="Self.TBORDENDECOMPRA" />
+          <EntitySet Name="TBPROVEEDOR" EntityType="Self.TBPROVEEDOR" />
+          <EntitySet Name="TBRECEPCION" EntityType="Self.TBRECEPCION" />
+          <EntitySet Name="TBTRASPASO" EntityType="Self.TBTRASPASO" />
+          <EntitySet Name="TBUSUARIO" EntityType="Self.TBUSUARIO" />
+          <EntitySet Name="TBVENTA" EntityType="Self.TBVENTA" />
+          <AssociationSet Name="TBCARGOTBUSUARIO" Association="DelphosModel.TBCARGOTBUSUARIO">
+            <End Role="TBCARGO" EntitySet="TBCARGO" />
+            <End Role="TBUSUARIO" EntitySet="TBUSUARIO" />
+          </AssociationSet>
+          <EntitySet Name="TBPRODUCTO" EntityType="DelphosModel.TBPRODUCTO" />
+          <AssociationSet Name="TBCATEGORIATBPRODUCTO" Association="DelphosModel.TBCATEGORIATBPRODUCTO">
+            <End Role="TBCATEGORIA" EntitySet="TBCATEGORIA" />
+            <End Role="TBPRODUCTO" EntitySet="TBPRODUCTO" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="TBCARGOTBUSUARIO">
+          <End Type="DelphosModel.TBCARGO" Role="TBCARGO" Multiplicity="1" />
+          <End Type="DelphosModel.TBUSUARIO" Role="TBUSUARIO" Multiplicity="*" />
+        </Association>
+        <EntityType Name="TBPRODUCTO">
+          <Key>
+            <PropertyRef Name="IDPRODUCTO" />
+            <PropertyRef Name="SKU" />
+          </Key>
+          <Property Name="IDPRODUCTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SKU" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="NOMBRE_P" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="CATEGORIA_P" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="PRECIO_P" Type="Int32" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IDCATEGORIA" Type="Int32" Nullable="false" />
+          <Property Name="IDUSUARIO" Type="Int32" Nullable="false" />
+          <Property Name="RUT_U" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TBCATEGORIA" Relationship="DelphosModel.TBCATEGORIATBPRODUCTO" FromRole="TBPRODUCTO" ToRole="TBCATEGORIA" />
+        </EntityType>
+        <Association Name="TBCATEGORIATBPRODUCTO">
+          <End Type="DelphosModel.TBCATEGORIA" Role="TBCATEGORIA" Multiplicity="1" />
+          <End Type="DelphosModel.TBPRODUCTO" Role="TBPRODUCTO" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DelphosModelStoreContainer" CdmEntityContainer="DelphosEntities">
+          <EntitySetMapping Name="DETALLETRASPASO">
+            <EntityTypeMapping TypeName="DelphosModel.DETALLETRASPASO">
+              <MappingFragment StoreEntitySet="DETALLETRASPASO">
+                <ScalarProperty Name="IDDETALLETRASPASO" ColumnName="IDDETALLETRASPASO" />
+                <ScalarProperty Name="IDTRASPASO" ColumnName="IDTRASPASO" />
+                <ScalarProperty Name="IDPRODUCTO" ColumnName="IDPRODUCTO" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="CANTIDAD_DET_TRASPASO" ColumnName="CANTIDAD_DET_TRASPASO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBBODEGA">
+            <EntityTypeMapping TypeName="DelphosModel.TBBODEGA">
+              <MappingFragment StoreEntitySet="TBBODEGA">
+                <ScalarProperty Name="IDBODEGA" ColumnName="IDBODEGA" />
+                <ScalarProperty Name="NOMBRE_B" ColumnName="NOMBRE_B" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBCARGO">
+            <EntityTypeMapping TypeName="DelphosModel.TBCARGO">
+              <MappingFragment StoreEntitySet="TBCARGO">
+                <ScalarProperty Name="IDCARGO" ColumnName="IDCARGO" />
+                <ScalarProperty Name="NOMBRECARGO" ColumnName="NOMBRECARGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBCATEGORIA">
+            <EntityTypeMapping TypeName="DelphosModel.TBCATEGORIA">
+              <MappingFragment StoreEntitySet="TBCATEGORIA">
+                <ScalarProperty Name="IDCATEGORIA" ColumnName="IDCATEGORIA" />
+                <ScalarProperty Name="NOMBRE_C" ColumnName="NOMBRE_C" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBDETALLEOC">
+            <EntityTypeMapping TypeName="DelphosModel.TBDETALLEOC">
+              <MappingFragment StoreEntitySet="TBDETALLEOC">
+                <ScalarProperty Name="IDDETALLEOC" ColumnName="IDDETALLEOC" />
+                <ScalarProperty Name="IDORDENCOMPRA" ColumnName="IDORDENCOMPRA" />
+                <ScalarProperty Name="IDPRODUCTO" ColumnName="IDPRODUCTO" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="CANTIDAD_DET_OC" ColumnName="CANTIDAD_DET_OC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBDETALLESTOCK">
+            <EntityTypeMapping TypeName="DelphosModel.TBDETALLESTOCK">
+              <MappingFragment StoreEntitySet="TBDETALLESTOCK">
+                <ScalarProperty Name="IDDETALLESTOCK" ColumnName="IDDETALLESTOCK" />
+                <ScalarProperty Name="IDBODEGA" ColumnName="IDBODEGA" />
+                <ScalarProperty Name="IDPRODUCTO" ColumnName="IDPRODUCTO" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBDETALLEVENTA">
+            <EntityTypeMapping TypeName="DelphosModel.TBDETALLEVENTA">
+              <MappingFragment StoreEntitySet="TBDETALLEVENTA">
+                <ScalarProperty Name="IDDETALLEVENTA" ColumnName="IDDETALLEVENTA" />
+                <ScalarProperty Name="IDVENTA" ColumnName="IDVENTA" />
+                <ScalarProperty Name="IDPRODUCTO" ColumnName="IDPRODUCTO" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="CANTIDAD_VENTA" ColumnName="CANTIDAD_VENTA" />
+                <ScalarProperty Name="PRECIO_D" ColumnName="PRECIO_D" />
+                <ScalarProperty Name="SUBTOTAL" ColumnName="SUBTOTAL" />
+                <ScalarProperty Name="METODO_PAGO" ColumnName="METODO_PAGO" />
+                <ScalarProperty Name="IDMETODODEPAGO" ColumnName="IDMETODODEPAGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBMETODODEPAGO">
+            <EntityTypeMapping TypeName="DelphosModel.TBMETODODEPAGO">
+              <MappingFragment StoreEntitySet="TBMETODODEPAGO">
+                <ScalarProperty Name="IDMETODODEPAGO" ColumnName="IDMETODODEPAGO" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBMOVIMIENTO">
+            <EntityTypeMapping TypeName="DelphosModel.TBMOVIMIENTO">
+              <MappingFragment StoreEntitySet="TBMOVIMIENTO">
+                <ScalarProperty Name="IDMOVIMIENTO" ColumnName="IDMOVIMIENTO" />
+                <ScalarProperty Name="IDBODEGA" ColumnName="IDBODEGA" />
+                <ScalarProperty Name="IDTRASPASO" ColumnName="IDTRASPASO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBORDENDECOMPRA">
+            <EntityTypeMapping TypeName="DelphosModel.TBORDENDECOMPRA">
+              <MappingFragment StoreEntitySet="TBORDENDECOMPRA">
+                <ScalarProperty Name="IDORDENCOMPRA" ColumnName="IDORDENCOMPRA" />
+                <ScalarProperty Name="NORDECOMPRA" ColumnName="NORDECOMPRA" />
+                <ScalarProperty Name="DETALLE" ColumnName="DETALLE" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="RUT_U" ColumnName="RUT_U" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBPROVEEDOR">
+            <EntityTypeMapping TypeName="DelphosModel.TBPROVEEDOR">
+              <MappingFragment StoreEntitySet="TBPROVEEDOR">
+                <ScalarProperty Name="IDPROVEEDOR" ColumnName="IDPROVEEDOR" />
+                <ScalarProperty Name="RUT_PRO" ColumnName="RUT_PRO" />
+                <ScalarProperty Name="NOMBRE_PRO" ColumnName="NOMBRE_PRO" />
+                <ScalarProperty Name="GIRO" ColumnName="GIRO" />
+                <ScalarProperty Name="RAZONSOCIAL" ColumnName="RAZONSOCIAL" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="RUT_U" ColumnName="RUT_U" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBRECEPCION">
+            <EntityTypeMapping TypeName="DelphosModel.TBRECEPCION">
+              <MappingFragment StoreEntitySet="TBRECEPCION">
+                <ScalarProperty Name="IDRECEPCION" ColumnName="IDRECEPCION" />
+                <ScalarProperty Name="FACTURA" ColumnName="FACTURA" />
+                <ScalarProperty Name="NORDENCOMPRA_R" ColumnName="NORDENCOMPRA_R" />
+                <ScalarProperty Name="FECHA_RECEPCION" ColumnName="FECHA_RECEPCION" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="RUT_U" ColumnName="RUT_U" />
+                <ScalarProperty Name="IDORDENCOMPRA" ColumnName="IDORDENCOMPRA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBTRASPASO">
+            <EntityTypeMapping TypeName="DelphosModel.TBTRASPASO">
+              <MappingFragment StoreEntitySet="TBTRASPASO">
+                <ScalarProperty Name="IDTRASPASO" ColumnName="IDTRASPASO" />
+                <ScalarProperty Name="FECHA_TRASPASO" ColumnName="FECHA_TRASPASO" />
+                <ScalarProperty Name="BODEGA_ORIGEN" ColumnName="BODEGA_ORIGEN" />
+                <ScalarProperty Name="BODEGA_DESTINO" ColumnName="BODEGA_DESTINO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBUSUARIO">
+            <EntityTypeMapping TypeName="DelphosModel.TBUSUARIO">
+              <MappingFragment StoreEntitySet="TBUSUARIO">
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="RUT_U" ColumnName="RUT_U" />
+                <ScalarProperty Name="NOMBRE_U" ColumnName="NOMBRE_U" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="CARGO_U" ColumnName="CARGO_U" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="IDCARGO" ColumnName="IDCARGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBVENTA">
+            <EntityTypeMapping TypeName="DelphosModel.TBVENTA">
+              <MappingFragment StoreEntitySet="TBVENTA">
+                <ScalarProperty Name="IDVENTA" ColumnName="IDVENTA" />
+                <ScalarProperty Name="FECHAVENTA" ColumnName="FECHAVENTA" />
+                <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="RUT_U" ColumnName="RUT_U" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBPRODUCTO">
+            <EntityTypeMapping TypeName="DelphosModel.TBPRODUCTO">
+              <MappingFragment StoreEntitySet="TBPRODUCTO">
+                <ScalarProperty Name="RUT_U" ColumnName="RUT_U" />
+                <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+                <ScalarProperty Name="IDCATEGORIA" ColumnName="IDCATEGORIA" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="PRECIO_P" ColumnName="PRECIO_P" />
+                <ScalarProperty Name="CATEGORIA_P" ColumnName="CATEGORIA_P" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="NOMBRE_P" ColumnName="NOMBRE_P" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="IDPRODUCTO" ColumnName="IDPRODUCTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

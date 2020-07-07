@@ -1,0 +1,46 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutComercial.cshtml";
+}
+    <h1>Agregar Orden De Compra</h1>
+
+    <form method="post" action="/OrdenDeCompra/Nuevo">
+        <div class="form-group row">
+            <label for="NORDECOMPRA" class="col-sm-2 col-form-label">N° de Orden</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="NORDECOMPRA" name="NORDECOMPRA">
+                <!--<span class="field-validation-valid" data-valmsg-for="Rut" data-valmsg-replace="true"></span>-->
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="PROVEEDOR" class="col-sm-2 col-form-label">PROVEEDOR</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="PROVEEDOR">
+                    <option>PROVEEDOR1</option>
+                    <option>PROVEEDOR2</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="TELEFONO" class="col-sm-2 col-form-label">Telefono</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="TELEFONO" name="TELEFONO">
+                <!--<span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>-->
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="DIRECCION" class="col-sm-2 col-form-label">Direccion</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="DIRECCION" name="DIRECCION">
+                <!--<span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>-->
+            </div>
+        </div>
+        <a class="btn btn-success">Agregar Productos</a>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Confirmar</button>
+                <a class="btn btn-warning" href="/OrdenDeCompra">Volver</a>
+            </div>
+        </div>
+    </form>

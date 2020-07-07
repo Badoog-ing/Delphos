@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutComercial.cshtml";
+}
+<h1>Lista Proveedores</h1>
+<!--proveedores-->
+<div class="table-responsive-lg">
+    <table class="table table-striped">
+        <thead>
+            <tr class="bg-primary">
+                <th scope="col">#</th>
+                <th scope="col">Rut</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Giro</th>
+                <th scope="col">Razon Social</th>
+                <th scope="col">Email</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>87765000-6</td>
+                <td>Versluys</td>
+                <td>Fabrica de Masas</td>
+                <td>Comercial Ruver LTDA</td>
+                <td>jtoledo@versluys.cl</td>
+                <td>#</td>
+                <td>
+                    <a href="/Proveedor/Editar/1">Editar</a>|
+                    <a href="/PRoveedor/Ver/1">Ver</a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<a class="btn btn-success" href="@Url.Action("Nuevo", "Proveedor")">Agregar</a>
+

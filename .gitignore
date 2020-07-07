@@ -1,0 +1,5 @@
+packages/
+Delphos/bin/
+Delphos/obj/Debug/
+Delphos/App_Data/
+.vs/

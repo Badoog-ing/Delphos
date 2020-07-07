@@ -1,0 +1,74 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutComercial.cshtml";
+}
+<h1>Ver ordenes de compra</h1>
+
+<!-- 50%/50% split -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <!--<p>NOrdenDeCompra</p>-->
+            <p>0000001</p>
+        </div>
+        <div class="col-6">
+            <!--<p>Proveedor</p>-->
+            <p>Comercializadora Colun</p>
+        </div>
+        <div class="col-2">
+            <!--<p>Fecha Creacion</p>-->
+            <p>18/06/2020</p>
+        </div>
+    </div>
+</div>
+
+<div class="table-responsive-lg">
+    <table class="table table-striped">
+        <thead>
+            <tr class="bg-primary">
+                <th scope="col">#</th>
+                <th scope="col">Nombre Del producto</th>
+                <th scope="col">SKU</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio Unitario</th>
+                <th scope="col">Total</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>#</td>
+                <td>#</td>
+                <td>#</td>
+                <td>#</td>
+                <td>#</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>#</td>
+                <td>#</td>
+                <td>#</td>
+                <td>#</td>
+                <td>#</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+<!-- 50%/50% split -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+           
+        </div>
+        <div class="col-4">
+           
+        </div>
+        <div class="col-2">
+            <!--<p>Total de la OC</p>-->
+            <p>Total : $400.000</p>
+        </div>
+    </div>
+</div>
+<a class="btn btn-success" href="@Url.Action("Index", "OrdenDeCompra")">Volver</a>

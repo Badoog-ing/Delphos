@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutComercial.cshtml";
+}
+<h1>Lista ordenes de compra</h1>
+
+<div class="table-responsive-lg">
+    <table class="table table-striped">
+        <thead>
+            <tr class="bg-primary">
+                <th scope="col">#</th>
+                <th scope="col">NOrden de Compra</th>
+                <th scope="col">Proveedor</th>
+                <th scope="col">Fecha de Emision</th>
+                <th scope="col">Realizado Por</th>
+                <th scope="col">Detalle</th>
+                <th scope="col">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>0000001</td>
+                <td>Comercializadora Colun</td>
+                <td>18/06/2020</td>
+                <td>Administrador</td>
+                <td>#</td>
+                <td>
+                    <a href="/OrdenDeCompra/Editar/1">Editar</a>|
+                    <a href="/OrdenDeCompra/Ver/1">Ver</a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>0000002</td>
+                <td>Comercializadora Soprole</td>
+                <td>18/06/2020</td>
+                <td>Administrador</td>
+                <td>#</td>
+                <td>
+                    <a href="/OrdenDeCompra/Editar/2">Editar</a>|<!--Faltaria agregar ruta con helper?-->
+                    <a href="/OrdenDeCompra/Ver/2">Ver</a>
+                </td>
+            </tr>   
+
+        </tbody>
+    </table>
+</div>
+
+<a class="btn btn-success" href="@Url.Action("Nuevo", "OrdenDeCompra")">Agregar</a>

@@ -1,0 +1,62 @@
+﻿@model Delphos.Models.Usuario
+
+@{
+    Layout = "~/Views/Shared/_LayoutU.cshtml";
+}
+
+<h1>Editar Usuario</h1>
+<hr />
+
+<form method="post" action="@Url.Action("Editar", "Usuario")">
+
+    <input type="hidden" value="@Model.Id" name="Id" />
+
+    <div class="form-group row">
+        <label for="Rut" class="col-sm-2 col-form-label">Rut</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="Rut" name="Rut" value="@Model.Rut">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="nombre" name="Nombre" value="@Model.Nombre">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Password" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="Password" name="Password" value="@Model.Password">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Cargo" class="col-sm-2 col-form-label">Cargo</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="Cargo" value="@Model.CargoId">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="Estado" name="Estado">
+        </div>
+    </div>
+
+    <hr />
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Agregar</button>
+            <a class="btn btn-warning" href="@Url.Action("Index", "Usuario")">Volver</a>
+        </div>
+    </div>
+</form>

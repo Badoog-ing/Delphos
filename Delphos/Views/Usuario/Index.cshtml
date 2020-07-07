@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutU.cshtml";
+}
+
+@model IEnumerable<Delphos.Models.Usuario>
+
+<h1>Listado de Trabajadores</h1>
+<hr />
+<a class="btn colorBoton" href="@Url.Action("Nuevo", "Usuario")">Agregar Usurio</a>
+<br />
+<br />
+<div class="table">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Rut</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Cargo</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var u in Model)
+            {
+                <tr>
+                    <th scope="row">@u.Id</th>
+                    <td>@u.Rut</td>
+                    <td>@u.Nombre</td>
+                    <td>@u.Cargo.Nombre</td>
+                    <td>@u.Estado</td>
+                    <td>
+                        <a class="far fa-edit" href="@Url.Action("Editar", "Usuario", new { id = u.Id })"></a> |
+                        <a class="far fa-eye" href="@Url.Action("Ver", "Usuario", new { id = u.Id })"></a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
