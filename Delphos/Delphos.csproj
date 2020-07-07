@@ -209,6 +209,7 @@
     <Content Include="Views\OrdenDeCompra\Editar.cshtml" />
     <Content Include="Views\Proveedor\Index.cshtml" />
     <Content Include="Views\Producto\Nuevo.cshtml" />
+    <Content Include="Views\Venta\VentaDelDia.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

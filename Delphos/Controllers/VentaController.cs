@@ -13,5 +13,10 @@ namespace Delphos.Controllers
         {
             return View();
         }
+
+        public ActionResult VentaDelDia()
+        {
+            return View();
+        }
     }
 }
