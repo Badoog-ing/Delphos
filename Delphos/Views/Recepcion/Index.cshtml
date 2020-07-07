@@ -7,7 +7,7 @@
 
 <p>
 
-    <input type="search" name="buscar" placeholder="receepcion...">
+    <input type="search" name="buscar" placeholder="Buscar...">
     <input type="submit" value="Buscar">
 
 </p>
@@ -23,7 +23,7 @@
     </div>
     <div class="col">
         <label for="n3">N° de Factura</label>
-        <input class="form-control" type="text" name="n3" value="" placeholder="N° de Factura" />
+        <input class="form-control" type="text" name="n3" value="" placeholder="000000" disabled />
     </div>
 </div>
 
@@ -56,11 +56,23 @@
     </tbody>
 </table>
 
-<br /><br /><br />
+<br />
+<br />
+<br />
 
-<textarea name="comentarios" rows="10" cols="150">Escribe aquí tus comentarios</textarea>
+<div class="form-group">
+    <label for="comentario">Observaciones</label>
+    <textarea class="form-control" style="resize:none" id="comentario" rows="10"></textarea>
+</div>
 
-<br /><br />
+<br />
+<br />
 
-<button>Aprobar</button>
-<button>Rechazar</button>
+<div class="row">
+    <div class="col" style="text-align:center">
+        <button style="">Aprobar</button>
+    </div>
+    <div class="col" style="text-align:center">
+        <button>Rechazar</button>
+    </div>
+</div>

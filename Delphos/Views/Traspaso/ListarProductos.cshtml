@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutBodega.cshtml";
+}
+
+<h1>Listar Productos</h1>
+<hr />
+<br /><br />
+<div class="row">
+    <div class="col">
+        <div style="text-align:center">
+            <label for="buscar">Buscar Productos</label>
+            <input type="search" name="buscar" value="" placeholder="Buscar..." />
+        </div>
+    </div>
+
+    <div class="col">
+        <select class="custom-select" id="combobox3">
+            <option selected>Bodega</option>
+            <option value="1">Opcion 1</option>
+            <option value="2">Opcion 2</option>
+        </select>
+    </div>
+</div>
+<br /><br />
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+            </tr>
+            <tr>
+                <td>Mary</td>
+                <td>Moe</td>
+                <td>mary@example.com</td>
+            </tr>
+            <tr>
+                <td>July</td>
+                <td>Dooley</td>
+                <td>july@example.com</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

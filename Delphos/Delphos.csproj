@@ -133,6 +133,7 @@
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\ProveedorController.cs" />
     <Compile Include="Controllers\RecepcionController.cs" />
+    <Compile Include="Controllers\TraspasoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\VentaController.cs" />
     <Compile Include="Controllers\WelcomeController.cs" />
@@ -210,6 +211,10 @@
     <Content Include="Views\Proveedor\Index.cshtml" />
     <Content Include="Views\Producto\Nuevo.cshtml" />
     <Content Include="Views\Venta\VentaDelDia.cshtml" />
+    <Content Include="Views\Traspaso\Index.cshtml" />
+    <Content Include="Views\Traspaso\Detalles.cshtml" />
+    <Content Include="Views\Traspaso\Crear.cshtml" />
+    <Content Include="Views\Traspaso\ListarProductos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
