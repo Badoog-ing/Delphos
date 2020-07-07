@@ -1,4 +1,4 @@
-﻿<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+﻿<nav class="navbar navbar-expand-sm navColor">
     <!-- Brand/logo -->
     <a class="navbar-brand">
         <img src="~/Otros/versluys.png" alt="logo" style="width:40px;">
@@ -8,10 +8,13 @@
     <!-- Links -->
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="@Url.Action("Login", "Welcome")">Ingresar</a>
+            <a class="nav-link" href="@Url.Action("Index", "Welcome")" style="color: black">Inicio</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="@Url.Action("Sugerencia", "Welcome")">Sugerencias</a>
+            <a class="nav-link" href="@Url.Action("Login", "Welcome")" style="color: black">Ingresar</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("Sugerencia", "Welcome")" style="color: black">Sugerencias</a>
         </li>
     </ul>
 </nav>

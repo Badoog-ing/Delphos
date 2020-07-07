@@ -1,14 +1,29 @@
-﻿<h1>Ingresar</h1>
+﻿<h1 style="text-align:center; margin-top:150px">Ingresar</h1>
+<hr />
+<br />
+<div class="col">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <form action="@Url.Action("Entrar", "Welcome")" method="post">
 
-<div class="container">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" name="user">
+                </div>
 
-    <form action="@Url.Action("Entrar", "Welcome")" method="post">
-        <label>Nombre</label>
-        <input type="text" name="user" value="" />
-        <label>Contraseña</label>
-        <input type="password" name="pass" value="" />
-        <button type="submit" class="btn btn-danger">Ingresar</button>
-    </form>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon2"><i class="fa fa-lock"></i></span>
+                    </div>
+                    <input type="password" class="form-control" placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon2" name="pass">
+                </div>
 
+                <button type="submit" class="btn colorBoton btn-block">Ingresar</button>
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
 </div>
-

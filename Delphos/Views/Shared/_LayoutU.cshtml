@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link href="~/Content/Site.css" rel="stylesheet" />
 
-@*    @Styles.Render("~/Content/css")
-*@
+@*    @Styles.Render("~/Content/css")*@
+
     @*   @Scripts.Render("~/bundles/modernizr")*@
 </head>
 <body class="fondo">
@@ -23,7 +23,9 @@
         <hr />
     </div>
 
-
+    <footer class="footer">
+        @Html.Partial("Partials/_Footer")
+    </footer>
 
 
     <!-- JS, Popper.js, and jQuery -->
@@ -34,8 +36,6 @@
     @*    @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)*@
-</body>
-
-        @Html.Partial("Partials/_Footer")
+</body> 
 
 </html>
