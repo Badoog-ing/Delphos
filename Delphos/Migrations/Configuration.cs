@@ -29,8 +29,9 @@ namespace Delphos.Migrations
             context.Usuarios.AddOrUpdate(
                 u => u.Rut,
                 new Usuario { Id = 1, Nombre = "Felipe", Rut = "16186571-0", Password = "123", CargoId = 1, Estado = true },
-                new Usuario { Id = 1, Nombre = "Jesus", Rut = "16186571-5", Password = "123", CargoId = 2, Estado = true },
-                new Usuario { Id = 1, Nombre = "Fernando", Rut = "16186571-k", Password = "123", CargoId = 3, Estado = true }
+                new Usuario { Id = 2, Nombre = "Jesus", Rut = "16186571-5", Password = "123", CargoId = 2, Estado = true },
+                new Usuario { Id = 3, Nombre = "Fernando", Rut = "16186571-k", Password = "123", CargoId = 3, Estado = true },
+                new Usuario { Id = 4, Nombre = "comercial", Rut = "16186571-k", Password = "123", CargoId = 4, Estado = true }
                 );
             context.SaveChanges();
         }
