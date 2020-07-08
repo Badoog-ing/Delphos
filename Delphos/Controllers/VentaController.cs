@@ -18,5 +18,10 @@ namespace Delphos.Controllers
         {
             return View();
         }
+
+        public ActionResult DetalleBoleta()
+        {
+            return View();
+        }
     }
 }
