@@ -1,12 +1,11 @@
-﻿<nav class="navbar navbar-expand-sm navColor">
-    <!-- Brand/logo -->
-    <a class="navbar-brand">
+﻿<nav class="navbar navbar-expand-lg navColor">
+    <a class="navbar-brand" id="navbarText">
         <img src="~/Otros/versluys.png" alt="logo" style="width:40px;">
         <label>Panel de Control de Trabajadores</label>
     </a>
-    <ul class="nav justify-content-end">
-        <li class="nav-item">
-            <a class="nav-link" href="#">Cerrar Session</a>
+    <ul class="navbar-nav ml-auto">
+        <li class="logoff" style="color:white">
+            @Html.ActionLink("CerrarSession", "Cerrar", "CerrarSession")
         </li>
     </ul>
 </nav>

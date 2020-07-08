@@ -4,64 +4,74 @@
     Layout = "~/Views/Shared/_LayoutU.cshtml";
 }
 
-<h1>Argegar Usuario</h1>
+<h1 style="text-align:center">Argegar Usuario</h1>
 <hr />
 
 @*@Html.ValidationSummary()*@
 
-<form method="post" action="@Url.Action("Nuevo", "Usuario")">
-    <div class="form-group row">
-        <label for="Rut" class="col-sm-2 col-form-label">Rut</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="Rut" name="Rut" value="@Model.Rut">
-            @Html.ValidationMessageFor(Model => Model.Rut)
-        </div>
-    </div>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <form method="post" action="@Url.Action("Nuevo", "Usuario")">
+            <div class="form-group row">
+                <label for="Rut" class="col-sm-2 col-form-label">Rut</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Rut" name="Rut" value="@Model.Rut">
+                    @Html.ValidationMessageFor(Model => Model.Rut)
+                </div>
+            </div>
 
-    <div class="form-group row">
-        <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="Nombre" name="Nombre" value="@Model.Nombre">
-            @Html.ValidationMessageFor(Model => Model.Nombre)
-        </div>
-    </div>
+            <div class="form-group row">
+                <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Nombre" name="Nombre" value="@Model.Nombre">
+                    @Html.ValidationMessageFor(Model => Model.Nombre)
+                </div>
+            </div>
 
-    <div class="form-group row">
-        <label for="Password" class="col-sm-2 col-form-label">Password</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="Password" name="Password" value="@Model.Nombre">
-            @Html.ValidationMessageFor(Model => Model.Password)
-        </div>
-    </div>
+            <div class="form-group row">
+                <label for="Password" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Password" name="Password" value="@Model.Nombre">
+                    @Html.ValidationMessageFor(Model => Model.Password)
+                </div>
+            </div>
 
-    <div class="form-group row">
-        <label for="CargoId" class="col-sm-2 col-form-label">Cargo</label>
-        <div class="col-sm-10">
-            <select class="form-control" id="CargoId" name="CargoId">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-            </select>
+            <div class="form-group row">
+                <label for="CargoId" class="col-sm-2 col-form-label">Cargo</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="CargoId" name="CargoId">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
 
-        </div>
-    </div>
+                </div>
+            </div>
 
-    <div class="form-group row">
-        <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
-        <div class="col-sm-10">
-            <select class="form-control" id="Estado">
-                <option>Activo</option>
-                <option>Desactivo</option>
-            </select>
-        </div>
-    </div>
+            <div class="form-group row">
+                <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="Estado">
+                        <option>Activo</option>
+                        <option>Desactivo</option>
+                    </select>
+                </div>
+            </div>
+            <br /><br />
+            <div class="row">
+                <div class="col">
+                    <a class="btn colorBoton" href="@Url.Action("Index", "Usuario")">Volver</a>
+                </div>
 
-    <hr />
-    <div class="form-group row">
-        <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Confirmar</button>
-            <a class="btn btn-warning" href="@Url.Action("Index", "Usuario")">Volver</a>
-        </div>
+                <div class="col" style="text-align:right">
+                    <button type="submit" class="btn colorBoton">Confirmar</button>
+                </div>
+            </div>
+
+        </form>
     </div>
-</form>
+    <div class="col-3"></div>
+</div>
+

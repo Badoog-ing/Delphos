@@ -1,0 +1,106 @@
+﻿.fondo {
+    /*    background-image: url("../Otros/v2.jpg");
+    background-repeat: repeat;
+    background-attachment: scroll;*/
+}
+
+table {
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 2px solid;
+    border-color: coral;
+    border-radius: .25rem;
+}
+
+thead {
+    color: white;
+    background-color: coral
+}
+
+.fa-edit {
+    color: black;
+}
+
+    .fa-edit:hover {
+        color: coral;
+    }
+
+.fa-eye {
+    color: black;
+}
+
+    .fa-eye:hover {
+        color: coral;
+    }
+
+.colorBoton {
+    background-color: coral;
+    color: white
+}
+
+.btn:hover {
+    background-color: white;
+    color: coral
+}
+
+.navColor {
+    border-bottom: 2px solid;
+    border-bottom: groove;
+    border-radius: .20rem;
+    background-color: #CD0528;
+}
+
+div {
+    background-color: white
+}
+
+.footer {
+    background-color: white;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    color: white;
+}
+
+hr {
+    height: 30px;
+    border-style: solid;
+    border-color: #8c8b8b;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+
+    hr:before {
+        display: block;
+        content: "";
+        height: 30px;
+        margin-top: -31px;
+        border-style: solid;
+        border-color: #8c8b8b;
+        border-width: 0 0 1px 0;
+        border-radius: 20px;
+    }
+
+
+a {
+    color:black
+}
+
+a:hover{
+    color:white
+}
+
+a:link {
+    text-decoration: none;
+}
+
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    text-shadow: 1px 2px #999;
+}
