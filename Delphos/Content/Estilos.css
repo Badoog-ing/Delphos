@@ -1,7 +1,24 @@
-﻿.fondo {
+﻿/*body, html {*/
     /*    background-image: url("../Otros/v2.jpg");
     background-repeat: repeat;
     background-attachment: scroll;*/
+    /*height: 100%;
+}*/
+
+/*container {
+    min-height: 100%;
+    height: auto;
+    height: 100%;
+}*/
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    margin: 0;
+    margin-bottom: 150px;
 }
 
 table {
@@ -12,6 +29,7 @@ table {
     border-color: coral;
     border-radius: .25rem;
 }
+
 
 thead {
     color: white;
@@ -56,8 +74,12 @@ div {
 }
 
 .footer {
-    background-color: white;
-    position: absolute;
+    border-top: 2px solid;
+    border-top: groove;
+    border-radius: .20rem;
+    background-color: lightgray;
+/*    display: flex;
+*/    position: absolute;
     bottom: 0px;
     width: 100%;
     color: white;
@@ -102,5 +124,6 @@ img.center {
 }
 
 h1 {
+    text-align:center;
     text-shadow: 1px 2px #999;
 }

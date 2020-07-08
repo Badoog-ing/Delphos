@@ -4,15 +4,14 @@
 
 <h1>Listar Productos</h1>
 <hr />
-<br /><br />
-<div class="row">
-    <div class="col">
-        <div style="text-align:center">
-            <label for="buscar">Buscar Productos</label>
-            <input type="search" name="buscar" value="" placeholder="Buscar..." />
-        </div>
-    </div>
 
+<div class="row">
+    <div class="col-4">
+        <input class="form-control" type="search" name="buscar" placeholder="Buscar...">
+    </div>
+    <div class="col-2">
+        <input class="btn colorBoton" type="submit" value="Buscar">
+    </div>
     <div class="col">
         <select class="custom-select" id="combobox3">
             <option selected>Bodega</option>
@@ -21,7 +20,8 @@
         </select>
     </div>
 </div>
-<br /><br />
+
+<br />
 <div>
     <table class="table table-hover">
         <thead>
@@ -50,3 +50,7 @@
         </tbody>
     </table>
 </div>
+
+
+
+
