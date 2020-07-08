@@ -3,11 +3,12 @@
     Layout = "~/Views/Shared/_LayoutComercial.cshtml";
 }
 <h1>Lista Proveedores</h1>
+<hr />
 <!--proveedoresssss-->
-<div class="table-responsive-lg">
+<div class="table">
     <table class="table table-striped">
         <thead>
-            <tr class="bg-primary">
+            <tr>
                 <th scope="col">#</th>
                 <th scope="col">Rut</th>
                 <th scope="col">Nombre</th>
@@ -37,5 +38,5 @@
     </table>
 </div>
 
-<a class="btn btn-success" href="@Url.Action("Nuevo", "Proveedor")">Agregar</a>
+<a class="bnt colorBoton" href="@Url.Action("Nuevo", "Proveedor")">Agregar</a>
 
