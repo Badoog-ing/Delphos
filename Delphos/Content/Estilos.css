@@ -59,7 +59,9 @@ thead {
 
 .btn:hover {
     background-color: white;
-    color: coral
+    color: coral;
+    border: 2px solid;
+    border-color: coral;
 }
 
 .navColor {
