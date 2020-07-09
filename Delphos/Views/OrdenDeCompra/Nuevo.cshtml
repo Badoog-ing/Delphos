@@ -1,46 +1,72 @@
-﻿@{
+﻿
+@{
     Layout = "~/Views/Shared/_LayoutComercial.cshtml";
 }
-    <h1>Agregar Orden De Compra</h1>
+<h1>Crear Orden de Compra</h1>
+<hr />
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <form method="post" action="@Url.Action("Nuevo", "OrdenDeCompra")">
 
-    <form method="post" action="/OrdenDeCompra/Nuevo">
-        <div class="form-group row">
-            <label for="rut" class="col-sm-2 col-form-label">N° de Orden</label>
-            <div class="col-sm-10">
-                <input type="number" class="form-control" id="NORDECOMPRA" name="NORDECOMPRA">
-                <!--<span class="field-validation-valid" data-valmsg-for="Rut" data-valmsg-replace="true"></span>-->
+            <div class="form-group row">
+                <label for="IdOrdenCompra" class="col-sm-2 col-form-label">N°OrdenDeCompra</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="IdOrdenCompra" name="IdOrdenCompra" disabled>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group row">
-            <label for="PROVEEDOR" class="col-sm-2 col-form-label">PROVEEDOR</label>
-            <div class="col-sm-10">
-                <select class="form-control" id="PROVEEDOR">
-                    <option>PROVEEDOR1</option>
-                    <option>PROVEEDOR2</option>
-                </select>
-            </div>
-        </div>
+            <div class="form-group row">
+                <label for="Proveedor" class="col-sm-2 col-form-label">Proveedor</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="Proveedor" name="Proveedor">
+                        <option>Comercial Ruver LTDA</option>
+                        <option>Aristia</option>
+                        <option>Super Pollo</option>
+                        <option>Comercial Yolanda</option>
+                    </select>
 
-        <div class="form-group row">
-            <label for="TELEFONO" class="col-sm-2 col-form-label">Telefono</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="TELEFONO" name="TELEFONO">
-                <!--<span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>-->
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="DIRECCION" class="col-sm-2 col-form-label">Direccion</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="DIRECCION" name="DIRECCION">
-                <!--<span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>-->
+
+            <div class="form-group row">
+                <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Telefono" name="Telefono" disabled>
+                </div>
             </div>
-        </div>
-        <a class="btn btn-success">Agregar Productos</a>
-        <div class="form-group row">
-            <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Confirmar</button>
-                <a class="btn btn-warning" href="/OrdenDeCompra">Volver</a>
+
+            <div class="form-group row">
+                <label for="Direccion" class="col-sm-2 col-form-label">Direccion</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Direccion" name="Direccion" disabled>
+                </div>
             </div>
-        </div>
-    </form>
+
+            <div class="form-group row">
+                <label for="Email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Email" name="Email" disabled>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Telefono" name="Telefono" disabled>
+                </div>
+            </div>
+            <br /><br />
+            <a class="btn colorBoton" href="@Url.Action("Nuevo", "OrdenDeCompra")">Agregar Productos</a> <!--Falta Grilla-->
+            <div class="row">
+                <div class="col">
+                    <a class="btn colorBoton" href="@Url.Action("Index", "OrdenDeCompra")">Volver</a>
+                </div>
+
+                <div class="col" style="text-align:right">
+                    <button type="submit" class="btn colorBoton">Confirmar</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div class="col-3"></div>

@@ -208,7 +208,6 @@
     <Content Include="Views\Shared\Partials\_NavbarCaja.cshtml" />
     <Content Include="Views\Shared\_LayoutCaja.cshtml" />
     <Content Include="Views\OrdenDeCompra\Index.cshtml" />
-    <Content Include="Views\OrdenDeCompra\Nuevo.cshtml" />
     <Content Include="Views\OrdenDeCompra\Ver.cshtml" />
     <Content Include="Views\Proveedor\Index.cshtml" />
     <Content Include="Views\Producto\Nuevo.cshtml" />
@@ -220,6 +219,8 @@
     <Content Include="Views\Venta\DetalleBoleta.cshtml" />
     <Content Include="Views\Proveedor\Editar.cshtml" />
     <Content Include="Views\Proveedor\Ver.cshtml" />
+    <Content Include="Views\Proveedor\Nuevo.cshtml" />
+    <Content Include="Views\OrdenDeCompra\Nuevo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
