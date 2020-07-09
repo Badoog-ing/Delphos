@@ -30,11 +30,20 @@ namespace Delphos.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    //Guardando en la bbdd
-                    _db = new bdSupermercado();
-                    _db.Productos.Add(p);
-                    _db.SaveChanges();
-                    return RedirectToAction("Index", "Producto");
+                    var Listap = from pr in _db.Productos
+                                where pr.Sku == p.Sku
+                                select pr;
+                    if (Listap.Count() > 0)
+                    {
+                        return Content("Producto ya esta");
+                    }else
+                    {
+                        _db = new bdSupermercado();
+                        _db.Productos.Add(p);
+                        _db.SaveChanges();
+                        return RedirectToAction("Index", "Producto");
+                    }
+
                 }
                 return View(p);
             }
