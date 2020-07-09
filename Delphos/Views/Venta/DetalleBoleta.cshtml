@@ -3,11 +3,11 @@
 }
 
 
-@*Script de FontAwesome*@
 
-<script src="https://kit.fontawesome.com/1204f88754.js" crossorigin="anonymous"></script>
 
 <h1>Detalle Boleta N° 111111</h1>
+
+<hr />
 
 <div class="container">
 
@@ -31,16 +31,16 @@
         <div class="row">
 
             <div class="col-md-4">
-                <input type="search" name="NumBoleta" value="" disabled/>
+                <input type="search" name="NumBoleta" value="" disabled />
             </div>
             <div class="col-md-4">
-                <input type="search" name="FechaBoleta" value="" disabled  />
+                <input type="search" name="FechaBoleta" value="" disabled />
             </div>
             <div class="col-md-4">
                 <input type="search" name="MetodoPago" value="" disabled />
             </div>
         </div>
-        
+
 
         <br />
 
@@ -49,10 +49,10 @@
 
     <br />
 
-    <div class="container">
+    <div class="table">
         <h3>Productos</h3>
         <table class="table">
-            <thead class="thead-dark">
+            <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Producto</th>
@@ -96,21 +96,13 @@
 
         <br />
 
-        <div  class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>Total Boleta</h3>
+        <div class="col-md-3">
+            <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="total">Total</span>
                 </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
             </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <input type="search" name="TotalBoleta" value="" />
-                </div>
-            </div>
-
-            <br />
-
         </div>
 
     </div>
