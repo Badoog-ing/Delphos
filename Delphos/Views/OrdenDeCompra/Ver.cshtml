@@ -5,7 +5,7 @@
 <h1>Ver ordenes de compra</h1>
 
 <!-- 50%/50% split -->
-<div class="container-fluid">
+<div class="table">
     <div class="row">
         <div class="col-4">
             <!--<p>NOrdenDeCompra</p>-->
@@ -22,10 +22,10 @@
     </div>
 </div>
 
-<div class="table-responsive-lg">
+<div class="table">
     <table class="table table-striped">
         <thead>
-            <tr class="bg-primary">
+            <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nombre Del producto</th>
                 <th scope="col">SKU</th>
@@ -71,4 +71,4 @@
         </div>
     </div>
 </div>
-<a class="btn btn-success" href="@Url.Action("Index", "OrdenDeCompra")">Volver</a>
+<a class="btn colorBoton" href="@Url.Action("Index", "OrdenDeCompra")">Volver</a>

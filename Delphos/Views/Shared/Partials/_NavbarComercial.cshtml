@@ -16,15 +16,23 @@
         <li class="nav-item">
             <a class="nav-link" href="@Url.Action("Index","Proveedor")">Proveedores</a>
         </li>
+        <!--
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Listar
             </a>
+            <!--
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="@Url.Action("Index","Producto")">Productos</a>
                 <a class="dropdown-item" href="#">Proveedores</a>
                 <a class="dropdown-item" href="@Url.Action("Index","OrdenDeCompra")">Orden de Compra</a>
             </div>
+            </li>
+            -->
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <li class="logoff" style="color:white">
+            @Html.ActionLink("CerrarSession", "Cerrar", "CerrarSession")
         </li>
     </ul>
 </nav>
