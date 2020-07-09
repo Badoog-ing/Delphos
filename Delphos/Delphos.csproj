@@ -210,7 +210,6 @@
     <Content Include="Views\OrdenDeCompra\Index.cshtml" />
     <Content Include="Views\OrdenDeCompra\Nuevo.cshtml" />
     <Content Include="Views\OrdenDeCompra\Ver.cshtml" />
-    <Content Include="Views\OrdenDeCompra\Editar.cshtml" />
     <Content Include="Views\Proveedor\Index.cshtml" />
     <Content Include="Views\Producto\Nuevo.cshtml" />
     <Content Include="Views\Venta\VentaDelDia.cshtml" />
