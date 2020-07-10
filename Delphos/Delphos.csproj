@@ -226,6 +226,8 @@
     <Content Include="Views\Proveedor\Nuevo.cshtml" />
     <Content Include="Views\OrdenDeCompra\Nuevo.cshtml" />
     <Content Include="Views\Shared\Partials\_FlashMensajes.cshtml" />
+    <Content Include="Views\Producto\Editar.cshtml" />
+    <Content Include="Views\Producto\Ver.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
