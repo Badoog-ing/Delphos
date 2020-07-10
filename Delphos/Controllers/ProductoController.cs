@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Optimization;
 
 namespace Delphos.Controllers
 {
@@ -25,16 +26,59 @@ namespace Delphos.Controllers
                 return View(p);
             }
 
+                       /* try
+            {
+                using (Entities db = new Entities())
+                {
+                    var Lista = from u in db.Usuario
+                                where u.Nombre == user && u.Password == pass
+                                select u;
+
+                    if (Lista.Count() > 0)
+                    {
+                        Usuario oUser = Lista.First();
+        Session["Usuario"] = oUser;
+                    }
+                    else
+                    {
+                        return Content("No se encuentra el user");
+}
+                }
+
+                return Content("Hola");
+            }
+            catch (Exception ex)
+            {
+
+                return Content("Ocurrio un error" + ex.Message);
+            }*/
+
             [HttpPost]
             public ActionResult Nuevo(Producto p)
-            {
+            {               
                 if (ModelState.IsValid)
                 {
-                    _db = new bdSupermercado();
-                    _db.Productos.Add(p);
-                    _db.SaveChanges();
-                    return RedirectToAction("Index", "Producto");
-
+                    using (_db = new bdSupermercado())
+                    {
+                        var Lista = from u in _db.Productos
+                                    where u.Sku == p.Sku
+                                    select u;
+                    if (Lista.Count() > 0)
+                    {
+                        Request.Flash("danger", "El producto ya esta registrado");
+                        /*return View("<script language='javascript' type='text/javascript'>alert('El Producto ya esta registrado');</script>");*/
+                        /*return Content("Hola");*/
+                    }
+                    else
+                    {
+                        _db = new bdSupermercado();
+                        p.FechaCreacion = DateTime.Today;
+                        _db.Productos.Add(p);
+                        _db.SaveChanges();
+                        Request.Flash("success", "Producto agregado");
+                        return RedirectToAction("Index", "Producto");
+                    }
+                    }
                 }
                 return View(p);
             }
