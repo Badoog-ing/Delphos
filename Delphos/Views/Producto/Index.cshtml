@@ -30,7 +30,7 @@
                     <td>@p.Descripcion</td>
                     <td>@p.CategoriaId</td>
                     <td>@p.Precio</td>
-                    <td>@p.FechaCreacion</td>
+                    <td>@p.FechaCreacion.ToString("dd-MM-yy")</td>
                     <td>
                         <a href="@Url.Action("Editar", "Producto", new { id = p.Id })">Editar</a>|
                         <a href="@Url.Action("Ver", "Producto", new { id = p.Id })">Ver</a>

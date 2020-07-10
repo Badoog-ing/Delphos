@@ -26,33 +26,6 @@ namespace Delphos.Controllers
                 return View(p);
             }
 
-                       /* try
-            {
-                using (Entities db = new Entities())
-                {
-                    var Lista = from u in db.Usuario
-                                where u.Nombre == user && u.Password == pass
-                                select u;
-
-                    if (Lista.Count() > 0)
-                    {
-                        Usuario oUser = Lista.First();
-        Session["Usuario"] = oUser;
-                    }
-                    else
-                    {
-                        return Content("No se encuentra el user");
-}
-                }
-
-                return Content("Hola");
-            }
-            catch (Exception ex)
-            {
-
-                return Content("Ocurrio un error" + ex.Message);
-            }*/
-
             [HttpPost]
             public ActionResult Nuevo(Producto p)
             {               

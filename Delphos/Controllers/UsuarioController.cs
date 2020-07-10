@@ -34,6 +34,7 @@ namespace Delphos.Controllers
                 _db = new bdSupermercado();
                 _db.Usuarios.Add(u);
                 _db.SaveChanges();
+                Request.Flash("success", "Usuario agregado con exito !!!");
                 return RedirectToAction("Index", "Usuario");
             }
             return View(u);
@@ -66,6 +67,7 @@ namespace Delphos.Controllers
                 _db = new bdSupermercado();
                 _db.Entry(u).State = EntityState.Modified;
                 _db.SaveChanges();
+                Request.Flash("success", "Usuario Actualizado");
                 return RedirectToAction("Ver", "Usuario", new { id = u.Id });
             }
             return View(u);
