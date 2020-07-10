@@ -40,8 +40,12 @@
             <div class="form-group row">
                 <label for="Categoria" class="col-sm-2 col-form-label">Categoria</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="Categoria" name="Categoria" value="@Model.CategoriaId">
-                    @Html.ValidationMessageFor(Model => Model.CategoriaId)
+                    <select class="form-control" id="Categoria" name="Categoria">
+                        <option>opcion 1</option>
+                        <option>opcion 2</option>
+                        <option>opcion 3</option>
+                        <option>opcion 4</option>
+                    </select>
                 </div>
             </div>
 
