@@ -13,13 +13,13 @@ namespace Delphos.Controllers
     {
         // GET: Producto
             private bdSupermercado _db;
-            public ActionResult Index()
+/*            public ActionResult Index()
             {
                 IEnumerable<Producto> productos = null;
                 _db = new bdSupermercado();
                 productos = _db.Productos.ToList();
                 return View(productos);
-            }
+            }*/
             public ActionResult Nuevo()
             {
                 Producto p = new Producto();
@@ -86,6 +86,21 @@ namespace Delphos.Controllers
                     return RedirectToAction("Ver", "Producto", new { id = p.Id });
                 }
                 return View(p);
+            }
+            //  (se reemplaza por el metodo de arriba de listar todos)
+            //falta cambiar el valor a int y mostrar un mensaje cuando no encuentre producto
+            public ActionResult Index(string searchString)
+            {
+                _db = new bdSupermercado();
+                var productos = from b in _db.Productos
+                                   select b;
+
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    productos = productos.Where(b => b.Sku.ToString().Contains(searchString));
+                }
+
+                return View(productos);
             }
         }
     }

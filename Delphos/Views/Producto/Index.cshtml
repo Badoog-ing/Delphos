@@ -6,6 +6,20 @@
 
 <h1>Lista de Productos</h1>
 <hr />
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-3">
+            @Html.TextBox("SearchString", "", new { @class = "form-control" })
+        </div>
+        <div class="col-3">
+            <input class="btn colorBoton" type="submit" value="Buscar por Sku" />
+        </div>
+        <div class="col-3"></div>
+    </div>
+}
+<br />
 <div class="table-wrapper-scroll-y my-custom-scrollbar">
     <table class="table table-striped">
         <thead>
@@ -24,20 +38,20 @@
         <tbody>
             @foreach (var p in Model)
             {
-            <tr>
-                <th scope="row">@p.Id</th>
-                <td>@p.Sku</td>
-                <td>@p.Nombre</td>
-                <td>@p.Descripcion</td>
-                <td>@p.CategoriaId</td>
-                <td>@string.Format("{0:C}", @p.Precio)</td>
-                <td>@p.FechaCreacion.ToString("dd-MM-yy")</td>
-                <td style="text-align:center; color:coral">|</td>
-                <td style="text-align:center">
-                    <a class="far fa-edit" href="@Url.Action("Editar", "Producto", new { id = p.Id })"></a> |
-                    <a class="far fa-eye" href="@Url.Action("Ver", "Producto", new { id = p.Id })"></a>
-                </td>
-            </tr>
+                <tr>
+                    <th scope="row">@p.Id</th>
+                    <td>@p.Sku</td>
+                    <td>@p.Nombre</td>
+                    <td>@p.Descripcion</td>
+                    <td>@p.CategoriaId</td>
+                    <td>@string.Format("{0:C}", @p.Precio)</td>
+                    <td>@p.FechaCreacion.ToString("dd-MM-yy")</td>
+                    <td style="text-align:center; color:coral">|</td>
+                    <td style="text-align:center">
+                        <a class="far fa-edit" href="@Url.Action("Editar", "Producto", new { id = p.Id })"></a> |
+                        <a class="far fa-eye" href="@Url.Action("Ver", "Producto", new { id = p.Id })"></a>
+                    </td>
+                </tr>
             }
 
         </tbody>
