@@ -17,5 +17,6 @@ namespace Delphos.Models
         [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true)]
         public int Precio { get; set; }
         public DateTime FechaCreacion { get; set; }
+        public virtual ICollection<Producto> Productos { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Delphos.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,7 @@ namespace Delphos.Controllers
     public class VentaController : Controller
     {
         // GET: Venta
+        private bdSupermercado _db;
         public ActionResult Index()
         {
             return View();
@@ -23,5 +25,6 @@ namespace Delphos.Controllers
         {
             return View();
         }
+
     }
 }

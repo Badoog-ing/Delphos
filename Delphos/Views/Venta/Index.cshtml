@@ -2,170 +2,132 @@
     Layout = "~/Views/Shared/_LayoutCaja.cshtml";
 }
 
-
-
-
 <h1>Vista Caja</h1>
-
-
 <hr />
 
-<div class="container">
 
-    <div class="container">
-
-
-        <div class="col-md-6">
-            <input type="search" name="buscar" value="" />
-            <button class="btn colorBoton">Buscar</button>
-        </div>
-
-        <br />
-
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-4">
-                    <label>Nombre del Producto</label>
-
-
-                </div>
-
-                <div class="col-md-4">
-                    <label>SKU                </label>
-                </div>
-                <div class="col-md-4">
-                    <label>Precio Unitario</label>
-
-                </div>
-            </div>
-
-            <div class="row">
-
-                <div class="col-md-4">
-
-                    <input type="search" name="NombreProducto" value="" />
-
-                </div>
-                <div class="col-md-4">
-                    <input type="search" name="SKU" value="" />
-                </div>
-                <div class="col-md-4">
-
-                    <input type="search" name="PrecioUnitario" value="" />
-                </div>
-            </div>
-            <br />
-            <div class="row">
-
-                <div class="col-md-6">
-
-                    <label>Cantidad</label>
-
-                </div>
-
-
-            </div>
-            <div class="row">
-
-                <div class="col-md-6">
-
-                    <input type="search" name="Cantidad" value="" />
-
-                </div>
-
-                <div class="col-md-6">
-                    <button class="btn colorBoton">Agregar</button>
-                </div>
-
-            </div>
-
-            <br />
-
-        </div>
-
-
-        <div class="table">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Producto</th>
-                        <th scope="col">SKU</th>
-                        <th scope="col">Cantidad</th>
-                        <th scope="col">Precio Unitario</th>
-                        <th scope="col">Subtotal</th>
-                        <th scope="col">Remover</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Bebida CCU. 2.5 lt</td>
-                        <td>15489519</td>
-                        <td>3</td>
-                        <td>2500</td>
-                        <td>7500</td>
-                        <td align="center"><a class="fa fa-ban" href=""></a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Chocolate Trencito 250 g</td>
-                        <td>254897</td>
-                        <td>1</td>
-                        <td>500</td>
-                        <td>500</td>
-                        <td align="center"><a class="fa fa-ban" href=""></a></td>
-
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Pan de Molde Bimbo</td>
-                        <td>35978897</td>
-                        <td>2</td>
-                        <td>1250</td>
-                        <td>2500</td>
-                        <td align="center"><a class="fa fa-ban" href=""></a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-
-        <br />
-
-        <div class="col-md-6">
-            <label for="pago">Forma de pago</label>
-            <div class="">
-                <select id="pago" name="">
-                    <option>Debito</option>
-                    <option>Efectivo</option>
-
-                </select>
-
-            </div>
-        </div>
-
-        <br />
-
-        <div class="row">   
-
-        <div class="col-md-6">
-            <div class="input-group input-group-lg">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="total">Total</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <button class="btn colorBoton">Aceptar</button>
-            <button class="btn colorBoton">Cancelar</button>
-        </div>
-
+<div class="row">
+    <div class="col">
+        <input class="form-control" type="search" name="buscar" id="buscar" />
     </div>
-
+    <div class="col">
+        <button class="btn colorBoton">Buscar x SKU</button>
+    </div>
+    <div class="col">
+        <button class="btn colorBoton form-control">Agregar Producto</button>
     </div>
 </div>
+<br />
+
+<div class="row">
+    <div class="col" style="text-align:center">
+        <p>Nombre del Producto</p>
+    </div>
+    <div class="col" style="text-align:center">
+        <p>SKU</p>
+    </div>
+    <div class="col" style="text-align:center">
+        <p>Precio Unitario</p>
+    </div>
+    <div class="col" style="text-align:center">
+        <p>Cantidad</p>
+    </div>
 </div>
+<div class="row">
+    <div class="col">
+        <input class="form-control" type="text" name="Nombre" id="Nombre" disabled />
+    </div>
+    <div class="col">
+        <input class="form-control" type="text" name="SKU" id="Sku" disabled />
+    </div>
+    <div class="col">
+        <input class="form-control" type="text" name="Precio" id="" disabled />
+    </div>
+    <div class="col">
+        <input class="form-control" type="text" name="Cantidad" value="" />
+    </div>
+</div>
+<br />
+<br />
+
+<div class="table">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Producto</th>
+                <th scope="col">SKU</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio Unitario</th>
+                <th scope="col">Subtotal</th>
+                <th scope="col">Remover</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Bebida CCU. 2.5 lt</td>
+                <td>15489519</td>
+                <td>3</td>
+                <td>2500</td>
+                <td>7500</td>
+                <td align="center"><a class="fa fa-ban" href=""></a></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Chocolate Trencito 250 g</td>
+                <td>254897</td>
+                <td>1</td>
+                <td>500</td>
+                <td>500</td>
+                <td align="center"><a class="fa fa-ban" href=""></a></td>
+
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Pan de Molde Bimbo</td>
+                <td>35978897</td>
+                <td>2</td>
+                <td>1250</td>
+                <td>2500</td>
+                <td align="center"><a class="fa fa-ban" href=""></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<br />
+<div class="row">
+    <div class="col">
+        <label for="pago">Forma de pago</label>
+        <div>
+            <select class="form-control" id="pago" name="">
+                <option>Debito</option>
+                <option>Efectivo</option>
+
+            </select>
+        </div>
+    </div>
+
+    <div class="col">
+        <br />
+        <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="total">Total</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+        </div>
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col" style="text-align:center">
+        <button class="btn colorBoton">Aprobar</button>
+    </div>
+    <div class="col" style="text-align:center">
+        <button class="btn colorBoton">Rechazar</button>
+    </div>
+</div>
+
