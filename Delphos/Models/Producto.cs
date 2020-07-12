@@ -13,6 +13,8 @@ namespace Delphos.Models
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public int CategoriaId { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true)]
         public int Precio { get; set; }
         public DateTime FechaCreacion { get; set; }
     }

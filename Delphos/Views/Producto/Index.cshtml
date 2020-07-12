@@ -6,7 +6,7 @@
 
 <h1>Lista de Productos</h1>
 <hr />
-<div class="table table-responsive-lg">
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
     <table class="table table-striped">
         <thead>
             <tr>
@@ -17,25 +17,27 @@
                 <th scope="col">Categoria</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Fecha</th>
+                <th style="text-align:center">|</th>
                 <th scope="col">Opciones</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var p in Model)
             {
-                <tr>
-                    <th scope="row">@p.Id</th>
-                    <td>@p.Sku</td>
-                    <td>@p.Nombre</td>
-                    <td>@p.Descripcion</td>
-                    <td>@p.CategoriaId</td>
-                    <td>@p.Precio</td>
-                    <td>@p.FechaCreacion.ToString("dd-MM-yy")</td>
-                    <td>
-                        <a href="@Url.Action("Editar", "Producto", new { id = p.Id })">Editar</a>|
-                        <a href="@Url.Action("Ver", "Producto", new { id = p.Id })">Ver</a>
-                    </td>
-                </tr>
+            <tr>
+                <th scope="row">@p.Id</th>
+                <td>@p.Sku</td>
+                <td>@p.Nombre</td>
+                <td>@p.Descripcion</td>
+                <td>@p.CategoriaId</td>
+                <td>@string.Format("{0:C}", @p.Precio)</td>
+                <td>@p.FechaCreacion.ToString("dd-MM-yy")</td>
+                <td style="text-align:center; color:coral">|</td>
+                <td style="text-align:center">
+                    <a class="far fa-edit" href="@Url.Action("Editar", "Producto", new { id = p.Id })"></a> |
+                    <a class="far fa-eye" href="@Url.Action("Ver", "Producto", new { id = p.Id })"></a>
+                </td>
+            </tr>
             }
 
         </tbody>
