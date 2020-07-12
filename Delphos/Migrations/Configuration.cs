@@ -34,6 +34,22 @@ namespace Delphos.Migrations
                 new Usuario { Id = 4, Nombre = "comercial", Rut = "16186571-k", Password = "123", CargoId = 4, Estado = "Activo" }
                 );
             context.SaveChanges();
+
+            // Productos
+            context.Productos.AddOrUpdate(
+                P => P.Sku,
+                new Producto { Id = 1, Sku = 100, Nombre = "Leche",        Descripcion = "Caja 1 litro",               CategoriaId = 1, Precio = 800 },
+                new Producto { Id = 2, Sku = 101, Nombre = "Yogurt",       Descripcion = "Soprole",                    CategoriaId = 1, Precio = 200 },
+                new Producto { Id = 3, Sku = 102, Nombre = "Gaseosa",      Descripcion = "3 litros ddesechable",       CategoriaId = 2, Precio = 1700 },
+                new Producto { Id = 4, Sku = 103, Nombre = "Agua Mineral", Descripcion = "1.6 litros mineral",         CategoriaId = 2, Precio = 600 },
+                new Producto { Id = 5, Sku = 104, Nombre = "Chocolate",    Descripcion = "Trencito",                   CategoriaId = 3, Precio = 1200 },
+                new Producto { Id = 6, Sku = 105, Nombre = "Alfajor",      Descripcion = "Calaf",                      CategoriaId = 3, Precio = 300 },
+                new Producto { Id = 7, Sku = 106, Nombre = "Carne",        Descripcion = "Posta paleta 1 kilo",        CategoriaId = 4, Precio = 8000 },
+                new Producto { Id = 8, Sku = 107, Nombre = "Pollo",        Descripcion = "Entero superpollo",          CategoriaId = 4, Precio = 7000 },
+                new Producto { Id = 9, Sku = 108, Nombre = "Tallarines",   Descripcion = "Espirales Carozzi 1 kilo",   CategoriaId = 5, Precio = 700 },
+                new Producto { Id = 10, Sku = 109, Nombre = "Arroz",       Descripcion = "1 kilo Miraflores",          CategoriaId = 5, Precio = 1000 }
+                );
+            context.SaveChanges();
         }
     }
 }
