@@ -155,7 +155,6 @@
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Recepcion.cs" />
     <Compile Include="Models\Usuario.cs" />
-    <Compile Include="Models\Venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
