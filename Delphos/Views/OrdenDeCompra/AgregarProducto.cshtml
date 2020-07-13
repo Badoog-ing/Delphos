@@ -1,0 +1,104 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutComercial.cshtml";
+}
+
+<h1>Agregar productos a la orden de compra</h1>
+<hr />
+<div class="row">
+    <div class="col-4">
+        <input class="form-control" type="search" name="buscar" placeholder="Buscar...">
+    </div>
+    <div class="col-2">
+        <input class="btn colorBoton" type="submit" value="Buscar">
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col">
+        <div>
+            <p>Productos</p>
+        </div>
+
+        <table id="tabla1" class="table table-hover">
+            <thead>
+                <tr>
+                    <th>SKU</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>111</td>
+                    <td>azucar</td>
+                    <td>1000</td>
+                    <td class="check"><input name="" type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>222</td>
+                    <td>sal</td>
+                    <td>2000</td>
+                    <td class="check"><input name="" type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>333</td>
+                    <td>leche</td>
+                    <td>3000</td>
+                    <td class="check"><input name="" type="checkbox"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col">
+        <br /><br />
+        <div style="text-align:center">
+            <button class="btn colorBoton">Agregar</button>
+            <br /><br />
+            <button class="btn colorBoton">Quitar</button>
+            <br /><br /><br />
+            <a class="btn colorBoton" href="@Url.Action("Nuevo", "OrdenDeCompra")">Aceptar</a>
+        </div>
+
+    </div>
+
+    <div class="col">
+        <div>
+            <p>Orden de compra</p>
+        </div>
+
+        <table id="tabla2" class="table table-hover">
+            <thead>
+                <tr>
+                    <th>SKU</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>444</td>
+                    <td>manjar</td>
+                    <td>4000</td>
+                    <td class="check"><input name="" type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>555</td>
+                    <td>cafe</td>
+                    <td>500</td>
+                    <td class="check"><input name="" type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>666</td>
+                    <td>milo</td>
+                    <td>6000</td>
+                    <td class="check"><input name="" type="checkbox"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

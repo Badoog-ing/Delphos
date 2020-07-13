@@ -29,5 +29,9 @@ namespace Delphos.Controllers
         {
             return View();
         }
+        public ActionResult AgregarProducto()
+        {
+            return View();
+        }
     }
 }
