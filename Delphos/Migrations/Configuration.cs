@@ -6,7 +6,7 @@ namespace Delphos.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Delphos.Models.bdSupermercado>
+    internal sealed class Configuration : DbMigrationsConfiguration<bdSupermercado>
     {
         public Configuration()
         {
