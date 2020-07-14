@@ -30,12 +30,11 @@ namespace Delphos.Filtros
                 {
                     if (oUser.CargoId == 1)
                     {
-                        filterContext.HttpContext.Response.Redirect("~/Usuario/Index");
+                        filterContext.HttpContext.Response.Redirect("~/Administrador/Usuario/Index");
                     }
                     if (oUser.CargoId == 2)
                     {
-                        //filterContext.HttpContext.Response.Redirect("~/Recepcion/Index");
-                        filterContext.HttpContext.Response.Redirect("~/Producto/Index");
+                        filterContext.HttpContext.Response.Redirect("~/Bodega/Recepcion/Index");
                     }
                     if (oUser.CargoId == 3)
                     {
@@ -43,7 +42,7 @@ namespace Delphos.Filtros
                     }
                     if (oUser.CargoId == 4)
                     {
-                        filterContext.HttpContext.Response.Redirect("~/Producto/Index");
+                        filterContext.HttpContext.Response.Redirect("~/Comercial/Producto/Index");
                     }
                 }
             }

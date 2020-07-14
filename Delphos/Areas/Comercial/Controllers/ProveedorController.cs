@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Delphos.Controllers
+namespace Delphos.Areas.Comercial.Controllers
 {
-    public class OrdenDeCompraController : Controller
+    public class ProveedorController : Controller
     {
-        // GET: OrdenDeCompra
+        // GET: Proveedor
         [HttpGet]
         public ActionResult Index()
         {
@@ -26,10 +26,6 @@ namespace Delphos.Controllers
         }
         [HttpGet]
         public ActionResult Editar(int id)
-        {
-            return View();
-        }
-        public ActionResult AgregarProducto()
         {
             return View();
         }

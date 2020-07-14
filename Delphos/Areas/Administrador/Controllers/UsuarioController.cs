@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Delphos.Models;
 
-namespace Delphos.Controllers
+namespace Delphos.Areas.Administrador.Controllers
 {
     public class UsuarioController : Controller
     {
