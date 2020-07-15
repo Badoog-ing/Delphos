@@ -38,7 +38,7 @@ namespace Delphos.Filtros
                     }
                     if (oUser.CargoId == 3)
                     {
-                        filterContext.HttpContext.Response.Redirect("~/Venta/Index");
+                        filterContext.HttpContext.Response.Redirect("~/Caja/Venta/Index");
                     }
                     if (oUser.CargoId == 4)
                     {
