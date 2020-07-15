@@ -6,8 +6,8 @@
 <hr />
 
 <div class="row">
-    @using (Html.BeginForm())
-    {
+    <form action="@Url.Action("Buscar","Venta")" method="post">
+
         <div class="row">
             <div class="col-3">
                 @Html.TextBox("SearchString", "", new { @class = "form-control" })
@@ -17,7 +17,7 @@
             </div>
             <div class="col-3"></div>
         </div>
-    }
+    </form>
     <div class="col">
         <button class="btn colorBoton form-control">Agregar Producto</button>
     </div>
