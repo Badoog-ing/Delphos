@@ -25,6 +25,18 @@ namespace Delphos.Areas.Caja.Controllers
         {
             return View();
         }
+        public ActionResult Buscar(string searchString)
+        {
+            _db = new bdSupermercado();
+            var productos = from b in _db.Productos
+                            select b;
 
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                productos = productos.Where(b => b.Sku.ToString().Contains(searchString));
+            }
+
+            return View(productos);
+        }
     }
 }

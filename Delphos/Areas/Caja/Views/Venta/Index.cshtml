@@ -5,14 +5,19 @@
 <h1>Vista Caja</h1>
 <hr />
 
-
 <div class="row">
-    <div class="col">
-        <input class="form-control" type="search" name="buscar" id="buscar" />
-    </div>
-    <div class="col">
-        <button class="btn colorBoton">Buscar x SKU</button>
-    </div>
+    @using (Html.BeginForm())
+    {
+        <div class="row">
+            <div class="col-3">
+                @Html.TextBox("SearchString", "", new { @class = "form-control" })
+            </div>
+            <div class="col-3">
+                <input class="btn colorBoton" type="submit" value="Buscar por Sku" />
+            </div>
+            <div class="col-3"></div>
+        </div>
+    }
     <div class="col">
         <button class="btn colorBoton form-control">Agregar Producto</button>
     </div>
