@@ -14,10 +14,11 @@ namespace Delphos.Areas.Administrador
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
-            context.MapRoute(
+            _ = context.MapRoute(
                 "Administrador_default",
                 "Administrador/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "Delphos.Areas.Administrador.Controllers" }
             );
         }
     }

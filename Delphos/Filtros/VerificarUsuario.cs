@@ -1,4 +1,4 @@
-﻿using Delphos.Controllers;
+﻿using Delphos.Areas.Inicio.Controllers;
 using Delphos.Models;
 using System;
 using System.Collections.Generic;

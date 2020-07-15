@@ -70,6 +70,10 @@ thead {
     background-color: #CD0528;
 }
 
+.barra {
+    border-bottom: double;
+    border-color: red;
+}
 
 div {
     background-color: white
