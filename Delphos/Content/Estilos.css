@@ -71,9 +71,10 @@ thead {
 }
 
 .barra {
-    border-bottom: double;
-    border-color: red;
+    box-shadow: 2px 2px 5px #999;
 }
+
+
 
 div {
     background-color: white
