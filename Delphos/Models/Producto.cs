@@ -18,5 +18,6 @@ namespace Delphos.Models
         public int Precio { get; set; }
         public DateTime FechaCreacion { get; set; }
         public virtual ICollection<Venta> Ventas { get; set; }
+        public virtual ICollection<Bodega> Bodegas { get; set; }
     }
 }

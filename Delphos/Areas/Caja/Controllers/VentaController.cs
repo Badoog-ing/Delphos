@@ -26,13 +26,9 @@ namespace Delphos.Areas.Caja.Controllers
             return View();
         }
 
-        
-
-
         [HttpPost]
         public ActionResult Buscar(string searchString)
-        {
-            
+        {            
             _db = new bdSupermercado();
             Producto p = new Producto();
             var productos = from b in _db.Productos
