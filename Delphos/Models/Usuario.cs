@@ -17,10 +17,15 @@ namespace Delphos.Models
         public string Nombre { get; set; }
         [Required]
         public string Password { get; set; }
-        [Required]
-        public int CargoId { get; set; }
+        
         public string Estado { get; set; }
 
+        //fk
+        [Required]
+        public int CargoId { get; set; }
         public virtual Cargo Cargo { get; set; }
+
+        //de donde sera referenciado
+        public virtual ICollection<Proveedor> Proveedores { get; set; }
     }
 }
