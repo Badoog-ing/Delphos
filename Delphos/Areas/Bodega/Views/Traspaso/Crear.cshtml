@@ -1,33 +1,43 @@
-﻿@{
+﻿@model IEnumerable<Delphos.Models.Producto>
+
+@{
     Layout = "~/Views/Shared/_LayoutBodega.cshtml";
 }
 
 <h1>Crear Traspasos</h1>
 <hr />
-<div class="row">
-    <div class="col-4">
-        <input class="form-control" type="search" name="buscar" placeholder="Buscar...">
+
+@using (Html.BeginForm("Crear", "Traspaso", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-3">
+            @Html.TextBox("SearchString", "", new { @class = "form-control" })
+        </div>
+        <div class="col-3">
+            <input class="btn colorBoton" type="submit" value="Buscar por Sku" />
+        </div>
+        <div class="col-3"></div>
     </div>
-    <div class="col-2">
-        <input class="btn colorBoton" type="submit" value="Buscar">
-    </div>
-</div>
+}
+
 <br />
 <div class="row">
     <div class="col">
-        <input class="form-control" type="text" name="name" value="" disabled />
+        <input class="form-control" type="text" name="Id" value="" disabled />
+    </div>
+    <div class="col">-->
+@*        @Html.TextBoxFor(m => m., new { @class = "form-control" })*@
+       <input class="form-control" type="text" name="Nombre" value="" disabled />
     </div>
     <div class="col">
-        <input class="form-control" type="text" name="name" value="" disabled />
+        <input class="form-control" type="text" name="Sku" value="" disabled />
     </div>
     <div class="col">
-        <input class="form-control" type="text" name="name" value="" disabled />
-    </div>
-    <div class="col">
-        <input class="form-control" type="text" name="name" value="" disabled />
+        <input class="form-control" type="text" name="Precio" value="" disabled />
     </div>
 </div>
 <br />
+
 <input class="btn colorBoton" type="submit" value="Agregar">
 <br />
 <br />
