@@ -98,11 +98,7 @@ namespace Delphos.Areas.Comercial.Controllers
             if (!string.IsNullOrEmpty(searchString))
             {
                 productos = productos.Where(b => b.Sku.ToString().Contains(searchString));
-                if(productos.Count() > 0)
-                {
-
-                }
-                else
+                if(productos.Count() == 0)
                 {
                     Request.Flash("danger", "El producto no se encuentra");
                 }
