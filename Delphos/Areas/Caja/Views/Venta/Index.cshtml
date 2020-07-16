@@ -1,26 +1,26 @@
-﻿@model IEnumerable<Delphos.Models.Producto>
-@{
+﻿@{
     Layout = "~/Views/Shared/_LayoutCaja.cshtml";
-
 }
-
 
 <h1>Vista Caja</h1>
 <hr />
 
 <div class="row">
-    @using (Html.BeginForm())    {
-        <div class="row">
-            <div class="col-3">
-                @Html.TextBox("SearchString", "", new { @class = "form-control" })
+    <div class="col-8">
+        @using (Html.BeginForm("Index", "Venta", FormMethod.Post))
+        {
+            <div class="row">
+                <div class="col-3">
+                    @Html.TextBox("SearchString", "", new { @class = "form-control" })
+                </div>
+                <div class="col-3">
+                    <input class="btn colorBoton" type="submit" value="Buscar por Sku " />
+                </div>
+                <div class="col-3"></div>
+            </div>
+        }
+    </div>
 
-            </div>
-            <div class="col-3">
-                <input class="btn colorBoton" type="submit" value="Buscar por Sku " />
-            </div>
-            <div class="col-3"></div>
-        </div>
-    }
     <div class="col">
         <button class="btn colorBoton form-control">Agregar Producto</button>
     </div>
@@ -43,17 +43,16 @@
 </div>
 <div class="row">
     <div class="col">
-
-        <input class="form-control" type="text" name="Nombre" id="Nombre" disabled />
+        <input style="text-align:center" class="form-control" type="text" name="Nombre" id="Nombre" value="@ViewBag.Nombre" disabled />
     </div>
     <div class="col">
-        <input class="form-control" type="text" name="SKU" id="Sku" disabled />
+        <input style="text-align:center" class="form-control" type="text" name="SKU" id="Sku" value="@ViewBag.Sku" disabled />
     </div>
     <div class="col">
-        <input class="form-control" type="text" name="Precio" id="" disabled />
+        <input style="text-align:center" class="form-control" type="text" name="Precio" id="" value="@ViewBag.Precio" disabled />
     </div>
     <div class="col">
-        <input class="form-control" type="text" name="Cantidad" value="" />
+        <input style="text-align:center" class="form-control" type="text" name="Cantidad" value="" />
     </div>
 </div>
 <br />

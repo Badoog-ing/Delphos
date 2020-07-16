@@ -101,6 +101,7 @@ namespace Delphos.Areas.Comercial.Controllers
                 if(productos.Count() == 0)
                 {
                     Request.Flash("danger", "El producto no se encuentra");
+                    return View(productos);
                 }
             }
             return View(productos);

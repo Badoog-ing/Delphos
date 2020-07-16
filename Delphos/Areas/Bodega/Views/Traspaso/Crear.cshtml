@@ -22,19 +22,21 @@
 
 <br />
 <div class="row">
-    <div class="col">
-        <input class="form-control" type="text" name="Id" value="" disabled />
-    </div>
-    <div class="col">-->
-@*        @Html.TextBoxFor(m => m., new { @class = "form-control" })*@
-       <input class="form-control" type="text" name="Nombre" value="" disabled />
-    </div>
-    <div class="col">
-        <input class="form-control" type="text" name="Sku" value="" disabled />
-    </div>
-    <div class="col">
-        <input class="form-control" type="text" name="Precio" value="" disabled />
-    </div>
+
+        <div class="col">
+            <input class="form-control" type="text" name="Id" value="@ViewBag.Id" disabled />
+        </div>
+        <div class="col">
+            @*        @Html.TextBoxFor(m => m., new { @class = "form-control" })*@
+            <input class="form-control" type="text" name="Nombre" value="@ViewBag.Nombre" disabled />
+        </div>
+        <div class="col">
+            <input class="form-control" type="text" name="Sku" value="@ViewBag.Sku" disabled />
+        </div>
+        <div class="col">
+            <input class="form-control" type="text" name="Precio" value="@ViewBag.Precio" disabled />
+        </div>
+
 </div>
 <br />
 
