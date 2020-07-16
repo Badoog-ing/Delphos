@@ -23,6 +23,10 @@ namespace Delphos.Models
         public string Giro { get; set; }
 
         [Required]
+        [StringLength(30, MinimumLength = 5)]
+        public String RazonSocial { get; set; }
+
+        [Required]
         [RegularExpression(@"^[0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@(ua)\.(es)$")]
         public string Email { get; set; }
 

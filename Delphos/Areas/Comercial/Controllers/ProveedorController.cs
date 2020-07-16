@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Delphos.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace Delphos.Areas.Comercial.Controllers
 {
     public class ProveedorController : Controller
     {
+        private bdSupermercado _db;
+
         // GET: Proveedor
         [HttpGet]
         public ActionResult Index()
@@ -17,7 +20,24 @@ namespace Delphos.Areas.Comercial.Controllers
         [HttpGet]
         public ActionResult Nuevo()
         {
-            return View();
+            //objeto pro de la clase Proveedor
+            Proveedor pro = new Proveedor();
+            return View(pro);
+        }
+        public ActionResult Nuevo(Proveedor pro)
+        {
+            if (ModelState.IsValid)
+            {
+                _db = new bdSupermercado();
+                _db.Proveedores.Add(pro);
+                _db.SaveChanges();
+                Request.Flash("success", "Proveedor agregado con exito !!!");
+                return RedirectToAction("Index", "Proveedor");
+            }
+            else
+            {
+                return View(pro);
+            }
         }
         [HttpGet]
         public ActionResult Ver(int id)
