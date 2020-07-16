@@ -162,6 +162,7 @@
     <Compile Include="Models\Bodega.cs" />
     <Compile Include="Models\Cargo.cs" />
     <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\Proveedor.cs" />
     <Compile Include="Models\Recepcion.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Venta.cs" />
