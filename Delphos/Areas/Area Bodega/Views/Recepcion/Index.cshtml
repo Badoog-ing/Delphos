@@ -1,0 +1,81 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutBodega.cshtml";
+}
+
+<h1>Vista Recepciones</h1>
+<hr />  
+
+<div class="row">
+    <div class="col-4">
+        <input class="form-control" type="search" name="buscar" placeholder="Buscar...">
+    </div>
+    <div class="col-2">
+        <input class="btn colorBoton" type="submit" value="Buscar">
+    </div>
+</div>
+
+<br />
+
+
+<div class="row">
+    <div class="col">
+        <label for="n1">Orden de compra</label>
+        <input class="form-control" type="text" name="n1" value="" placeholder="Orden de compra" />
+    </div>
+    <div class="col">
+        <label for="n2">Nombre proveedor</label>
+        <input class="form-control" type="text" name="n2" value="" placeholder="Nombre proveedor" />
+    </div>
+    <div class="col">
+        <label for="n3">N° de Factura</label>
+        <input class="form-control" type="text" name="n3" value="" placeholder="000000" disabled />
+    </div>
+</div>
+<br />
+<table class="table">
+    <thead class="table table-striped">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+        </tr>
+    </tbody>
+</table>
+
+<br />
+<br />
+<br />
+
+<div class="form-group">
+    <label for="comentario">Observaciones</label>
+    <textarea class="form-control" style="resize:none" id="comentario" rows="7"></textarea>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="col" style="text-align:center">
+        <button class="btn colorBoton">Rechazar</button>
+    </div>
+    <div class="col" style="text-align:center">
+        <button class="btn colorBoton">Aprobar</button>
+    </div>
+</div>

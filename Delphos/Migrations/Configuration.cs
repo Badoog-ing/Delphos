@@ -50,6 +50,15 @@ namespace Delphos.Migrations
                 new Producto { Id = 10, Sku = 109, Nombre = "Arroz",       Descripcion = "1 kilo Miraflores",          CategoriaId = 5, Precio = 1000, FechaCreacion = DateTime.Today }
                 );
             context.SaveChanges();
+
+            // Bodega
+            context.Bodegas.AddOrUpdate(
+                b => b.Nombre,
+                new TablaBodega { Id = 1, Nombre = "Bodega Principal", Stock = 5, ProductoId = 4 },
+                new TablaBodega { Id = 2, Nombre = "Bodega Secundaria", Stock = 7, ProductoId = 5 },
+                new TablaBodega { Id = 3, Nombre = "Bodega Principal", Stock = 9, ProductoId = 6 }
+                );
+            context.SaveChanges();
         }
     }
 }

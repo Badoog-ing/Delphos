@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Delphos.Models
 {
-    public class Bodega
+    public class TablaBodega
     {
         public int Id { get; set; }
         public string Nombre { get; set; }

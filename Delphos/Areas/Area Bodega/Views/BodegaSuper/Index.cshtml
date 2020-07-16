@@ -1,0 +1,66 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutBodega.cshtml";
+}
+
+<h1>Listar Productos</h1>
+<hr />
+
+<div class="row">
+    <div class="col-4">
+        <input class="form-control" type="search" name="buscar" placeholder="Buscar...">
+    </div>
+    <div class="col-2">
+        <input class="btn colorBoton" type="submit" value="Buscar">
+    </div>
+    <div class="col">
+        <select class="custom-select" id="combobox3">
+            <option selected>Bodega</option>
+            <option value="1">Opcion 1</option>
+            <option value="2">Opcion 2</option>
+        </select>
+    </div>
+</div>
+
+<br />
+<div class="table">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Sku</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Fecha</th>
+                <th style="text-align:center">|</th>
+                <th scope="col">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <th scope="row">@p.Id</th>
+                    <td>@p.Sku</td>
+                    <td>@p.Nombre</td>
+                    <td>@p.Descripcion</td>
+                    <td>@p.CategoriaId</td>
+                    <td>@string.Format("{0:C}", @p.Precio)</td>
+                    <td>@p.FechaCreacion.ToString("dd-MM-yy")</td>
+                    <td style="text-align:center; color:coral">|</td>
+                    <td style="text-align:center">
+                        <a class="far fa-edit" href="@Url.Action("Editar", "Producto", new { id = p.Id })"></a> |
+                        <a class="far fa-eye" href="@Url.Action("Ver", "Producto", new { id = p.Id })"></a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+
+
+

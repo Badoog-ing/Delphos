@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Delphos.Models.TablaBodega>
+
+@{
+    Layout = "~/Views/Shared/_LayoutBodega.cshtml";
+}
+
+<h1>Listar Productos</h1>
+<hr />
+
+<div class="row">
+    <div class="col-4">
+        <input class="form-control" type="search" name="buscar" placeholder="Buscar...">
+    </div>
+    <div class="col-2">
+        <input class="btn colorBoton" type="submit" value="Buscar">
+    </div>
+    <div class="col">
+        <select class="custom-select" id="combobox3">
+            <option selected>Bodega</option>
+            <option value="1">Opcion 1</option>
+            <option value="2">Opcion 2</option>
+        </select>
+    </div>
+</div>
+
+<br />
+<div class="table">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Sku</th>
+                <th scope="col">Nombre Bodega</th>
+                <th scope="col">Nombre Producto</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Precio Unitario</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <th scope="row"></th>
+                    <td>@p.Producto.Sku</td>
+                    <td>@p.Nombre</td>
+                    <td>@p.Producto.Nombre</td>
+                    <td>@p.Stock</td>
+                    <td>@p.Producto.Precio</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+
+
+

@@ -136,6 +136,7 @@
     <Compile Include="Areas\Administrador\Views\Usuario\CerrarSessionController.cs" />
     <Compile Include="Areas\Bodega\BodegaAreaRegistration.cs" />
     <Compile Include="Areas\Bodega\Controllers\CerrarSessionController.cs" />
+    <Compile Include="Areas\Bodega\Controllers\TipoBodegaController.cs" />
     <Compile Include="Areas\Caja\CajaAreaRegistration.cs" />
     <Compile Include="Areas\Caja\Controllers\CerrarSessionController.cs" />
     <Compile Include="Areas\Comercial\ComercialAreaRegistration.cs" />
@@ -159,7 +160,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\bdSupermercado.cs" />
-    <Compile Include="Models\Bodega.cs" />
+    <Compile Include="Models\TablaBodega.cs" />
     <Compile Include="Models\Cargo.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Proveedor.cs" />
@@ -183,6 +184,9 @@
     <Content Include="Areas\Bodega\Views\web.config" />
     <Content Include="Areas\Comercial\Views\web.config" />
     <Content Include="Areas\Caja\Views\web.config" />
+    <Content Include="Areas\Bodega\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Bodega\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Bodega\Views\TipoBodega\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\Global.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -234,7 +238,6 @@
     <Content Include="Areas\Bodega\Views\Traspaso\Index.cshtml" />
     <Content Include="Areas\Bodega\Views\Traspaso\Detalles.cshtml" />
     <Content Include="Areas\Bodega\Views\Traspaso\Crear.cshtml" />
-    <Content Include="Areas\Bodega\Views\Traspaso\ListarProductos.cshtml" />
     <Content Include="Areas\Caja\Views\Venta\DetalleBoleta.cshtml" />
     <Content Include="Areas\Comercial\Views\Proveedor\Editar.cshtml" />
     <Content Include="Areas\Comercial\Views\Proveedor\Ver.cshtml" />
@@ -250,7 +253,6 @@
     <Folder Include="Areas\Administrador\Data\" />
     <Folder Include="Areas\Administrador\Views\Shared\" />
     <Folder Include="Areas\Bodega\Data\" />
-    <Folder Include="Areas\Bodega\Views\Shared\" />
     <Folder Include="Areas\Caja\Data\" />
     <Folder Include="Areas\Caja\Views\Shared\" />
     <Folder Include="Areas\Comercial\Data\" />
