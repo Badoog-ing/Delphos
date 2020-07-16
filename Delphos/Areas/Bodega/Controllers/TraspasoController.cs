@@ -31,6 +31,7 @@ namespace Delphos.Areas.Bodega.Controllers
             if (!string.IsNullOrEmpty(searchString))
             {
                 productos = productos.Where(b => b.Sku.ToString().Contains(searchString));
+               /* ViewBag.Nombre = productos.Where(b => b.Sku.ToString().Contains(searchString)).ToList();*/
                 if (productos.Count() == 0)
                 {
                     Request.Flash("danger", "El producto no se encuentra");
