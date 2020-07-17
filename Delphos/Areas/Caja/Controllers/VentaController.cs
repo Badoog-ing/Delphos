@@ -11,6 +11,7 @@ namespace Delphos.Areas.Caja.Controllers
     {
         // GET: Venta
         private bdSupermercado _db;
+        
         public ActionResult Index()
         {
             return View();
@@ -51,5 +52,27 @@ namespace Delphos.Areas.Caja.Controllers
             }
             return View(productos);
         }
+
+        [HttpPost]
+        public ActionResult AgregarVenta(string searchString) // creo que deberia ser algo asi cambiando el valor que se envia
+        {
+            _db = new bdSupermercado();
+            Producto p = new Producto();
+            var productos = from b in _db.Productos
+                            select b;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                productos = productos.Where(b => b.Sku.ToString().Contains(searchString));
+                List<Producto> listaV = new List<Producto>();
+                foreach (var d in productos)
+                {
+                    listaV.Add(d);
+                }
+                
+            }
+            return View(productos);
+        }
+
     }
 }
