@@ -1,13 +1,16 @@
-﻿@{
+﻿@model IEnumerable<Delphos.Models.Usuario>
+
+@{
     Layout = "~/Views/Shared/_LayoutU.cshtml";
 }
 
-@model IEnumerable<Delphos.Models.Usuario>
+
 
 <h1>Listado de Trabajadores</h1>
 <hr />
 <a class="btn colorBoton" href="@Url.Action("Nuevo", "Usuario")">Agregar Usurio</a>
-<br /><br />
+<br />
+<br />
 <div class="table">
     <table class="table table-striped">
         <thead>
@@ -18,7 +21,7 @@
                 <th scope="col">Cargo</th>
                 <th scope="col">Estado</th>
                 <th style="text-align:center">|</th>
-                <th scope="col" style="text-align:center" >Opciones</th>
+                <th scope="col" style="text-align:center">Opciones</th>
             </tr>
         </thead>
         <tbody>

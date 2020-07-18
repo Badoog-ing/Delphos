@@ -141,7 +141,7 @@
     <Compile Include="Areas\Caja\Controllers\CerrarSessionController.cs" />
     <Compile Include="Areas\Comercial\ComercialAreaRegistration.cs" />
     <Compile Include="Areas\Comercial\Controllers\CerrarSessionController.cs" />
-    <Compile Include="Controllers\CargoController.cs" />
+    <Compile Include="Areas\Administrador\Controllers\CargoController.cs" />
     <Compile Include="Areas\Comercial\Controllers\OrdenDeCompraController.cs" />
     <Compile Include="Areas\Comercial\Controllers\ProductoController.cs" />
     <Compile Include="Areas\Comercial\Controllers\ProveedorController.cs" />

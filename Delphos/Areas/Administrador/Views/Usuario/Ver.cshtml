@@ -4,11 +4,17 @@
     Layout = "~/Views/Shared/_LayoutU.cshtml";
 }
 
-<h1 style="text-align:center">Ver Usuario</h1>
+<h1 style="text-align:center">Trabajador - @Model.Nombre</h1>
 <hr />
 
 @*@Html.ValidationSummary()*@
 
+@*<div class="container" style="text-align: center">
+    <p>Rut   : @Model.Rut</p>
+    <p>Cargo : @Model.CargoId</p>
+    <p>Estado: @Model.Estado</p>
+</div>*@
+<br /><br />
 <div class="row">
     <div class="col-3"></div>
     <div class="col-6">
@@ -41,7 +47,7 @@
                 <label for="Cargo" class="col-sm-2 col-form-label">Cargo</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="Cargo" name="Cargo" value="@Model.CargoId" disabled>
-                    @Html.ValidationMessageFor(model => model.Cargo)
+                    @*@Html.ValidationMessageFor(model => model.Cargo)*@
                 </div>
             </div>
 

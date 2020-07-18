@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Delphos.Controllers
+namespace Delphos.Areas.Administrador.Controllers
 {
     public class CargoController : Controller
     {
