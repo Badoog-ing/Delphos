@@ -34,10 +34,10 @@ namespace Delphos.Models
         [Range(8,10)]//0412252626 - 99266273
         public int Telefono { get; set; }
 
-        //fk
+      /*  //fk
         [Required]
         public int UsuarioId { get; set; }
-        public virtual Usuario Usuarios { get; set; }
+        public virtual Usuario Usuarios { get; set; }*/
 
     }
 }
