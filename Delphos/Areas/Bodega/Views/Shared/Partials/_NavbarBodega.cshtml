@@ -1,4 +1,8 @@
-﻿<nav class="navbar navbar-expand-sm navColor">
+﻿@{
+    Delphos.Models.Usuario u = (Delphos.Models.Usuario)Session["Usuario"];
+}
+
+<nav class="navbar navbar-expand-sm navColor">
     <!-- Brand/logo -->
     <a class="navbar-brand">
         <img src="~/Otros/versluys.png" alt="logo" style="width:40px;">
@@ -19,7 +23,8 @@
     </ul>
     <ul class="navbar-nav ml-auto">
         <li class="logoff" style="color:white">
-            @Html.ActionLink("CerrarSession", "Cerrar", "CerrarSession")
+        <li style="margin-right: 10px">@u.Nombre</li>
+        @Html.ActionLink("CerrarSession", "Cerrar", "CerrarSession")
         </li>
     </ul>
 </nav>

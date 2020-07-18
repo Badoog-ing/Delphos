@@ -185,7 +185,6 @@
     <Content Include="Areas\Comercial\Views\web.config" />
     <Content Include="Areas\Caja\Views\web.config" />
     <Content Include="Areas\Bodega\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Bodega\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Bodega\Views\TipoBodega\Index.cshtml" />
     <Content Include="Areas\Administrador\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -226,8 +225,8 @@
     <Content Include="Views\Shared\Partials\_NavbarComercial.cshtml" />
     <Content Include="Views\Shared\_LayoutComercial.cshtml" />
     <Content Include="Areas\Bodega\Views\Recepcion\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutBodega.cshtml" />
-    <Content Include="Views\Shared\Partials\_NavbarBodega.cshtml" />
+    <Content Include="Areas\Bodega\Views\Shared\_LayoutBodega.cshtml" />
+    <Content Include="Areas\Bodega\Views\Shared\Partials\_NavbarBodega.cshtml" />
     <Content Include="Areas\Caja\Views\Venta\Index.cshtml" />
     <Content Include="Views\Shared\Partials\_NavbarCaja.cshtml" />
     <Content Include="Views\Shared\_LayoutCaja.cshtml" />
