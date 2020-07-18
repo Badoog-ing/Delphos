@@ -14,10 +14,12 @@
                 <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" id="nombre" name="Nombre" value="@Model.Nombre">
+                    @Html.ValidationMessageFor(Model => Model.Nombre)
                 </div>
                 <label for="Rut" class="col-sm-2 col-form-label">Rut</label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" id="Rut" name="Rut" value="@Model.Rut">
+                    @Html.ValidationMessageFor(Model => Model.Rut)
                 </div>
             </div>
 
@@ -25,12 +27,12 @@
                 <label for="ApellidoP" class="col-sm-2 col-form-label">Apellido Paterno</label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" id="ApellidoP" name="ApellidoP" value="@Model.ApellidoP">
-                    @Html.ValidationMessageFor(Model => Model.Rut)
+                    @Html.ValidationMessageFor(Model => Model.ApellidoP)
                 </div>
                 <label for="ApellidoM" class="col-sm-2 col-form-label">Apellido Materno</label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" id="ApellidoM" name="ApellidoM" value="@Model.ApellidoM">
-                    @Html.ValidationMessageFor(Model => Model.Rut)
+                    @Html.ValidationMessageFor(Model => Model.ApellidoM)
                 </div>
             </div>
 
