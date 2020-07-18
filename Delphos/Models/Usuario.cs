@@ -16,8 +16,19 @@ namespace Delphos.Models
         [StringLength(12)]
         public string Nombre { get; set; }
         [Required]
+        public string ApellidoP { get; set; }
+        [Required]
+        public string ApellidoM { get; set; }
+        [Required]
+        public string Direccion { get; set; }
+        [Required]
+        public string Email { get; set; }
+        [Required]
+        public int Telefono { get; set; }
+        [Required]
         public string Password { get; set; }
         
+
         public string Estado { get; set; }
 
         //fk

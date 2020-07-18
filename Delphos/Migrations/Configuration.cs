@@ -28,10 +28,10 @@ namespace Delphos.Migrations
             // Usuario
             context.Usuarios.AddOrUpdate(
                 u => u.Rut,
-                new Usuario { Id = 1, Nombre = "Felipe", Rut = "16186571-0", Password = "123", CargoId = 1, Estado = "Activo" },
-                new Usuario { Id = 2, Nombre = "Jesus", Rut = "16186571-5", Password = "123", CargoId = 2, Estado = "Activo" },
-                new Usuario { Id = 3, Nombre = "Fernando", Rut = "16186571-2", Password = "123", CargoId = 3, Estado = "Activo" },
-                new Usuario { Id = 4, Nombre = "comercial", Rut = "16186571-k", Password = "123", CargoId = 4, Estado = "Activo" }
+                new Usuario { Id = 1, Nombre = "Felipe", Rut = "16186571-0", ApellidoP = "Villa", ApellidoM = "Molina", Direccion = "Casa 0000", Email = "a@a.cl", Telefono = 123456789, Password = "123", CargoId = 1, Estado = "Activo" },
+                new Usuario { Id = 2, Nombre = "Jesus", Rut = "16186571-5", ApellidoP = "Toledo", ApellidoM = "Nazaret", Direccion = "Casa 0000", Email = "a@a.cl", Telefono = 123456789, Password = "123", CargoId = 2, Estado = "Activo" },
+                new Usuario { Id = 3, Nombre = "Fernando", Rut = "16186571-2", ApellidoP = "Orellana", ApellidoM = "Cadiz", Direccion = "Casa 0000", Email = "a@a.cl", Telefono = 123456789, Password = "123", CargoId = 3, Estado = "Activo" },
+                new Usuario { Id = 4, Nombre = "comercial", Rut = "16186571-k", ApellidoP = "ApellidoP", ApellidoM = "ApellidoM", Direccion = "Casa 0000", Email = "a@a.cl", Telefono = 123456789, Password = "123", CargoId = 4, Estado = "Activo" }
                 );
             context.SaveChanges();
 
