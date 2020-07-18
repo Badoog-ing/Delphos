@@ -12,6 +12,10 @@
                 <th scope="col">#</th>
                 <th scope="col">Rut</th>
                 <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Telefono</th>
                 <th scope="col">Cargo</th>
                 <th scope="col">Estado</th>
                 <th style="text-align:center">|</th>
@@ -21,18 +25,22 @@
         <tbody>
             @foreach (var u in Model)
             {
-                <tr>
-                    <th scope="row">@u.Id</th>
-                    <td>@u.Rut</td>
-                    <td>@u.Nombre</td>
-                    <td>@u.Cargo.Nombre</td>
-                    <td>@u.Estado</td>
-                    <td style="text-align:center; color:coral">|</td>
-                    <td style="text-align:center">
-                        <a class="far fa-edit" href="@Url.Action("Editar", "Usuario", new { id = u.Id })"></a> |
-                        <a class="far fa-eye" href="@Url.Action("Ver", "Usuario", new { id = u.Id })"></a>
-                    </td>
-                </tr>
+            <tr>
+                <th scope="row">@u.Id</th>
+                <td>@u.Rut</td>
+                <td>@u.Nombre</td>
+                <td>@u.ApellidoP @u.ApellidoM</td>
+                <td>@u.Direccion</td>
+                <td>@u.Email</td>
+                <td>@u.Telefono</td>
+                <td>@u.Cargo.Nombre</td>
+                <td>@u.Estado</td>
+                <td style="text-align:center; color:coral">|</td>
+                <td style="text-align:center">
+                    <a class="far fa-edit" href="@Url.Action("Editar", "Usuario", new { id = u.Id })"></a> |
+                    <a class="far fa-eye" href="@Url.Action("Ver", "Usuario", new { id = u.Id })"></a>
+                </td>
+            </tr>
             }
 
         </tbody>
