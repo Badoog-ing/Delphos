@@ -187,6 +187,7 @@
     <Content Include="Areas\Bodega\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Bodega\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Bodega\Views\TipoBodega\Index.cshtml" />
+    <Content Include="Areas\Administrador\Views\Shared\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\Global.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -220,8 +221,8 @@
     <Content Include="Views\Welcome\Login.cshtml" />
     <Content Include="Views\Welcome\Sugerencia.cshtml" />
     <Content Include="Areas\Comercial\Views\Producto\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutU.cshtml" />
-    <Content Include="Views\Shared\Partials\_NavbarU.cshtml" />
+    <Content Include="Areas\Administrador\Views\_LayoutU.cshtml" />
+    <Content Include="Areas\Administrador\Views\Shared\Partials\_NavbarU.cshtml" />
     <Content Include="Views\Shared\Partials\_NavbarComercial.cshtml" />
     <Content Include="Views\Shared\_LayoutComercial.cshtml" />
     <Content Include="Areas\Bodega\Views\Recepcion\Index.cshtml" />
@@ -251,7 +252,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administrador\Data\" />
-    <Folder Include="Areas\Administrador\Views\Shared\" />
     <Folder Include="Areas\Bodega\Data\" />
     <Folder Include="Areas\Caja\Data\" />
     <Folder Include="Areas\Caja\Views\Shared\" />
