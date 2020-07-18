@@ -1,80 +1,98 @@
 ﻿@model Delphos.Models.Usuario
 
-<h1 style="text-align:center">Agregar Usuario</h1>
+<h1 style="text-align:center">Registro de Nuevo Trabajador</h1>
 <hr />
 
-@*@Html.ValidationSummary()*@
+<div class="caja">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-10">
+            <form method="post" action="@Url.Action("Nuevo", "Usuario")">
 
-<div class="row">
-    <div class="col-3"></div>
-    <div class="col-6">
-        <form method="post" action="@Url.Action("Nuevo", "Usuario")">
-            <div class="form-group row">
-                <label for="Rut" class="col-sm-2 col-form-label">Rut</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="Rut" name="Rut" value="@Model.Rut">
-                    @Html.ValidationMessageFor(Model => Model.Rut)
-                </div>
-            </div>
+                <input type="hidden" value="@Model.Id" name="Id" />
 
-            <div class="form-group row">
-                <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="Nombre" name="Nombre" value="@Model.Nombre">
-                    @Html.ValidationMessageFor(Model => Model.Nombre)
-                </div>
-            </div>
+                <div class="form-group row">
+                    <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+                    <div class="col-sm-4">
+                        @*@Html.TextBoxFor(@Model => @Model.Nombre, new { @class = "form-control is-invalid", autofocus = "autofocus" })*@
+                        <input type="text" class="form-control" id="nombre" name="Nombre" value="@Model.Nombre">
+                        @Html.ValidationMessageFor(Model => Model.Nombre, null, new { @class = "error" })
 
-            <div class="form-group row">
-                <label for="ApellidoP" class="col-sm-2 col-form-label">Apellido Paterno</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="ApellidoP" name="ApellidoP" value="@Model.ApellidoP">
-                    @Html.ValidationMessageFor(Model => Model.Rut)
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="Password" class="col-sm-2 col-form-label">Password</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="Password" name="Password" value="@Model.Password">
-                    @Html.ValidationMessageFor(Model => Model.Password)
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="CargoId" class="col-sm-2 col-form-label">Cargo</label>
-                <div class="col-sm-10">
-                    <select class="form-control">
-                        @foreach (Delphos.Models.Cargo c in ViewBag.cargos)
-                        {
-                            <option value="@c.Id">@c.Nombre</option>
-                        }
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
-                <div class="col-sm-10">
-                    <select class="form-control" id="Estado">
-                        <option>Habilitado</option>
-                        <option>Deshabilitado</option>
-                    </select>
-                </div>
-            </div>
-            <br /><br />
-            <div class="row">
-                <div class="col">
-                    <a class="btn colorBoton" href="@Url.Action("Index", "Usuario")">Volver</a>
+                    </div>
+                    <label for="Rut" class="col-sm-2 col-form-label">Rut</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="Rut" name="Rut" value="@Model.Rut">
+                        @Html.ValidationMessageFor(Model => Model.Rut, null, new { @class = "error" })
+                    </div>
                 </div>
 
-                <div class="col" style="text-align:right">
-                    <button type="submit" class="btn colorBoton">Confirmar</button>
+                <div class="form-group row">
+                    <label for="ApellidoP" class="col-sm-2 col-form-label">Ap. Paterno</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="ApellidoP" name="ApellidoP" value="@Model.ApellidoP">
+                        @Html.ValidationMessageFor(Model => Model.ApellidoP, null, new { @class = "error" })
+                    </div>
+                    <label for="ApellidoM" class="col-sm-2 col-form-label">Ap. Materno</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="ApellidoM" name="ApellidoM" value="@Model.ApellidoM">
+                        @Html.ValidationMessageFor(Model => Model.ApellidoM, null, new { @class = "error" })
+                    </div>
                 </div>
-            </div>
 
-        </form>
+                <div class="form-group row">
+                    <label for="Direccion" class="col-sm-2 col-form-label">Direccion</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="Direccion" name="Password" value="@Model.Direccion">
+                        @Html.ValidationMessageFor(Model => Model.Direccion, null, new { @class = "error" })
+                    </div>
+                    <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="Telefono" name="Telefono" value="@Model.Telefono">
+                        @Html.ValidationMessageFor(Model => Model.Telefono, null, new { @class = "error" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="Correo" class="col-sm-2 col-form-label">Correo</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="Correo" name="Correo" value="@Model.Email">
+                        @Html.ValidationMessageFor(Model => Model.Email, null, new { @class = "error" })
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Cargo" class="col-sm-2 col-form-label">Cargo</label>
+                    <div class="col-sm-4">
+                        <select class="form-control">
+                            @foreach (Delphos.Models.Cargo c in ViewBag.cargos)
+                            {
+                                if (c.Id == Model.CargoId)
+                                {
+                                    <option style="font-style: oblique" selected disabled value="@c.Id">@c.Nombre</option>
+                                }
+                                <option value="@c.Id">@c.Nombre</option>
+                            }
+                        </select>
+                    </div>
+                    <label for="Estado" class="col-sm-2 col-form-label">Estado</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="Estado" value="@Model.Estado" name="Estado">
+                            <option>Activo</option>
+                            <option>Deshabilitado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <br /><br />
+                <div class="row">
+                    <div class="col" style="text-align:right">
+                        <a class="btn btn-sm colorBoton col-sm-2" href="@Url.Action("Index", "Usuario")"><i class="fas fa-arrow-left" style="padding-right:10px"></i>Volver</a>
+                        <button type="submit" class="btn btn-sm colorBoton col-sm-2"><i class="far fa-save" style="padding-right:10px"></i>Confirmar</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="col"></div>
     </div>
-    <div class="col-3"></div>
-</div>
 
+</div>

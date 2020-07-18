@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
@@ -31,6 +32,7 @@ namespace Delphos.Areas.Administrador.Controllers
             {
                 _db = new bdSupermercado();
                 _db.Usuarios.Add(u);
+                u.FechasCreacion = DateTime.Today;
                 _db.SaveChanges();
                 Request.Flash("success", "Usuario agregado con exito !!!");
                 return RedirectToAction("Index", "Usuario");
@@ -41,11 +43,13 @@ namespace Delphos.Areas.Administrador.Controllers
         }
         public ActionResult Ver(int id)
         {
-            Usuario u = null;
-            using (_db = new bdSupermercado())
+            Usuario u = _db.Usuarios.Find(id);
+            if (u == null)
             {
-                u = _db.Usuarios.Find(id);
+                return new HttpNotFoundResult();
             }
+            List<Cargo> cargos = _db.Cargos.ToList();
+            ViewBag.cargos = cargos;
             return View(u);
         }
 

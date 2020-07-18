@@ -1,9 +1,9 @@
-﻿<nav class="navbar navbar-expand-lg barra" style="box-shadow: 2px 2px 5px #999">
+﻿<nav class="navbar navbar-expand-lg barra">
     <a class="navbar-brand">
         <img src="~/Otros/versluys.png" alt="logo" style="width:40px;">
-        <label>Versluys</label>
+        <label style="font-weight:bold">Versluys</label>
     </a>
-    <ul class="nav nav-tabs" style="border-bottom:none">
+    <ul class="nav nav-tabs">
         <li class="nav-item">
             <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")" href="@Url.Action("Index", "Welcome")">Inicio</a>
         </li>

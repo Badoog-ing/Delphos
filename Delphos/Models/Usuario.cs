@@ -14,22 +14,27 @@ namespace Delphos.Models
         public string Rut { get; set; }
         [Required]
         [StringLength(12)]
-        public string Nombre { get; set; }
-        [Required]
+        public string Nombre { get; set; }  
+        
+        [Display(Name = "Ap. Paterno")][Required]
         public string ApellidoP { get; set; }
-        [Required]
+        
+        [Display(Name = "Ap. Materno")][Required]
         public string ApellidoM { get; set; }
         [Required]
         public string Direccion { get; set; }
-        [Required]
+        
+        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*",
+            ErrorMessage = "Dirección de Correo electrónico incorrecta.")][Required]
         public string Email { get; set; }
         [Required]
         public int Telefono { get; set; }
         [Required]
         public string Password { get; set; }
-        
-
+        [Required]
         public string Estado { get; set; }
+        [Required]
+        public DateTime FechasCreacion { get; set; }
 
         //fk
         [Required]

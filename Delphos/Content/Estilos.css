@@ -56,22 +56,21 @@ thead {
     color: white
 }
 
-.btn:hover {
+.colorBoton:hover {
+    border-color:coral;
     background-color: white;
     color: coral;
-    border: 2px solid;
-    border-color: coral;
 }
+
 
 .navColor {
     border-bottom: 2px solid;
     border-bottom: groove;
     border-radius: .20rem;
-    background-color: #CD0528;
 }
 
 .barra {
-    box-shadow: 2px 2px 5px #999;
+    box-shadow: 2px 2px 5px #ff0000;
 }
 
 
@@ -81,15 +80,13 @@ div {
 }
 
 .footer {
-    border-top: 2px solid;
-    border-top: groove;
+    box-shadow: 2px 2px 5px #999;
+    border-top: 2px initial;
     border-radius: .20rem;
-    background-color: lightgray;
-/*    display: flex;
-*/    position: absolute;
+    position: absolute;
     bottom: 0px;
     width: 100%;
-    color: white;
+    color: black;
 }
 
 hr {
@@ -117,7 +114,7 @@ a {
 }
 
 a:hover{
-    color:white
+    color:red
 }
 
 a:link {
@@ -133,4 +130,22 @@ img.center {
 h1 {
     text-align:center;
     text-shadow: 1px 2px #999;
+}
+
+.caja {
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px #ff0000;
+}
+
+label {
+    color: brown;
+    font-weight: bold;
+    cursor: default;z
+}
+
+.error {
+    font-size:small;
+    font-style:italic;
+    color: red;
 }
