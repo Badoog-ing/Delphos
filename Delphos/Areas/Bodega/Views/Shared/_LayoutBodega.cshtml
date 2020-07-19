@@ -36,6 +36,23 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
+    <style>
+
+        .selected {
+            cursor: pointer;
+        }
+
+            .selected:hover {
+                background-color: #0585C0;
+                color: white;
+            }
+
+        .seleccionada {
+            background-color: #0585C0;
+            color: white;
+        }
+    </style>
+
 
     <script>
         $(document).ready(function () {
@@ -53,6 +70,32 @@
         });
     </script>
 
+
+    <script>
+        $(document).ready(function () {
+            $('#bt_add').click(function () {
+                agregar();
+            });
+
+        });
+
+        var _nom = document.getElementById('Id').value;
+        var _cat = document.getElementById('Nombre').value;
+        var _precio = document.getElementById('Sku').value;
+        var _stock = document.getElementById('Precio').value;
+
+        var cont = 0;
+        var id_fila_selected = [];
+        function agregar() {
+            cont++;
+            var fila = "<tr><td>" + _nom + "</td><td>" + _cat + "</td><td>" + _precio + "</td><td>" + _stock + "</td></tr>";
+            $('#tabla').append(fila);
+            reordenar();
+        }
+
+
+    </script>
+
 </body>
 
-</html>
+</html >

@@ -149,7 +149,8 @@
     <Compile Include="Areas\Bodega\Controllers\TraspasoController.cs" />
     <Compile Include="Areas\Administrador\Controllers\UsuarioController.cs" />
     <Compile Include="Areas\Caja\Controllers\VentaController.cs" />
-    <Compile Include="Controllers\WelcomeController.cs" />
+    <Compile Include="Areas\Inicio\InicioAreaRegistration.cs" />
+    <Compile Include="Areas\Inicio\Controllers\WelcomeController.cs" />
     <Compile Include="Filtros\VerificarUsuario.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -188,6 +189,8 @@
     <Content Include="Areas\Bodega\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Bodega\Views\TipoBodega\Index.cshtml" />
     <Content Include="Areas\Administrador\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Inicio\Views\web.config" />
+    <Content Include="Areas\Inicio\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\Global.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -210,16 +213,16 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\Partials\_Navbar.cshtml" />
+    <Content Include="Areas\Inicio\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Inicio\Views\Shared\Partials\_Navbar.cshtml" />
     <Content Include="Views\Shared\Partials\_Footer.cshtml" />
-    <Content Include="Views\Welcome\Index.cshtml" />
+    <Content Include="Areas\Inicio\Views\Welcome\Index.cshtml" />
     <Content Include="Areas\Administrador\Views\Usuario\Nuevo.cshtml" />
     <Content Include="Areas\Administrador\Views\Usuario\Ver.cshtml" />
     <Content Include="Areas\Administrador\Views\Usuario\Editar.cshtml" />
     <Content Include="Areas\Administrador\Views\Usuario\Index.cshtml" />
-    <Content Include="Views\Welcome\Login.cshtml" />
-    <Content Include="Views\Welcome\Sugerencia.cshtml" />
+    <Content Include="Areas\Inicio\Views\Welcome\Login.cshtml" />
+    <Content Include="Areas\Inicio\Views\Welcome\Sugerencia.cshtml" />
     <Content Include="Areas\Comercial\Views\Producto\Index.cshtml" />
     <Content Include="Areas\Administrador\Views\Shared\_LayoutU.cshtml" />
     <Content Include="Areas\Administrador\Views\Shared\Partials\_NavbarU.cshtml" />
@@ -257,6 +260,8 @@
     <Folder Include="Areas\Caja\Views\Shared\" />
     <Folder Include="Areas\Comercial\Data\" />
     <Folder Include="Areas\Comercial\Views\Shared\" />
+    <Folder Include="Areas\Inicio\Data\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

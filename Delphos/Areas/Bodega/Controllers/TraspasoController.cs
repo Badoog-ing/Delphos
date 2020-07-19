@@ -48,5 +48,6 @@ namespace Delphos.Areas.Bodega.Controllers
             }
             return View(productos);
         }
+
     }
 }

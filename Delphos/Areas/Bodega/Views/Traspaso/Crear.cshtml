@@ -2,133 +2,154 @@
 
 <h1>Crear Traspasos</h1>
 <hr />
+<div class="caja">
+    @using (Html.BeginForm("Crear", "Traspaso", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-3">
+                @Html.TextBox("SearchString", "", new { @class = "form-control" })
+            </div>
+            <div class="col-3">
+                <input class="btn colorBoton" type="submit" value="Buscar por Sku" />
+            </div>
+            <div class="col-3"></div>
+        </div>
+    }
 
-@using (Html.BeginForm("Crear", "Traspaso", FormMethod.Post))
-{
+    <br />
     <div class="row">
-        <div class="col-3">
-            @Html.TextBox("SearchString", "", new { @class = "form-control" })
-        </div>
-        <div class="col-3">
-            <input class="btn colorBoton" type="submit" value="Buscar por Sku" />
-        </div>
-        <div class="col-3"></div>
-    </div>
-}
-
-<br />
-<div class="row">
 
         <div class="col">
-            <input class="form-control" type="text" name="Id" value="@ViewBag.Id" disabled />
+            <input class="form-control" type="text" name="Id" id="Id" value="@ViewBag.Id" disabled />
         </div>
         <div class="col">
             @*        @Html.TextBoxFor(m => m., new { @class = "form-control" })*@
-            <input class="form-control" type="text" name="Nombre" value="@ViewBag.Nombre" disabled />
+            <input class="form-control" type="text" name="Nombre" id="Nombre" value="@ViewBag.Nombre" disabled />
         </div>
         <div class="col">
-            <input class="form-control" type="text" name="Sku" value="@ViewBag.Sku" disabled />
+            <input class="form-control" type="text" name="Sku" id="Sku" value="@ViewBag.Sku" disabled />
         </div>
         <div class="col">
-            <input class="form-control" type="text" name="Precio" value="@ViewBag.Precio" disabled />
+            <input class="form-control" type="text" name="Precio" id="Precio" value="@ViewBag.Precio" disabled />
         </div>
 
-</div>
-<br />
-
-<input class="btn colorBoton" type="submit" value="Agregar">
-<br />
-<br />
-<div class="row">
-    <div class="col">
-        <div>
-            <select class="form-control" id="combobox">
-                <option selected value="1">Opcion 1</option>
-                <option value="2">Opcion 2</option>
-            </select>
-        </div>
-
-        <table id="tabla1" class="table table-hover">
-            <thead>
-                <tr>
-                    <th>SKU</th>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>111</td>
-                    <td>azucar</td>
-                    <td>1000</td>
-                    <td class="check"><input name="" type="checkbox"></td>
-                </tr>
-                <tr>
-                    <td>222</td>
-                    <td>sal</td>
-                    <td>2000</td>
-                    <td class="check"><input name="" type="checkbox"></td>
-                </tr>
-                <tr>
-                    <td>333</td>
-                    <td>leche</td>
-                    <td>3000</td>
-                    <td class="check"><input name="" type="checkbox"></td>
-                </tr>
-            </tbody>
-        </table>
     </div>
+    <br />
+    <button id="bt_add" class="btn colorBoton">Agregar</button>
+    @*<input id="Agregar" class="btn colorBoton" value="Agregar">*@
+    <br />
+    <br />
+    <div class="row">
+        <div class="col">
+            <div>
+                <select class="form-control" id="combobox">
+                    <option selected value="1">Opcion 1</option>
+                    <option value="2">Opcion 2</option>
+                </select>
+            </div>
 
-    <div class="col">
-        <br /><br />
-        <div style="text-align:center">
-            <button class="btn colorBoton">Agregar</button>
+            <table id="tabla1" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>SKU</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>111</td>
+                        <td>azucar</td>
+                        <td>1000</td>
+                        <td class="check"><input name="" type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>222</td>
+                        <td>sal</td>
+                        <td>2000</td>
+                        <td class="check"><input name="" type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>333</td>
+                        <td>leche</td>
+                        <td>3000</td>
+                        <td class="check"><input name="" type="checkbox"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col">
             <br /><br />
-            <button class="btn colorBoton">Quitar</button>
-            <br /><br /><br />
-            <button class="btn colorBoton">Aceptar</button>
+            <div style="text-align:center">
+                <button class="btn colorBoton">Agregar</button>
+                <br /><br />
+                <button class="btn colorBoton">Quitar</button>
+                <br /><br /><br />
+                <button class="btn colorBoton">Aceptar</button>
+            </div>
+
         </div>
 
-    </div>
+        <div class="col">
+            <div>
+                <select class="form-control" id="combobox2">
+                    <option value="1">Opcion 1</option>
+                    <option selected value="2">Opcion 2</option>
+                </select>
+            </div>
 
-    <div class="col">
-        <div>
-            <select class="form-control" id="combobox2">
-                <option value="1">Opcion 1</option>
-                <option selected value="2">Opcion 2</option>
-            </select>
+            <table id="tabla2" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>SKU</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>444</td>
+                        <td>manjar</td>
+                        <td>4000</td>
+                        <td class="check"><input name="" type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>555</td>
+                        <td>cafe</td>
+                        <td>500</td>
+                        <td class="check"><input name="" type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>666</td>
+                        <td>milo</td>
+                        <td>6000</td>
+                        <td class="check"><input name="" type="checkbox"></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-
-        <table id="tabla2" class="table table-hover">
-            <thead>
-                <tr>
-                    <th>SKU</th>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>444</td>
-                    <td>manjar</td>
-                    <td>4000</td>
-                    <td class="check"><input name="" type="checkbox"></td>
-                </tr>
-                <tr>
-                    <td>555</td>
-                    <td>cafe</td>
-                    <td>500</td>
-                    <td class="check"><input name="" type="checkbox"></td>
-                </tr>
-                <tr>
-                    <td>666</td>
-                    <td>milo</td>
-                    <td>6000</td>
-                    <td class="check"><input name="" type="checkbox"></td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 </div>
+
+
+<div class="caja">
+
+    <div id="content">
+        
+        <table id="tabla" class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>Sku</td>
+                    <td>Nombre</td>
+                    <td>Precio</td>
+                    <td>Cantidad</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+</div>
+

@@ -1,4 +1,5 @@
-﻿using Delphos.Areas.Inicio.Controllers;
+﻿using Delphos.Areas.Administrador.Controllers;
+using Delphos.Areas.Inicio.Controllers;
 using Delphos.Models;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace Delphos.Filtros
                 if (filterContext.Controller is WelcomeController == false)
                 {
 
-                    filterContext.HttpContext.Response.Redirect("~/Welcome/Login");
+                    filterContext.HttpContext.Response.Redirect("~/Inicio/Welcome/Login");
                 }
 
             }
@@ -28,21 +29,24 @@ namespace Delphos.Filtros
             {
                 if (filterContext.Controller is WelcomeController == true)
                 {
-                    if (oUser.CargoId == 1)
+
+                    switch (oUser.CargoId)
                     {
-                        filterContext.HttpContext.Response.Redirect("~/Administrador/Usuario/Index");
-                    }
-                    if (oUser.CargoId == 2)
-                    {
-                        filterContext.HttpContext.Response.Redirect("~/Bodega/Recepcion/Index");
-                    }
-                    if (oUser.CargoId == 3)
-                    {
-                        filterContext.HttpContext.Response.Redirect("~/Caja/Venta/Index");
-                    }
-                    if (oUser.CargoId == 4)
-                    {
-                        filterContext.HttpContext.Response.Redirect("~/Comercial/Producto/Index");
+                        case 1:
+                            filterContext.HttpContext.Response.Redirect("~/Administrador/Usuario/Index");
+                            break;
+                        case 2:
+                            filterContext.HttpContext.Response.Redirect("~/Bodega/Recepcion/Index");
+                            break;
+                        case 3:
+                            filterContext.HttpContext.Response.Redirect("~/Caja/Venta/Index");
+                            break;
+                        case 4:
+                            filterContext.HttpContext.Response.Redirect("~/Comercial/Producto/Index");
+                            break;
+                        default:
+                            filterContext.HttpContext.Response.Redirect("~/Inicio/Welcome/Login");
+                            break;
                     }
                 }
             }
