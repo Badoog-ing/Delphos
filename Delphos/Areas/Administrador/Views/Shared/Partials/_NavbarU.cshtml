@@ -2,6 +2,7 @@
     Delphos.Models.Usuario u = (Delphos.Models.Usuario)Session["Usuario"];
 }
 
+
 <nav class="navbar navbar-expand-lg barra">
     <a class="navbar-brand" id="navbarText">
         <img src="~/Otros/versluys.png" alt="logo" style="width:40px;">
@@ -20,9 +21,9 @@
         <li style="margin-right: 10px">|</li>
         <li class="logoff" style="color:white; font-weight:bold">
             @Html.ActionLink("CerrarSession", "Cerrar", "CerrarSession")
-        </li>     
-        <li style="margin-left:10px"><i class="fas fa-sign-out-alt"></i></li>    
-        
+        </li>
+        <li style="margin-left:10px"><i class="fas fa-sign-out-alt"></i></li>
+
     </ul>
 </nav>
 
