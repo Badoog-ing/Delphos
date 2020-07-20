@@ -141,7 +141,7 @@ h1 {
 label {
     color: brown;
     font-weight: bold;
-    cursor: default;z
+    cursor: default;
 }
 
 .error {
@@ -149,3 +149,5 @@ label {
     font-style:italic;
     color: red;
 }
+
+
