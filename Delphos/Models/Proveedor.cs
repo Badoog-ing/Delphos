@@ -13,24 +13,24 @@ namespace Delphos.Models
        /*[Required]*/
         public string Rut { get; set; }
 
-        /*[Required]
-        [StringLength(30, MinimumLength = 5)]*/
+        [Required]
+        /*[StringLength(30, MinimumLength = 5)]*/
         public string Nombre { get; set; }
 
-       /* [Required]
-        [StringLength(30, MinimumLength = 5)]*/
+       [Required]
+        /*[StringLength(30, MinimumLength = 5)]*/
         public string Giro { get; set; }
-/*
+
         [Required]
-        [StringLength(30, MinimumLength = 5)]*/
+        /*[StringLength(30, MinimumLength = 5)]*/
         public string RazonSocial { get; set; }
 
-      /* [Required]*/
+        [Required]
         /*[RegularExpression(@"^[0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@(ua)\.(es)$")]*/
         public string Email { get; set; }
 
-        /*[Required]*/
-       /* [Range(8,10)]//0412252626 - 99266273*/
+        /*[Range(8, 10)]//0412252626 - 99266273*/
+        [Required]
         public int Telefono { get; set; }
 /*
       //fk
