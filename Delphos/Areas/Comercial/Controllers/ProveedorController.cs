@@ -9,13 +9,16 @@ namespace Delphos.Areas.Comercial.Controllers
 {
     public class ProveedorController : Controller
     {
-        private bdSupermercado _db;
+        private bdSupermercado _db = new bdSupermercado();
 
         // GET: Proveedor
         [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            //list de model Proveedor
+            //select * from Proveedores
+            List<Proveedor> proveedores = _db.Proveedores.ToList();
+            return View(proveedores);
         }
         [HttpGet]
         public ActionResult Nuevo()

@@ -1,4 +1,5 @@
-﻿
+﻿<!--vista requiere que datos son otorgados atraves del metodo view -->
+@model IEnumerable<Delphos.Models.Proveedor>
 @{
     Layout = "~/Views/Shared/_LayoutComercial.cshtml";
 }
@@ -20,20 +21,22 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>87765000-6</td>
-                <td>Versluys</td>
-                <td>Fabrica de Masas</td>
-                <td>Comercial Ruver LTDA</td>
-                <td>jtoledo@versluys.cl</td>
-                <td>#</td>
-                <td>
-                    <a href="/Proveedor/Editar/1">Editar</a>|
-                    <a href="/Proveedor/Ver/1">Ver</a>
-                </td>
-            </tr>
-
+            @foreach (Delphos.Models.Proveedor proveedor in Model)
+            {
+                <tr>
+                    <th scope="row">@proveedor.Id</th>
+                    <td>@proveedor.Rut</td>
+                    <td>@proveedor.Nombre</td>
+                    <td>@proveedor.Giro</td>
+                    <td>@proveedor.RazonSocial</td>
+                    <td>@proveedor.Email</td>
+                    <td>@proveedor.Telefono</td>
+                    <td>
+                        <a href="@Url.Action("Edit","Proveedor", new { id=proveedor.Id})">Editar</a>|
+                        <a href="@Url.Action("View","Proveedor", new { id=proveedor.Id})">Ver</a>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
 </div>

@@ -41,6 +41,6 @@ namespace Delphos.Models
         public virtual Cargo Cargo { get; set; }
 
         //de donde sera referenciado
-        /*public virtual ICollection<Proveedor> Proveedores { get; set; }*/
+        public virtual ICollection<Proveedor> Proveedores { get; set; }
     }
 }
