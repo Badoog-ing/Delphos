@@ -10,6 +10,7 @@
             <form method="post" action="@Url.Action("Editar", "Usuario")">
 
                 <input type="hidden" value="@Model.Id" name="Id" />
+                <input type="hidden" value="@Model.FechasCreacion" name="FechasCreacion" />
 
                 <div class="form-group row">
                     <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
@@ -66,7 +67,7 @@
                 <div class="form-group row">
                     <label for="Cargo" class="col-sm-2 col-form-label">Cargo</label>
                     <div class="col-sm-4">
-                        <select class="form-control">
+                        <select class="form-control" name="CargoId">
                             @foreach (Delphos.Models.Cargo c in ViewBag.cargos)
                             {
                                 if (c.Id == Model.CargoId)
@@ -74,6 +75,7 @@
                                     <option style="font-style: oblique" selected disabled value="@c.Id">@c.Nombre</option>
                                 }
                                 <option value="@c.Id">@c.Nombre</option>
+
                             }
                         </select>
                     </div>

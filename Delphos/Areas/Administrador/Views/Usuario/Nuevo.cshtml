@@ -67,7 +67,7 @@
                 <div class="form-group row">
                     <label for="Cargo" class="col-sm-2 col-form-label">Cargo</label>
                     <div class="col-sm-4">
-                        <select class="form-control">
+                        <select class="form-control" name="CargoId">
                             @foreach (Delphos.Models.Cargo c in ViewBag.cargos)
                             {
                                 <option value="@c.Id">@c.Nombre</option>

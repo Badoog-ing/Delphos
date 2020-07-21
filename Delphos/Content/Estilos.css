@@ -12,8 +12,10 @@
 }*/
 
 html {
+    width: 1500px;
     min-height: 100%;
     position: relative;
+    margin: auto;
 }
 
 body {

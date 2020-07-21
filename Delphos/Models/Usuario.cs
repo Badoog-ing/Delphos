@@ -37,7 +37,6 @@ namespace Delphos.Models
         public DateTime FechasCreacion { get; set; }
 
         //fk
-        [Required]
         public int CargoId { get; set; }
         public virtual Cargo Cargo { get; set; }
 
