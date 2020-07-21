@@ -51,20 +51,21 @@ namespace Delphos.Migrations
                 );
             context.SaveChanges();
 
-            // Bodega
-            context.Bodegas.AddOrUpdate(
-                b => b.Nombre,
-                new TablaBodega { Id = 1, Nombre = "Bodega Principal", Stock = 5, ProductoId = 4 },
-                new TablaBodega { Id = 2, Nombre = "Bodega Secundaria", Stock = 7, ProductoId = 5 },
-                new TablaBodega { Id = 3, Nombre = "Bodega Principal", Stock = 9, ProductoId = 6 }
-                );
-            context.SaveChanges();
+            /* // Bodega
+             context.Bodegas.AddOrUpdate(
+                 b => b.Nombre,
+                 new TablaBodega { Id = 1, Nombre = "Bodega Principal", Stock = 5, ProductoId = 4 },
+                 new TablaBodega { Id = 2, Nombre = "Bodega Secundaria", Stock = 7, ProductoId = 5 },
+                 new TablaBodega { Id = 3, Nombre = "Bodega Principal", Stock = 9, ProductoId = 6 }
+                 );
+             context.SaveChanges();*/
 
             //proveedor
             context.Proveedores.AddOrUpdate(
                 p => p.Rut,
-                new Proveedor { Rut = "87765000-6", Nombre = "Comercial Ruver",RazonSocial = "Versluys",Giro = "Fabrica de Masas",Email = "jtoledo@versluys.cl",Telefono = 99266273});
-                new Proveedor { Rut = "78129870-0", Nombre = "Comercial Yolanda", RazonSocial = "Versluys", Giro = "Fabrica de Masas", Email = "jtoledo@versluys.cl", Telefono = 99266273 };
+                new Proveedor { Id = 1, Rut = "87765000-6", Nombre = "Comercial Ruver", Giro = "Fabrica de Masas", RazonSocial = "Versluys", Email = "jtoledo@versluys.cl", Telefono = 99266273 },
+                new Proveedor { Id = 2, Rut = "78129870-0", Nombre = "Comercial Yolanda", Giro = "Fabrica de Masas", RazonSocial = "Versluys", Email = "jtoledo@versluys.cl", Telefono = 99266273 }
+                );
                 context.SaveChanges();
 
         }
