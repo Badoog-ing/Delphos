@@ -4,6 +4,16 @@
 <hr />
 <div class="caja">
 
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fab fa-searchengin"></i></span>
+        </div>
+        <input type="text" class="form-control col-sm-3" placeholder="Buscar..." aria-label="Username" aria-describedby="basic-addon1" name="Search" Id="Search">
+        <label style="padding-left:10px; padding-top:4px" for="Search">Busqueda rapida</label>
+    </div>
+
+
     <table class="table table-striped">
         <thead>
             <tr>
@@ -20,7 +30,7 @@
         <tbody>
             @foreach (var u in Model)
             {
-                <tr>
+                <tr class="Search">
                     <th scope="row">@u.Id</th>
                     <td>@u.Rut</td>
                     <td>@u.Nombre @u.ApellidoP @u.ApellidoM</td>

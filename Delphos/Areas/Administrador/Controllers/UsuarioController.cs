@@ -12,10 +12,9 @@ namespace Delphos.Areas.Administrador.Controllers
         bdSupermercado _db = new bdSupermercado();
         public ActionResult Index()
         {
-            IEnumerable<Usuario> usuarios = null;
-            _db = new bdSupermercado();
-            usuarios = _db.Usuarios.ToList();
-            return View(usuarios);
+            bdSupermercado _db = new bdSupermercado();
+            return View(_db.Usuarios.ToList());
+
         }
         public ActionResult Nuevo()
         {
@@ -41,6 +40,7 @@ namespace Delphos.Areas.Administrador.Controllers
             ViewBag.cargos = cargos;
             return View(u);
         }
+
         public ActionResult Ver(int id)
         {
             Usuario u = _db.Usuarios.Find(id);

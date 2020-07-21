@@ -5,13 +5,13 @@
     </a>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")" href="@Url.Action("Index", "Welcome")">Inicio</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "color:red; background-color: cornsilk" : "color:Black")" href="@Url.Action("Index", "Welcome")">Inicio</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "active" : "")" href="@Url.Action("Login", "Welcome")">Ingresar</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "color:red; background-color: cornsilk" : "color:Black")" href="@Url.Action("Login", "Welcome")">Ingresar</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Sugerencia" ? "active" : "")" href="@Url.Action("Sugerencia", "Welcome")">Sugerencias</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Sugerencia" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "Sugerencia" ? "color:red; background-color: cornsilk" : "color:Black")" href="@Url.Action("Sugerencia", "Welcome")">Sugerencias</a>
         </li>
     </ul>
 </nav>

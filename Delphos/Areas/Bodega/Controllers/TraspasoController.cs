@@ -43,11 +43,13 @@ namespace Delphos.Areas.Bodega.Controllers
                     if(productos.Count() == 0)
                     {
                         /*falta mostrar un mensaje de que no se encontro el producto*/
-                        /*return Content("El producto no se encuentra");*/                    
-                    }
-            }
-            return View(productos);
+            return Content("El producto no se encuentra");                    
+                }
         }
+        return View(productos);
+        }
+
+
 
     }
 }

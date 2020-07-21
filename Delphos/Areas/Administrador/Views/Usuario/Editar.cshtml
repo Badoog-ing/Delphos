@@ -27,7 +27,7 @@
                 <div class="form-group row">
                     <label for="ApellidoP" class="col-sm-2 col-form-label">Ap. Paterno</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" id="ApellidoP" name="Apellido" value="@Model.ApellidoP">
+                        <input type="text" class="form-control" id="ApellidoP" name="ApellidoP" value="@Model.ApellidoP">
                         @Html.ValidationMessageFor(Model => Model.ApellidoP)
                     </div>
                     <label for="ApellidoM" class="col-sm-2 col-form-label">Ap. Materno</label>
@@ -40,7 +40,7 @@
                 <div class="form-group row">
                     <label for="Direccion" class="col-sm-2 col-form-label">Direccion</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" id="Direccion" name="Password" value="@Model.Direccion">
+                        <input type="text" class="form-control" id="Direccion" name="Direccion" value="@Model.Direccion">
                         @Html.ValidationMessageFor(Model => Model.Direccion)
                     </div>
                     <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label>
@@ -51,12 +51,18 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="Correo" class="col-sm-2 col-form-label">Correo</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="Correo" name="Correo" value="@Model.Email">
-                        @Html.ValidationMessageFor(Model => Model.Email)
+                    <label for="Email" class="col-sm-2 col-form-label">Correo</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="Email" name="Email" value="@Model.Email">
+                        @Html.ValidationMessageFor(Model => Model.Email, null, new { @class = "error" })
+                    </div>
+                    <label for="Password" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="Password" name="Password" value="@Model.Password">
+                        @Html.ValidationMessageFor(Model => Model.Password, null, new { @class = "error" })
                     </div>
                 </div>
+
                 <div class="form-group row">
                     <label for="Cargo" class="col-sm-2 col-form-label">Cargo</label>
                     <div class="col-sm-4">
