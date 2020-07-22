@@ -192,6 +192,8 @@
     <Content Include="Areas\Administrador\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Inicio\Views\web.config" />
     <Content Include="Areas\Inicio\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Caja\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Comercial\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\Global.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -227,14 +229,14 @@
     <Content Include="Areas\Comercial\Views\Producto\Index.cshtml" />
     <Content Include="Areas\Administrador\Views\Shared\_LayoutU.cshtml" />
     <Content Include="Areas\Administrador\Views\Shared\Partials\_NavbarU.cshtml" />
-    <Content Include="Views\Shared\Partials\_NavbarComercial.cshtml" />
-    <Content Include="Views\Shared\_LayoutComercial.cshtml" />
+    <Content Include="Areas\Comercial\Views\Shared\Partials\_NavbarComercial.cshtml" />
+    <Content Include="Areas\Comercial\Views\Shared\_LayoutComercial.cshtml" />
     <Content Include="Areas\Bodega\Views\Recepcion\Index.cshtml" />
     <Content Include="Areas\Bodega\Views\Shared\_LayoutBodega.cshtml" />
     <Content Include="Areas\Bodega\Views\Shared\Partials\_NavbarBodega.cshtml" />
     <Content Include="Areas\Caja\Views\Venta\Index.cshtml" />
-    <Content Include="Views\Shared\Partials\_NavbarCaja.cshtml" />
-    <Content Include="Views\Shared\_LayoutCaja.cshtml" />
+    <Content Include="Areas\Caja\Views\Shared\Partials\_NavbarCaja.cshtml" />
+    <Content Include="Areas\Caja\Views\Shared\_LayoutCaja.cshtml" />
     <Content Include="Areas\Comercial\Views\OrdenDeCompra\Index.cshtml" />
     <Content Include="Areas\Comercial\Views\OrdenDeCompra\Ver.cshtml" />
     <Content Include="Areas\Comercial\Views\Proveedor\Index.cshtml" />
@@ -258,9 +260,7 @@
     <Folder Include="Areas\Administrador\Data\" />
     <Folder Include="Areas\Bodega\Data\" />
     <Folder Include="Areas\Caja\Data\" />
-    <Folder Include="Areas\Caja\Views\Shared\" />
     <Folder Include="Areas\Comercial\Data\" />
-    <Folder Include="Areas\Comercial\Views\Shared\" />
     <Folder Include="Areas\Inicio\Data\" />
     <Folder Include="Controllers\" />
   </ItemGroup>
