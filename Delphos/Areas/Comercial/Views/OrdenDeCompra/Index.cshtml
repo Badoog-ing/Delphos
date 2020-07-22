@@ -1,4 +1,5 @@
-﻿
+﻿<!--vista requiere que datos son otorgados atraves del metodo view -->
+@model IEnumerable<Delphos.Models.OrdenCompra>
 @{
     Layout = "~/Views/Shared/_LayoutComercial.cshtml";
 }
@@ -19,30 +20,21 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>0000001</td>
-                <td>Comercializadora Colun</td>
-                <td>18/06/2020</td>
-                <td>Administrador</td>
-                <td>#</td>
-                <td>
-                    <a href="#">Anular</a>|
-                    <a href="/OrdenDeCompra/Ver/1">Ver</a>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>0000002</td>
-                <td>Comercializadora Soprole</td>
-                <td>18/06/2020</td>
-                <td>Administrador</td>
-                <td>#</td>
-                <td>
-                    <a href="#">Anular</a>|<!--Faltaria agregar ruta con helper?-->
-                    <a href="/OrdenDeCompra/Ver/2">Ver</a>
-                </td>
-            </tr>   
+            @foreach (Delphos.Models.OrdenCompra ordenCompra in Model)
+            {
+                <tr>
+                    <th scope="row">@ordenCompra.Id</th>
+                    <td>@ordenCompra.NOrdenDeCompra</td>
+                    <td>@ordenCompra.Proveedor</td>
+                    <td>@ordenCompra.FechaEmision</td>
+                    <td>@ordenCompra.Usuario</td>
+                    <td>#</td>
+                    <td>
+                        <a href="#">Anular</a>|
+                        <a href="@Url.Action("Ver","OrdenDeCompra", new { id=ordenCompra.Id})">Ver</a>
+                    </td>
+                </tr>
+            }
 
         </tbody>
     </table>

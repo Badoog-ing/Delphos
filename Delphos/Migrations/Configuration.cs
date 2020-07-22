@@ -68,6 +68,14 @@ namespace Delphos.Migrations
                 );
                 context.SaveChanges();
 
+            //OrdenCompra
+            context.OrdenCompras.AddOrUpdate(
+                p => p.Id,
+                new OrdenCompra { Id = 1, NOrdenDeCompra = 1, FechaEmision = "2020-07-21", Usuario = "Comercial", Proveedor = "Comercial Ruver" },
+                new OrdenCompra { Id = 2, NOrdenDeCompra = 2, FechaEmision = "2020-07-22", Usuario = "Comercial", Proveedor = "Comercial Yolanda" }
+                );
+            context.SaveChanges();
+
         }
     }
 }

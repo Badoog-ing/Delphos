@@ -16,5 +16,6 @@ namespace Delphos.Models
         public DbSet<TablaBodega> Bodegas { get; set; }
 
         public DbSet<Proveedor> Proveedores { get; set; }
+        public DbSet<OrdenCompra> OrdenCompras { get; set; }
     }
 }

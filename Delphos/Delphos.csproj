@@ -161,6 +161,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\bdSupermercado.cs" />
+    <Compile Include="Models\OrdenCompra.cs" />
     <Compile Include="Models\TablaBodega.cs" />
     <Compile Include="Models\Cargo.cs" />
     <Compile Include="Models\Producto.cs" />

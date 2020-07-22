@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Delphos.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,11 +9,14 @@ namespace Delphos.Areas.Comercial.Controllers
 {
     public class OrdenDeCompraController : Controller
     {
+        private bdSupermercado _db = new bdSupermercado();
+
         // GET: OrdenDeCompra
         [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            List<OrdenCompra> ordenCompras = _db.OrdenCompras.ToList();
+            return View(ordenCompras);
         }
         [HttpGet]
         public ActionResult Nuevo()
