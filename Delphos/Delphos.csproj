@@ -163,6 +163,8 @@
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Proveedor.cs" />
     <Compile Include="Models\Recepcion.cs" />
+    <Compile Include="Models\Traspaso.cs" />
+    <Compile Include="Models\TraspasoDetalle.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Venta.cs" />
     <Compile Include="Models\VentadelDia.cs" />
