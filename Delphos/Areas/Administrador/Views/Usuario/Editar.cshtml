@@ -72,7 +72,8 @@
                             {
                                 if (c.Id == Model.CargoId)
                                 {
-                                    <option style="font-style: oblique" selected disabled value="@c.Id">@c.Nombre</option>
+                                    <option style="font-style: oblique" selected value="@c.Id" hidden>@c.Nombre</option>
+
                                 }
                                 <option value="@c.Id">@c.Nombre</option>
 
