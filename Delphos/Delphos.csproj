@@ -157,12 +157,15 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\bdSupermercado.cs" />
+    <Compile Include="Models\DetalleBoleta.cs" />
     <Compile Include="Models\OrdenCompra.cs" />
     <Compile Include="Models\TablaBodega.cs" />
     <Compile Include="Models\Cargo.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Proveedor.cs" />
     <Compile Include="Models\Recepcion.cs" />
+    <Compile Include="Models\Traspaso.cs" />
+    <Compile Include="Models\TraspasoDetalle.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Venta.cs" />
     <Compile Include="Models\VentadelDia.cs" />
@@ -191,6 +194,7 @@
     <Content Include="Areas\Inicio\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Caja\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Comercial\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Bodega\Views\Traspaso\TraspasoDetalle.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\Global.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

@@ -15,7 +15,8 @@ namespace Delphos.Areas.Bodega.Controllers
         // GET: Traspaso
         public ActionResult Index()
         {
-            return View();
+            bdSupermercado _db = new bdSupermercado();
+            return View(_db.Traspasos.ToList());
         }
 
         public ActionResult Detalles()
@@ -49,6 +50,10 @@ namespace Delphos.Areas.Bodega.Controllers
         return View(productos);
         }
 
+        public ActionResult TraspasoDetalle()
+        {
+            return View();
+        }
 
 
     }

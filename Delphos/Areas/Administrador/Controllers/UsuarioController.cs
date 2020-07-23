@@ -33,7 +33,7 @@ namespace Delphos.Areas.Administrador.Controllers
                 _db.Usuarios.Add(u);
                 u.FechasCreacion = DateTime.Today;
                 _db.SaveChanges();
-                Request.Flash("success", "Usuario agregado con exito !!!");
+                Request.Flash("success", "Registrado con exito !!!");
                 return RedirectToAction("Index", "Usuario");
             }
             List<Cargo> cargos = _db.Cargos.ToList();
@@ -73,7 +73,7 @@ namespace Delphos.Areas.Administrador.Controllers
                 _db = new bdSupermercado();
                 _db.Entry(u).State = EntityState.Modified;
                 _db.SaveChanges();
-                Request.Flash("success", "Usuario Actualizado");
+                Request.Flash("success", "Datos Actualizados");
                 return RedirectToAction("Ver", "Usuario", new { id = u.Id });
             }
             List<Cargo> cargos = _db.Cargos.ToList();

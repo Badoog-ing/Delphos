@@ -78,13 +78,46 @@ namespace Delphos.Migrations
 
             //VentadelDia
             context.VentadelDia.AddOrUpdate(
-                p => p.FechaVenta,
+                p => p.Id,
                 new VentadelDia { Id = 1, NumeroBoleta = 123, FechaVenta = "2020-07-11", Vendedor = 1, TotaldeVenta = 123456 },
                 new VentadelDia { Id = 2, NumeroBoleta = 124, FechaVenta = "2020-07-11", Vendedor = 2, TotaldeVenta = 615789 },
                 new VentadelDia { Id = 3, NumeroBoleta = 125, FechaVenta = "2020-07-12", Vendedor = 1, TotaldeVenta = 61789 },
                 new VentadelDia { Id = 4, NumeroBoleta = 126, FechaVenta = "2020-07-13", Vendedor = 2, TotaldeVenta = 61579 }
                 );
             context.SaveChanges();
+
+<<<<<<< HEAD
+
+            //DetalleBoleta
+
+/*            context.DetalleBoletas.AddOrUpdate(
+                p => p.Id,
+                new DetalleBoleta { Id = 1, NumeroBoleta = 123, FechaVenta = "2020-07-11", MetodoPago = 1, TotaldeVenta = 548797,  Cantidad = 2, Subtotal = 1000 },
+                new DetalleBoleta { Id = 2, NumeroBoleta = 123, FechaVenta = "2020-07-11", MetodoPago = 1, TotaldeVenta = 548797, Cantidad = 3, Subtotal = 2400 },
+                new DetalleBoleta { Id = 3, NumeroBoleta = 123, FechaVenta = "2020-07-11", MetodoPago = 1, TotaldeVenta = 548797,  Cantidad = 6,  Subtotal = 1200 },
+                new DetalleBoleta { Id = 4, NumeroBoleta = 123, FechaVenta = "2020-07-11", MetodoPago = 1, TotaldeVenta = 548797, Cantidad = 1,  Subtotal = 3500 }
+                );
+            context.SaveChanges();*/
+
+
+=======
+            //Traspasos
+            context.Traspasos.AddOrUpdate(
+                t => t.Id,
+                new Traspaso { Id = 1, FechaTraspaso = DateTime.Today, BodegaOrigen = "Central", BodegaDestino = "Sala de Ventas" },
+                new Traspaso { Id = 2, FechaTraspaso = DateTime.Today, BodegaOrigen = "Sala de Ventas", BodegaDestino = "Central" },
+                new Traspaso { Id = 3, FechaTraspaso = DateTime.Today, BodegaOrigen = "Central", BodegaDestino = "Sala de Ventas" },
+                new Traspaso { Id = 4, FechaTraspaso = DateTime.Today, BodegaOrigen = "Sala de Ventas", BodegaDestino = "Central" }
+                );
+            context.SaveChanges();
+
+            //Recepcion
+            context.Recepciones.AddOrUpdate(
+                r => r.Id,
+                new Recepcion { Id = 1, Factura = 000005, OrdenDeCompra = 1, FechasCreacion = DateTime.Today }
+                );
+            context.SaveChanges();
+>>>>>>> 2c6772fa4fe000b59deea98d2870b5d8e60f6d97
 
         }
     }

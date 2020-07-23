@@ -1,4 +1,6 @@
-﻿
+﻿@model IEnumerable<Delphos.Models.DetalleBoleta>
+
+
 <h1>Detalle Boleta N° 111111</h1>
 <hr />
 
@@ -14,6 +16,10 @@
     </div>
 </div>
 
+
+
+
+
 <div class="row">
     <div class="col">
         <input class="form-control" type="text" name="NumBoleta" value="" disabled />
@@ -27,67 +33,51 @@
 </div>
 
 
-    <br />
 
-    <div class="table">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Producto</th>
-                    <th scope="col">SKU</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Precio Unitario</th>
-                    <th scope="col">Subtotal</th>
+<br />
 
+<div class="table">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Producto</th>
+                <th scope="col">SKU</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio Unitario</th>
+                <th scope="col">Subtotal</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @*            @foreach (var u in Model) {
+                <tr  class="Search">
+                    <th scope="row">@u.IdP</th>
+                    <td>@u.NombreProducto</td>
+                    <td>@u.Sku</td>
+                    <td>@u.Cantidad</td>
+                    <td>@u.PrecioUnitario</td>
+                    <td>@u.Subtotal</td>
                 </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Bebida CCU. 2.5 lt</td>
-                    <td>15489519</td>
-                    <td>3</td>
-                    <td>2500</td>
-                    <td>7500</td>
+                    }*@
+        </tbody>
+    </table>
+</div>
 
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Chocolate Trencito 250 g</td>
-                    <td>254897</td>
-                    <td>1</td>
-                    <td>500</td>
-                    <td>500</td>
-
-
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Pan de Molde Bimbo</td>
-                    <td>35978897</td>
-                    <td>2</td>
-                    <td>1250</td>
-                    <td>2500</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-        <br />
-        <div class="row">
-            <div class="col"></div>
-            <div class="col"></div>
-            <div class="col-md-3">
-                <div class="input-group input-group-lg">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="total">Total</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
-                </div>
+<br />
+<div class="row">
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col-md-3">
+        <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="total">Total</span>
             </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" value="">
         </div>
+    </div>
+</div>
 
 
-  
+
 

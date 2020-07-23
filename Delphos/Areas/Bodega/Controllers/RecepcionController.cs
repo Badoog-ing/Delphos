@@ -11,65 +11,33 @@ namespace Delphos.Areas.Bodega.Controllers
     public class RecepcionController : Controller
     {
         private bdSupermercado _db;
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            /*            IEnumerable<Recepcion> recepciones = null;    Aun no tiene nada que mostrar
-                        _db = new bdSupermercado();
-                        recepciones = _db.Recepciones.ToList();
-                        return View(recepciones);*/
+            /*            _db = new bdSupermercado();
+                        Recepcion p = new Recepcion();
+                        var recepciones = from b in _db.Recepciones
+                                        select b;
+
+                        if (!string.IsNullOrEmpty(searchString))
+                        {
+                            productos = productos.Where(b => b.Sku.ToString().Contains(searchString));
+                            foreach (var d in productos)
+                            {
+                                ViewBag.Id = d.Id;
+                                ViewBag.Nombre = d.Nombre;
+                                ViewBag.Sku = d.Sku;
+                                ViewBag.Precio = d.Precio;
+                            }
+                            if (productos.Count() == 0)
+                            {
+                                *//*falta mostrar un mensaje de que no se encontro el producto*//*
+                                return Content("El producto no se encuentra");
+                            }
+                        }
+                        return View(productos);*/
             return View();
         }
-        public ActionResult Nuevo()
-        {
-            Recepcion r = new Recepcion();
-            return View(r);
-        }
 
-        [HttpPost]
-        public ActionResult Nuevo(Recepcion r)
-        {
-            if (ModelState.IsValid)
-            {
-                //Guardando en la bbdd
-                _db = new bdSupermercado();
-                _db.Recepciones.Add(r);
-                _db.SaveChanges();
-                return RedirectToAction("Index", "Recepcion");
-            }
-            return View(r);
-        }
-        public ActionResult Ver(int id)
-        {
-            Recepcion r = null;
-            using (_db = new bdSupermercado())
-            {
-                r = _db.Recepciones.Find(id);
-            }
-            return View(r);
-        }
-
-        public ActionResult Editar(int id)
-        {
-            Recepcion r = null;
-            using (_db = new bdSupermercado())
-            {
-                r = _db.Recepciones.Find(id);
-            }
-            return View(r);
-        }
-
-        [HttpPost]
-        public ActionResult Editar(Recepcion r)
-        {
-            if (ModelState.IsValid)
-            {
-                _db = new bdSupermercado();
-                _db.Entry(r).State = EntityState.Modified;
-                _db.SaveChanges();
-                return RedirectToAction("Ver", "Recepcion", new { id = r.Id });
-            }
-            return View(r);
-        }
 
     }
 }

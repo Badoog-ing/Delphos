@@ -7,27 +7,30 @@ using System.Web.Mvc;
 
 namespace Delphos.Areas.Caja.Controllers
 {
-  
+    
     public class VentaController : Controller
     {
         // GET: Venta
-        private bdSupermercado _db;
-        
+        bdSupermercado _db = new bdSupermercado();
+
         public ActionResult Index()
         {
 
-            bdSupermercado _db = new bdSupermercado();
-            return View(_db.VentadelDia.ToList());
 
+
+            return View();
         }
 
         public ActionResult VentaDelDia()
         {
-            return View();
+            bdSupermercado _db = new bdSupermercado();
+            return View(_db.VentadelDia.ToList());
         }
 
         public ActionResult DetalleBoleta()
         {
+            /*            bdSupermercado _db = new bdSupermercado();
+                        return View(_db.DetalleBoletas.ToList());*/
             return View();
         }
 
