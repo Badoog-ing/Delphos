@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Delphos.Models.VentadelDia>
 <h1>Resumen de ventas del dia</h1>
 <hr />
 
@@ -14,46 +14,33 @@
 
 
 
-    <br />
+<br />
 
-    <div class="table">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Numero de Boleta</th>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Vendedor</th>
-                    <th scope="col">Total Boleta</th>
-                    <th scope="col">Ver Boleta</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>1234556</td>
-                    <td>07/07/2020</td>
-                    <td>Vendedor 3</td>
-                    <td>54128</td>
+<div class="table">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Numero de Boleta</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Vendedor</th>
+                <th scope="col">Total Boleta</th>
+                <th scope="col">Ver Boleta</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var u in Model)
+            {
+                <tr class="Search">
+                    <th scope="row">@u.Id</th>
+                    <td>@u.NumeroBoleta</td>
+                    <td>@u.FechaVenta</td>
+                    <td>@u.Vendedor</td>
+                    <td>@u.TotaldeVenta</td>
                     <td align="center"><a class="fa fa-eye" href="@Url.Action("DetalleBoleta","Venta")"></a></td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>1234556</td>
-                    <td>07/07/2020</td>
-                    <td>Vendedor 5</td>
-                    <td>54123448</td>
-                    <td align="center"><a class="fa fa-eye" href="@Url.Action("DetalleBoleta","Venta")"></a></td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>12348786</td>
-                    <td>07/07/2020</td>
-                    <td>Vendedor 1</td>
-                    <td>541sd28</td>
-                    <td align="center"><a class="fa fa-eye" href="@Url.Action("DetalleBoleta","Venta")"></a></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                 }
+        </tbody>
+    </table>
+</div>
 
