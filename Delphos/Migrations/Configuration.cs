@@ -31,7 +31,7 @@ namespace Delphos.Migrations
                 new Usuario { Id = 1, Nombre = "Felipe", Rut = "16186571-0", ApellidoP = "Villa", ApellidoM = "Molina", Direccion = "Casa 0000", Email = "a@a.cl", Telefono = 123456789, Password = "123", CargoId = 1, Estado = "Activo", FechasCreacion = new DateTime(2020, 5, 10, 12, 30, 00) },
                 new Usuario { Id = 2, Nombre = "Bodega", Rut = "17186571-5", ApellidoP = "Toledo", ApellidoM = "Nazaret", Direccion = "Casa 0000", Email = "a@a.cl", Telefono = 123456789, Password = "123", CargoId = 2, Estado = "Activo", FechasCreacion = new DateTime(2020, 4, 10, 12, 30, 00) },
                 new Usuario { Id = 3, Nombre = "Fernando", Rut = "18186571-2", ApellidoP = "Orellana", ApellidoM = "Cadiz", Direccion = "Casa 0000", Email = "a@a.cl", Telefono = 123456789, Password = "123", CargoId = 3, Estado = "Activo", FechasCreacion = new DateTime(2020, 3, 10, 12, 30, 00) },
-                new Usuario { Id = 4, Nombre = "Jesús", Rut = "19186571-k", ApellidoP = "ApellidoP", ApellidoM = "ApellidoM", Direccion = "Casa 0000", Email = "a@a.cl", Telefono = 123456789, Password = "123", CargoId = 4, Estado = "Activo", FechasCreacion = new DateTime(2020, 2, 10, 12, 30, 00) }
+                new Usuario { Id = 4, Nombre = "Jesus", Rut = "19186571-k", ApellidoP = "ApellidoP", ApellidoM = "ApellidoM", Direccion = "Casa 0000", Email = "a@a.cl", Telefono = 123456789, Password = "123", CargoId = 4, Estado = "Activo", FechasCreacion = new DateTime(2020, 2, 10, 12, 30, 00) }
                 );
             context.SaveChanges();
 
