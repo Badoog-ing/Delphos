@@ -86,21 +86,6 @@ namespace Delphos.Migrations
                 );
             context.SaveChanges();
 
-<<<<<<< HEAD
-
-            //DetalleBoleta
-
-/*            context.DetalleBoletas.AddOrUpdate(
-                p => p.Id,
-                new DetalleBoleta { Id = 1, NumeroBoleta = 123, FechaVenta = "2020-07-11", MetodoPago = 1, TotaldeVenta = 548797,  Cantidad = 2, Subtotal = 1000 },
-                new DetalleBoleta { Id = 2, NumeroBoleta = 123, FechaVenta = "2020-07-11", MetodoPago = 1, TotaldeVenta = 548797, Cantidad = 3, Subtotal = 2400 },
-                new DetalleBoleta { Id = 3, NumeroBoleta = 123, FechaVenta = "2020-07-11", MetodoPago = 1, TotaldeVenta = 548797,  Cantidad = 6,  Subtotal = 1200 },
-                new DetalleBoleta { Id = 4, NumeroBoleta = 123, FechaVenta = "2020-07-11", MetodoPago = 1, TotaldeVenta = 548797, Cantidad = 1,  Subtotal = 3500 }
-                );
-            context.SaveChanges();*/
-
-
-=======
             //Traspasos
             context.Traspasos.AddOrUpdate(
                 t => t.Id,
@@ -117,7 +102,6 @@ namespace Delphos.Migrations
                 new Recepcion { Id = 1, Factura = 000005, OrdenDeCompra = 1, FechasCreacion = DateTime.Today }
                 );
             context.SaveChanges();
->>>>>>> 2c6772fa4fe000b59deea98d2870b5d8e60f6d97
 
         }
     }
