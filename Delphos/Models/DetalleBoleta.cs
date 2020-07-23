@@ -12,8 +12,6 @@ namespace Delphos.Models
         public string FechaVenta { get; set; }
         public int MetodoPago { get; set; }
         public int TotaldeVenta { get; set; }
-
-
         public int Cantidad { get; set; }
         public int Subtotal { get; set; }
 
