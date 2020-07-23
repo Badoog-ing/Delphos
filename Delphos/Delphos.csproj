@@ -193,6 +193,7 @@
     <Content Include="Areas\Inicio\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Caja\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Comercial\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Bodega\Views\Traspaso\TraspasoDetalle.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\Global.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

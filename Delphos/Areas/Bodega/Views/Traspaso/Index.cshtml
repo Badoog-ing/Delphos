@@ -1,38 +1,39 @@
-﻿<h1>Traspasos</h1>
+﻿@model IEnumerable<Delphos.Models.Traspaso>
+
+<h1>Traspasos</h1>
 <hr />
-<div class="caja">
+
+<div class="table">
     <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Bodega Origen</th>
+                <th scope="col">Bodega Destino</th>
+                <th scope="col">Fecha</th>
+                <th style="text-align:center">|</th>
+                <th style="text-align:center" scope="col">Detalles</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>twitter</td>
-            </tr>
+            @foreach (var t in Model)
+            {
+                <tr>
+                    <th scope="row">@t.Id</th>
+                    <td>@t.BodegaOrigen</td>
+                    <td>@t.BodegaDestino</td>
+                    <td>@t.FechaTraspaso.ToString("dd-MM-yy")</td>
+                    <td style="text-align:center; color:coral">|</td>
+                    <td style="text-align:center">
+                        <a class="far fa-eye" href="@Url.Action("TraspasoDetalle", "Traspaso", new { id = 1 })"></a>
+                    </td>
+                </tr>
+            }
+
         </tbody>
     </table>
+</div>
 
-
-    <div>
-        <a class="btn colorBoton" href="@Url.Action("Crear", "Traspaso")">Nuevo Traspaso</a>
-    </div>
+<div>
+    <a class="btn colorBoton" href="@Url.Action("Crear", "Traspaso")">Nuevo Traspaso</a>
 </div>

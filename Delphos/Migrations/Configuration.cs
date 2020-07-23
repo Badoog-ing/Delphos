@@ -86,6 +86,23 @@ namespace Delphos.Migrations
                 );
             context.SaveChanges();
 
+            //Traspasos
+            context.Traspasos.AddOrUpdate(
+                t => t.Id,
+                new Traspaso { Id = 1, FechaTraspaso = DateTime.Today, BodegaOrigen = "Central", BodegaDestino = "Sala de Ventas" },
+                new Traspaso { Id = 2, FechaTraspaso = DateTime.Today, BodegaOrigen = "Sala de Ventas", BodegaDestino = "Central" },
+                new Traspaso { Id = 3, FechaTraspaso = DateTime.Today, BodegaOrigen = "Central", BodegaDestino = "Sala de Ventas" },
+                new Traspaso { Id = 4, FechaTraspaso = DateTime.Today, BodegaOrigen = "Sala de Ventas", BodegaDestino = "Central" }
+                );
+            context.SaveChanges();
+
+            //Recepcion
+            context.Recepciones.AddOrUpdate(
+                r => r.Id,
+                new Recepcion { Id = 1, Factura = 000005, OrdenDeCompra = 1, FechasCreacion = DateTime.Today }
+                );
+            context.SaveChanges();
+
         }
     }
 }
