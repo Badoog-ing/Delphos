@@ -76,6 +76,16 @@ namespace Delphos.Migrations
                 );
             context.SaveChanges();
 
+            //VentadelDia
+            context.VentadelDia.AddOrUpdate(
+                p => p.FechaVenta,
+                new VentadelDia { Id = 1, NumeroBoleta = 123, FechaVenta = "2020-07-11", Vendedor = 1, TotaldeVenta = 123456 },
+                new VentadelDia { Id = 2, NumeroBoleta = 124, FechaVenta = "2020-07-11", Vendedor = 2, TotaldeVenta = 615789 },
+                new VentadelDia { Id = 3, NumeroBoleta = 125, FechaVenta = "2020-07-12", Vendedor = 1, TotaldeVenta = 61789 },
+                new VentadelDia { Id = 4, NumeroBoleta = 126, FechaVenta = "2020-07-13", Vendedor = 2, TotaldeVenta = 61579 }
+                );
+            context.SaveChanges();
+
         }
     }
 }

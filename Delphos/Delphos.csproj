@@ -155,10 +155,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006251309130_InitialCreate.cs" />
-    <Compile Include="Migrations\202006251309130_InitialCreate.Designer.cs">
-      <DependentUpon>202006251309130_InitialCreate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\bdSupermercado.cs" />
     <Compile Include="Models\OrdenCompra.cs" />
@@ -169,6 +165,7 @@
     <Compile Include="Models\Recepcion.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Venta.cs" />
+    <Compile Include="Models\VentadelDia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -275,11 +272,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006251309130_InitialCreate.resx">
-      <DependentUpon>202006251309130_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
