@@ -29,9 +29,9 @@ namespace Delphos.Areas.Caja.Controllers
 
         public ActionResult DetalleBoleta()
         {
-            /*            bdSupermercado _db = new bdSupermercado();
-                        return View(_db.DetalleBoletas.ToList());*/
-            return View();
+                     bdSupermercado _db = new bdSupermercado();
+                        return View(_db.DetalleBoletas.ToList());
+            
         }
 
         [HttpPost]

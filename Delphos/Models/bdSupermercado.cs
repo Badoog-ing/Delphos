@@ -20,6 +20,8 @@ namespace Delphos.Models
         public DbSet<Traspaso> Traspasos { get; set; }
         public DbSet<TraspasoDetalle> TraspasoDetalles { get; set; }
 
+        public DbSet<DetalleBoleta> DetallesBoletas { get; set; }
+
 
     }
 }
