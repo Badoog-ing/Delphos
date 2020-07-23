@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Delphos.Areas.Caja.Controllers
 {
+  
     public class VentaController : Controller
     {
         // GET: Venta
@@ -14,7 +15,10 @@ namespace Delphos.Areas.Caja.Controllers
         
         public ActionResult Index()
         {
-            return View();
+
+            bdSupermercado _db = new bdSupermercado();
+            return View(_db.VentadelDia.ToList());
+
         }
 
         public ActionResult VentaDelDia()
