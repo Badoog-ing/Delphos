@@ -103,6 +103,12 @@ namespace Delphos.Migrations
                 );
             context.SaveChanges();
 
+            //DetalleBoleta
+            context.DetallesBoletas.AddOrUpdate(
+                p => p.Id,
+                new DetalleBoleta { Id =1, NumeroBoleta = 11111, FechaVenta = "2020 - 07 - 11", Cantidad= 1, MetodoPago = 1, Subtotal =12548, TotaldeVenta= 65879}
+                );
+
         }
     }
 }
