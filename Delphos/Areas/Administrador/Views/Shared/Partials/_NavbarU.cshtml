@@ -10,10 +10,10 @@
     </a>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "color:red; background-color: cornsilk" : "color:Black")" href="@Url.Action("Index","Usuario")">Trabajadores</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" href="@Url.Action("Index","Usuario")">Trabajadores</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Nuevo" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "Nuevo" ? "color:red; background-color: cornsilk" : "color:Black")" href="@Url.Action("Nuevo","Usuario")">Registrar</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Nuevo" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "Nuevo" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" href="@Url.Action("Nuevo","Usuario")">Registrar</a>
         </li>
     </ul>
     <ul class="navbar-nav ml-auto">

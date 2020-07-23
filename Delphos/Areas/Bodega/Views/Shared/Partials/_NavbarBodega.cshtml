@@ -12,13 +12,13 @@
     <!-- Links -->
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Recepcion" ? "active" : "")" href="@Url.Action("Index","Recepcion")">Recepcion</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Recepcion" ? "active" : "")" style="@(ViewContext.RouteData.Values["Controller"].ToString() == "Recepcion" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" href="@Url.Action("Index","Recepcion")">Recepcion</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Traspaso" ? "active" : "")" href="@Url.Action("Index","Traspaso")">Traspasos</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Traspaso" ? "active" : "")" style="@(ViewContext.RouteData.Values["Controller"].ToString() == "Traspaso" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" href="@Url.Action("Index","Traspaso")">Traspasos</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "TipoBodega" ? "active" : "")" href="@Url.Action("Index","TipoBodega")">Listar Productos</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "TipoBodega" ? "active" : "")" style="@(ViewContext.RouteData.Values["Controller"].ToString() == "TipoBodega" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" href="@Url.Action("Index","TipoBodega")">Listar Productos</a>
         </li>
     </ul>
     <ul class="navbar-nav ml-auto">
