@@ -45,7 +45,12 @@ namespace Delphos.Areas.Comercial.Controllers
         [HttpGet]
         public ActionResult Ver(int id)
         {
-            return View();
+            Proveedor proveedor = _db.Proveedores.Find(id);
+            if (proveedor == null)
+            {
+                return new HttpNotFoundResult();
+            }
+            return View(proveedor);
         }
         [HttpGet]
         public ActionResult Editar(int id)
