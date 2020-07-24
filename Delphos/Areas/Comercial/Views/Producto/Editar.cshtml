@@ -3,7 +3,7 @@
 <h1 style="text-align:center">Editar Producto</h1>
 <hr />
 
-@*@Html.ValidationSummary()*@
+@Html.ValidationSummary()
 
 <div class="row">
     <div class="col-3"></div>
@@ -12,28 +12,28 @@
             <div class="form-group row">
                 <label for="Sku" class="col-sm-2 col-form-label">Sku</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="Sku" name="Sku" disabled>
+                    <input type="text" class="form-control" id="Sku" name="Sku" value="@Model.Sku">
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="Nombre" name="Nombre">
+                    <input type="text" class="form-control" id="Nombre" name="Nombre" value="@Model.Nombre">
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="Descripcion" class="col-sm-2 col-form-label">Descripcion</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="Descripcion" name="Descripcion">
+                    <input type="text" class="form-control" id="Descripcion" name="Descripcion" value="@Model.Descripcion">
                 </div>
             </div>
 
             <div class="form-group row">
                 <label for="Categoria" class="col-sm-2 col-form-label">Categoria</label>
                 <div class="col-sm-10">
-                    <select class="form-control" id="Categoria" name="Categoria">
+                    <select class="form-control" id="Categoria" name="Categoria" >
                         <option>opcion 1</option>
                         <option>opcion 2</option>
                         <option>opcion 3</option>
@@ -45,11 +45,11 @@
             <div class="form-group row">
                 <label for="Precio" class="col-sm-2 col-form-label">Precio</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="Categoria" name="Precio">
+                    <input type="text" class="form-control" id="Categoria" name="Precio" value="@Model.Precio">
                 </div>
             </div>
 
-            <input type="hidden" name="FechaCreacion" />
+            <input type="hidden" name="FechaCreacion" value="@Model.FechaCreacion"/>
 
             <br /><br />
             <div class="row">

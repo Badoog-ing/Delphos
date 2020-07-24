@@ -83,6 +83,7 @@ namespace Delphos.Areas.Comercial.Controllers
                 _db = new bdSupermercado();
                 _db.Entry(p).State = EntityState.Modified;
                 _db.SaveChanges();
+                Request.Flash("success", "Datos Actualizados");
                 return RedirectToAction("Ver", "Producto", new { id = p.Id });
             }
             return View(p);

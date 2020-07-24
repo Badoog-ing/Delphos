@@ -10,9 +10,10 @@ namespace Delphos.Models
         //faltan las validaciones
         public int Id { get; set; }
         public int NOrdenDeCompra { get; set; }
-      
-        //hay que cambiarlo a date
-        public String FechaEmision { get; set; }
+
+        //
+        //public DateTime FechaCreacion { get; set; }
+        public string FechaEmision { get; set; }
         //fk usuario
         public String Usuario { get; set; }
         //FK de proveedor
