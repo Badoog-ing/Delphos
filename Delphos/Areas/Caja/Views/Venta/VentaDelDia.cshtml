@@ -37,7 +37,7 @@
                     <td>@u.FechaVenta</td>
                     <td>@u.Vendedor</td>
                     <td>@u.TotaldeVenta</td>
-                    <td align="center"><a class="fa fa-eye" href="@Url.Action("DetalleBoleta","Venta")"></a></td>
+                    <td align="center"><a class="fa fa-eye" href="@Url.Action("DetalleBoleta","Venta", new { id = u.Id })"></a></td>
                 </tr>
                  }
         </tbody>
