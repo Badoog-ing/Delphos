@@ -1,6 +1,7 @@
 ﻿using Delphos.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -55,7 +56,26 @@ namespace Delphos.Areas.Comercial.Controllers
         [HttpGet]
         public ActionResult Editar(int id)
         {
-            return View();
+            Proveedor proveedor = _db.Proveedores.Find(id);
+            if (proveedor == null)
+            {
+                return new HttpNotFoundResult();
+            }
+            return View(proveedor);
+        }
+        [HttpPost]
+        public ActionResult Editar(Proveedor p)
+        {
+            if (ModelState.IsValid)
+            {
+                _db = new bdSupermercado();
+                _db.Entry(p).State = EntityState.Modified;
+                _db.SaveChanges();
+                Request.Flash("success", "Datos Actualizados");
+                return RedirectToAction("Ver", "Proveedor", new { id = p.Id });
+            }
+           
+            return View(p);
         }
     }
 }
