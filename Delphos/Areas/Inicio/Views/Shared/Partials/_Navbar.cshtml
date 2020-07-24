@@ -5,13 +5,13 @@
     </a>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" href="@Url.Action("Index", "Welcome")">Inicio</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" href="@Url.Action("Index", "Welcome")"><i class="fas fa-home" style="margin-right:10px"></i>Inicio</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" href="@Url.Action("Login", "Welcome")">Ingresar</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" href="@Url.Action("Login", "Welcome")"><i class="fas fa-user-tie" style="margin-right:10px"></i>Ingresar</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Sugerencia" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "Sugerencia" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" href="@Url.Action("Sugerencia", "Welcome")">Sugerencias</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Sugerencia" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "Sugerencia" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" href="@Url.Action("Sugerencia", "Welcome")"><i class="fas fa-comments" style="margin-right:10px"></i>Sugerencias</a>
         </li>
     </ul>
 </nav>

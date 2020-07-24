@@ -56,13 +56,11 @@
             <input type="hidden" value="@Model.FechaCreacion" name="FechaCreacion" />
 
             <br /><br />
-            <div class="row">
-                <div class="col">
-                    <a class="btn colorBoton" href="@Url.Action("Index", "Producto")">Volver</a>
-                </div>
 
+            <div class="row">
                 <div class="col" style="text-align:right">
-                    <button type="submit" class="btn colorBoton">Confirmar</button>
+                    <a class="btn btn-sm colorBoton col-sm-3" href="@Url.Action("Index", "Producto")"><i class="fas fa-arrow-left" style="padding-right:10px"></i>Volver</a>
+                    <button type="submit" class="btn btn-sm colorBoton col-sm-3"><i class="far fa-save" style="padding-right:10px"></i>Confirmar</button>
                 </div>
             </div>
 

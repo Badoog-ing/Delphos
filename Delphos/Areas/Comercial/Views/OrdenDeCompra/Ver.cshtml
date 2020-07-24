@@ -1,4 +1,5 @@
-﻿
+﻿@model Delphos.Models.OrdenCompra
+
 <h1>Ver ordenes de compra</h1>
 <hr />
 <!-- 50%/50% split -->
@@ -6,15 +7,15 @@
     <div class="row">
         <div class="col-4">
             <!--<p>NOrdenDeCompra</p>-->
-            <p>0000001</p>
+            <p>@Model.NOrdenDeCompra</p>
         </div>
         <div class="col-6">
             <!--<p>Proveedor</p>-->
-            <p>Comercializadora Colun</p>
+            <p>@Model.Proveedor</p>
         </div>
         <div class="col-2">
             <!--<p>Fecha Creacion</p>-->
-            <p>18/06/2020</p>
+            <p>@Model.FechaEmision</p>
         </div>
     </div>
 </div>
@@ -57,10 +58,10 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-6">
-           
+
         </div>
         <div class="col-4">
-           
+
         </div>
         <div class="col-2">
             <!--<p>Total de la OC</p>-->

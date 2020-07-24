@@ -1,22 +1,26 @@
-﻿<nav class="navbar navbar-expand-sm navColor">
-    <!-- Brand/logo -->
-    <a class="navbar-brand">
-        <img src="~/Otros/versluys.png" alt="logo" style="width:40px;">
-        <label>Area Comercial</label>
-    </a>
+﻿@{
+    Delphos.Models.Usuario u = (Delphos.Models.Usuario)Session["Usuario"];
+}
 
-    <!-- Links -->
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="@Url.Action("Index","Producto")">Productos</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="@Url.Action("Index","OrdenDeCompra")">Orden de Compra</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="@Url.Action("Index","Proveedor")">Proveedores</a>
-        </li>
-        <!--
+
+    <nav class="navbar navbar-expand-lg barra">
+        <a class="navbar-brand" id="navbarText">
+            <img src="~/Otros/versluys.png" alt="logo" style="width:40px;">
+            <label style="font-weight:bold">Administrador</label>
+        </a>
+
+        <!-- Links -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Producto" ? "active" : "")" style="@(ViewContext.RouteData.Values["Controller"].ToString() == "Producto" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")"" href="@Url.Action("Index","Producto")">Productos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "OrdenDeCompra" ? "active" : "")" style="@(ViewContext.RouteData.Values["Controller"].ToString() == "OrdenDeCompra" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")"" href="@Url.Action("Index","OrdenDeCompra")">Orden de Compra</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Proveedor" ? "active" : "")" style="@(ViewContext.RouteData.Values["Controller"].ToString() == "Proveedor" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")"" href="@Url.Action("Index","Proveedor")">Proveedores</a>
+            </li>
+            <!--
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Listar
@@ -29,10 +33,14 @@
             </div>
             </li>
             -->
-    </ul>
-    <ul class="navbar-nav ml-auto">
-        <li class="logoff" style="color:white">
-            @Html.ActionLink("CerrarSession", "Cerrar", "CerrarSession")
-        </li>
-    </ul>
-</nav>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li style="margin-right: 10px; font-style:italic">Bienvenido: @u.Nombre @u.ApellidoP @u.ApellidoM</li>
+            <li style="margin-right: 10px">|</li>
+            <li class="logoff" style="color:white; font-weight:bold">
+                @Html.ActionLink("CerrarSession", "Cerrar", "CerrarSession")
+            </li>
+            <li style="margin-left:10px"><i class="fas fa-sign-out-alt"></i></li>
+
+        </ul>
+    </nav>

@@ -1,22 +1,29 @@
-﻿<nav class="navbar navbar-expand-lg navColor">
-    <!-- Brand/logo -->
-    <a class="navbar-brand">
+﻿@{
+    Delphos.Models.Usuario u = (Delphos.Models.Usuario)Session["Usuario"];
+}
+
+
+<nav class="navbar navbar-expand-lg barra">
+    <a class="navbar-brand" id="navbarText">
         <img src="~/Otros/versluys.png" alt="logo" style="width:40px;">
-        <label>Area Caja</label>
+        <label style="font-weight:bold">Administrador</label>
     </a>
 
     <!-- Links -->
-    <ul class="navbar-nav">
+    <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link" href="@Url.Action("Index","Venta")">Ventas</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" " href="@Url.Action("Index","Venta")">Ventas</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="@Url.Action("VentaDelDia","Venta")">Ventas del dia</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "VentaDelDia" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "VentaDelDia" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" " href="@Url.Action("VentaDelDia","Venta")">Ventas del dia</a>
         </li>
     </ul>
     <ul class="navbar-nav ml-auto">
-        <li class="logoff" style="color:white">
+        <li style="margin-right: 10px; font-style:italic">Bienvenido: @u.Nombre @u.ApellidoP @u.ApellidoM</li>
+        <li style="margin-right: 10px">|</li>
+        <li class="logoff" style="color:white; font-weight:bold">
             @Html.ActionLink("CerrarSession", "Cerrar", "CerrarSession")
         </li>
+        <li style="margin-left:10px"><i class="fas fa-sign-out-alt"></i></li>
     </ul>
 </nav>

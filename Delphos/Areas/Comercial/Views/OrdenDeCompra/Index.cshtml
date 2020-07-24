@@ -1,6 +1,4 @@
-﻿<!--vista requiere que datos son otorgados atraves del metodo view -->
-
-<h1>Lista ordenes de compra</h1>
+﻿<h1>Lista ordenes de compra</h1>
 <hr />
 
 <div class="table">
@@ -28,7 +26,7 @@
                     <td>#</td>
                     <td>
                         <a href="#">Anular</a>|
-                        <a href="@Url.Action("Ver","OrdenDeCompra", new { id=ordenCompra.Id})">Ver</a>
+                        <a href="@Url.Action("Ver","OrdenDeCompra", new { id = ordenCompra.Id})">Ver</a>
                     </td>
                 </tr>
             }
@@ -37,4 +35,4 @@
     </table>
 </div>
 
-<a class="btn colorBoton" href="@Url.Action("Nuevo", "OrdenDeCompra")">Agregar</a>
+<a class="btn colorBoton col-sm-3" href="@Url.Action("Nuevo", "OrdenDeCompra")"><i class="fas fa-plus" style="margin-right:10px"></i>Agregar</a>

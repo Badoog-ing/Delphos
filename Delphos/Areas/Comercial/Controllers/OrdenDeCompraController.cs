@@ -26,7 +26,13 @@ namespace Delphos.Areas.Comercial.Controllers
         [HttpGet]
         public ActionResult Ver(int id)
         {
-            return View();
+            OrdenCompra orden = _db.OrdenCompras.Find(id);
+            if (orden == null)
+            {
+                return new HttpNotFoundResult();
+            }
+
+            return View(orden);
         }
         [HttpGet]
         public ActionResult Editar(int id)
