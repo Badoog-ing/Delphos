@@ -157,7 +157,6 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\bdSupermercado.cs" />
-    <Compile Include="Models\DetalleBoleta.cs" />
     <Compile Include="Models\OrdenCompra.cs" />
     <Compile Include="Models\TablaBodega.cs" />
     <Compile Include="Models\Cargo.cs" />
@@ -168,7 +167,6 @@
     <Compile Include="Models\TraspasoDetalle.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Venta.cs" />
-    <Compile Include="Models\VentadelDia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

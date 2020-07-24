@@ -77,12 +77,12 @@ namespace Delphos.Migrations
             context.SaveChanges();
 
             //VentadelDia
-            context.VentadelDia.AddOrUpdate(
+            context.Ventas.AddOrUpdate(
                 p => p.Id,
-                new VentadelDia { Id = 1, NumeroBoleta = 123, FechaVenta = "2020-07-11", Vendedor = 1, TotaldeVenta = 123456 },
-                new VentadelDia { Id = 2, NumeroBoleta = 124, FechaVenta = "2020-07-11", Vendedor = 2, TotaldeVenta = 615789 },
-                new VentadelDia { Id = 3, NumeroBoleta = 125, FechaVenta = "2020-07-12", Vendedor = 1, TotaldeVenta = 61789 },
-                new VentadelDia { Id = 4, NumeroBoleta = 126, FechaVenta = "2020-07-13", Vendedor = 2, TotaldeVenta = 61579 }
+                new Venta { Id = 1, NumeroBoleta = 123, FechaVenta = "2020-07-11", IdVendedor = 1, IdProducto = 2 },
+                new Venta { Id = 2, NumeroBoleta = 124, FechaVenta = "2020-07-11", IdVendedor = 2, IdProducto = 3 },
+                new Venta { Id = 3, NumeroBoleta = 125, FechaVenta = "2020-07-12", IdVendedor = 1, IdProducto = 4 },
+                new Venta { Id = 4, NumeroBoleta = 126, FechaVenta = "2020-07-13", IdVendedor = 2, IdProducto = 5 }
                 );
             context.SaveChanges();
 
@@ -102,12 +102,6 @@ namespace Delphos.Migrations
                 new Recepcion { Id = 1, Factura = 000005, OrdenDeCompra = 1, FechasCreacion = DateTime.Today }
                 );
             context.SaveChanges();
-
-            //DetalleBoleta
-            context.DetallesBoletas.AddOrUpdate(
-                p => p.Id,
-                new DetalleBoleta { Id =1, NumeroBoleta = 11111, FechaVenta = "2020 - 07 - 11", Cantidad= 1, MetodoPago = 1, Subtotal =12548, TotaldeVenta= 65879}
-                );
 
         }
     }

@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Delphos.Models.VentadelDia>
+﻿@model IEnumerable<Delphos.Models.Venta>
+
 <h1>Resumen de ventas del dia</h1>
 <hr />
 
@@ -24,7 +25,6 @@
                 <th scope="col">Numero de Boleta</th>
                 <th scope="col">Fecha</th>
                 <th scope="col">Vendedor</th>
-                <th scope="col">Total Boleta</th>
                 <th scope="col">Ver Boleta</th>
             </tr>
         </thead>
@@ -35,8 +35,7 @@
                     <th scope="row">@u.Id</th>
                     <td>@u.NumeroBoleta</td>
                     <td>@u.FechaVenta</td>
-                    <td>@u.Vendedor</td>
-                    <td>@u.TotaldeVenta</td>
+                    <td>@u.IdVendedor</td>
                     <td align="center"><a class="fa fa-eye" href="@Url.Action("DetalleBoleta","Venta", new { id = u.Id })"></a></td>
                 </tr>
                  }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Delphos.Models.DetalleBoleta>
+﻿@model Delphos.Models.Venta
 
 
 <h1>Detalle Boleta N° 111111</h1>
@@ -22,10 +22,10 @@
 
 <div class="row">
     <div class="col">
-        <input class="form-control" type="text" name="NumBoleta" value="" disabled />
+        <input class="form-control" type="text" name="NumBoleta" value="@Model.NumeroBoleta" disabled />
     </div>
     <div class="col">
-        <input class="form-control" type="text" name="FechaBoleta" value="" disabled />
+        <input class="form-control" type="text" name="FechaBoleta" value="@Model.FechaVenta" disabled />
     </div>
     <div class="col">
         <input class="form-control" type="text" name="MetodoPago" value="" disabled />

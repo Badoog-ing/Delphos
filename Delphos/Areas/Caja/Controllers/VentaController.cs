@@ -21,14 +21,7 @@ namespace Delphos.Areas.Caja.Controllers
         public ActionResult VentaDelDia()
         {
             bdSupermercado _db = new bdSupermercado();
-            return View(_db.VentadelDia.ToList());
-        }
-
-        public ActionResult DetalleBoleta()
-        {
-            /*      bdSupermercado _db = new bdSupermercado();
-                  return View(_db.DetallesBoletas.ToList());*/
-            return View();
+            return View(_db.Ventas.ToList());
         }
 
         [HttpPost]
@@ -76,6 +69,16 @@ namespace Delphos.Areas.Caja.Controllers
                 
             }
             return View(productos);
+        }
+
+        public ActionResult DetalleBoleta(int id)
+        {
+            Venta v = _db.Ventas.Find(id);
+            if (v == null)
+            {
+                return new HttpNotFoundResult();
+            }
+            return View(v);
         }
 
     }
