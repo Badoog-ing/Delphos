@@ -38,17 +38,8 @@
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)*@
 
-    @*mostrar pass*@
-    <script>
-        function mostrarContrasena() {
-            var tipo = document.getElementById("pass");
-            if (tipo.type == "password") {
-                tipo.type = "text";
-            } else {
-                tipo.type = "password";
-            }
-        }
-    </script>
+    <script src="@Url.Content("~/Scripts/Global.js")"></script>
+
 
 </body>
 </html>
