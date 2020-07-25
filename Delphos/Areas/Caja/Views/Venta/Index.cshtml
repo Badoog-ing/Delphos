@@ -22,6 +22,7 @@
         <button class="btn colorBoton form-control">Agregar Producto</button>
     </div>
 </div>
+
 <br />
 
 <div class="row">
@@ -56,47 +57,33 @@
 <br />
 
 <div class="table">
-    <table class="table">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Producto</th>
-                <th scope="col">SKU</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Precio Unitario</th>
-                <th scope="col">Subtotal</th>
-                <th scope="col">Remover</th>
+                <th scope="col">Sku</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Fecha</th>
+
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Bebida CCU. 2.5 lt</td>
-                <td>15489519</td>
-                <td>3</td>
-                <td>2500</td>
-                <td>7500</td>
-                <td align="center"><a class="fa fa-ban" href=""></a></td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Chocolate Trencito 250 g</td>
-                <td>254897</td>
-                <td>1</td>
-                <td>500</td>
-                <td>500</td>
-                <td align="center"><a class="fa fa-ban" href=""></a></td>
+@*            @foreach (var p in Model)
+            {
+                <tr>
+                    <th scope="row">@p.Id</th>
+                    <td>@p.Sku</td>
+                    <td>@p.Nombre</td>
+                    <td>@p.Descripcion</td>
+                    <td>@p.CategoriaId</td>
+                    <td>@string.Format("{0:C}", @p.Precio)</td>
+                    <td>@p.FechaCreacion.ToString("dd-MM-yy")</td>
+                </tr>
+            }*@
 
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Pan de Molde Bimbo</td>
-                <td>35978897</td>
-                <td>2</td>
-                <td>1250</td>
-                <td>2500</td>
-                <td align="center"><a class="fa fa-ban" href=""></a></td>
-            </tr>
         </tbody>
     </table>
 </div>
@@ -136,3 +123,45 @@
     </div>
 </div>
 
+<br />
+<br />
+
+<div class="caja">
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <div hidden>
+                    <p>
+                        <label>Nombre:</label> <br>
+                        <input id="nombre" class="form-control" type="text" placeholder="Nombre..." value="@ViewBag.Nombre"><br>
+                    </p>
+                    <p>
+                        <label>Sku:</label> <br>
+                        <input id="apellido" class="form-control" type="text" placeholder="Apellido..." value="@ViewBag.Sku"><br>
+                    </p>
+                    <p>
+                        <label>Precio:</label> <br>
+                        <input id="cedula" class="form-control" type="text" placeholder="Cedúla" value="@ViewBag.Precio"> <br>
+                    </p>
+                </div>
+
+                <button id="adicionar" class="btn btn-success" type="button">Adicionar a la tabla</button>
+            </div>
+        </form>
+
+        <p>
+            Elementos en la Tabla:
+            <div id="adicionados"></div>
+        </p>
+        <table id="mytable" class="table table-bordered table-hover ">
+            <tr>
+                <th>Nobmre</th>
+                <th>Sku</th>
+                <th>Precio</th>
+                <th>Eliminar</th>
+
+            </tr>
+        </table>
+
+    </div>
+</div>

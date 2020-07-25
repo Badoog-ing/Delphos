@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web.Services;
 using Delphos.Models;
+using Microsoft.Ajax.Utilities;
 
 namespace Delphos.Areas.Administrador.Controllers
 {
@@ -80,6 +82,7 @@ namespace Delphos.Areas.Administrador.Controllers
             ViewBag.cargos = cargos;
             return View(u);
         }
+
 
     }
 }

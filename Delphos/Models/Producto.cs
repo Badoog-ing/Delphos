@@ -28,4 +28,5 @@ namespace Delphos.Models
         public virtual ICollection<Venta> Ventas { get; set; }
         public virtual ICollection<TablaBodega> Bodegas { get; set; }
     }
+
 }
