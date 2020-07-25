@@ -41,25 +41,31 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Producto</th>
                 <th scope="col">SKU</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Precio Unitario</th>
-                <th scope="col">Subtotal</th>
-
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
             </tr>
         </thead>
         <tbody>
-            @*            @foreach (var u in Model) {
-                <tr  class="Search">
-                    <th scope="row">@u.IdP</th>
-                    <td>@u.NombreProducto</td>
-                    <td>@u.Sku</td>
-                    <td>@u.Cantidad</td>
-                    <td>@u.PrecioUnitario</td>
-                    <td>@u.Subtotal</td>
+            @foreach (var u in ViewBag.detalles)
+            {
+                <tr class="Search">
+                    <th>@u.Id</th>
+                    <th>@u.IdProducto</th>
+
+                    @foreach (var p in ViewBag.productos)
+                    {
+                        if (u.IdProducto == p.Sku)
+                        {
+                            <th>@p.Nombre</th>
+                            <th>@p.Precio</th>
+                        }
+
+                    }
                 </tr>
-                    }*@
+            }
+
+
         </tbody>
     </table>
 </div>
@@ -78,7 +84,8 @@
     </div>
 </div>
 
-<br /><br />
+<br />
+<br />
 
 <div class="row">
     <div class="col" style="text-align:right">

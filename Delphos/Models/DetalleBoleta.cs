@@ -12,5 +12,8 @@ namespace Delphos.Models
         public int IdProducto { get; set; }
         public int Cantidad { get; set; }
         public int Total { get; set; }
+
+        public virtual ICollection<Venta> Ventas { get; set; }
+        public virtual ICollection<Producto> Productos { get; set; }
     }
 }
