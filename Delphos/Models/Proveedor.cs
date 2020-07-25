@@ -10,7 +10,7 @@ namespace Delphos.Models
     {
         public int Id { get; set; }
 
-       /*[Required]*/
+        [Required]
         public string Rut { get; set; }
 
         [Required]
