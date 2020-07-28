@@ -18,7 +18,7 @@
             <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Traspaso" ? "active" : "")" style="@(ViewContext.RouteData.Values["Controller"].ToString() == "Traspaso" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" href="@Url.Action("Index","Traspaso")">Traspasos</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "TipoBodega" ? "active" : "")" style="@(ViewContext.RouteData.Values["Controller"].ToString() == "TipoBodega" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" href="@Url.Action("Index","TipoBodega")">Listar Productos</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "TipoBodega" ? "active" : "")" style="@(ViewContext.RouteData.Values["Controller"].ToString() == "TipoBodega" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" href="@Url.Action("Origen","TipoBodega")">Listar Productos</a>
         </li>
     </ul>
     <ul class="navbar-nav ml-auto">

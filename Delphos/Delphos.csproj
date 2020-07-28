@@ -157,6 +157,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\bdSupermercado.cs" />
+    <Compile Include="Models\BodegaTipo.cs" />
     <Compile Include="Models\DetalleBoleta.cs" />
     <Compile Include="Models\OrdenCompra.cs" />
     <Compile Include="Models\TablaBodega.cs" />
@@ -187,13 +188,14 @@
     <Content Include="Areas\Comercial\Views\web.config" />
     <Content Include="Areas\Caja\Views\web.config" />
     <Content Include="Areas\Bodega\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Bodega\Views\TipoBodega\Index.cshtml" />
+    <Content Include="Areas\Bodega\Views\TipoBodega\Origen.cshtml" />
     <Content Include="Areas\Administrador\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Inicio\Views\web.config" />
     <Content Include="Areas\Inicio\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Caja\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Comercial\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Bodega\Views\Traspaso\TraspasoDetalle.cshtml" />
+    <Content Include="Areas\Bodega\Views\TipoBodega\Destino.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\Global.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -243,7 +245,6 @@
     <Content Include="Areas\Comercial\Views\Producto\Nuevo.cshtml" />
     <Content Include="Areas\Caja\Views\Venta\VentaDelDia.cshtml" />
     <Content Include="Areas\Bodega\Views\Traspaso\Index.cshtml" />
-    <Content Include="Areas\Bodega\Views\Traspaso\Detalles.cshtml" />
     <Content Include="Areas\Bodega\Views\Traspaso\Crear.cshtml" />
     <Content Include="Areas\Caja\Views\Venta\DetalleBoleta.cshtml" />
     <Content Include="Areas\Comercial\Views\Proveedor\Editar.cshtml" />

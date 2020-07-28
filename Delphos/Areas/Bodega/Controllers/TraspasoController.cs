@@ -16,11 +16,16 @@ namespace Delphos.Areas.Bodega.Controllers
         public ActionResult Index()
         {
             bdSupermercado _db = new bdSupermercado();
+            
+            List<BodegaTipo> Bodegas = _db.BodegaTipos.ToList();
+            ViewBag.Bodegas = Bodegas;
+
             return View(_db.Traspasos.ToList());
         }
 
-        public ActionResult Detalles()
+        public ActionResult TraspasoDetalle(int id)
         {
+
             return View();
         }
 
@@ -48,11 +53,6 @@ namespace Delphos.Areas.Bodega.Controllers
                 }
         }
         return View(productos);
-        }
-
-        public ActionResult TraspasoDetalle()
-        {
-            return View();
         }
 
 

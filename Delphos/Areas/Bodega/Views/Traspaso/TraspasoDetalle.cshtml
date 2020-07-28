@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Delphos.Models.TraspasoDetalle>
+﻿@model Delphos.Models.Traspaso
 
 
 
@@ -10,20 +10,24 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Sku</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Descripcion</th>
-                <th scope="col">Categoria</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Fecha</th>
+                <th scope="col">1</th>
+                <th scope="col">2</th>
+                <th scope="col">3</th>
             </tr>
         </thead>
         <tbody>
+            @foreach (var u in ViewBag.detalles)
+            {
+                <tr >
+                    <th>@u.Id</th>
 
-            @* falta agregar la lista de productos*@
+                 
+                </tr>
+            }
 
         </tbody>
     </table>
+
 </div>
 
 <div class="row">

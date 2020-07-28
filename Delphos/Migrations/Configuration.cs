@@ -51,14 +51,27 @@ namespace Delphos.Migrations
                 );
             context.SaveChanges();
 
-            /* // Bodega
-             context.Bodegas.AddOrUpdate(
-                 b => b.Nombre,
-                 new TablaBodega { Id = 1, Nombre = "Bodega Principal", Stock = 5, ProductoId = 4 },
-                 new TablaBodega { Id = 2, Nombre = "Bodega Secundaria", Stock = 7, ProductoId = 5 },
-                 new TablaBodega { Id = 3, Nombre = "Bodega Principal", Stock = 9, ProductoId = 6 }
-                 );
-             context.SaveChanges();*/
+            context.BodegaTipos.AddOrUpdate(
+            bt => bt.Id,
+                new BodegaTipo { Id = 1, Nombre = "Bodega Principal" },
+                new BodegaTipo { Id = 2, Nombre = "Bodega Secundaria" }
+            );
+            context.SaveChanges();
+
+            // Bodega
+            context.Bodegas.AddOrUpdate(
+                b => b.Id,
+                new TablaBodega { Id = 1, TipoBodega = 1, Stock = 5, ProductoId = 1 },
+                new TablaBodega { Id = 2, TipoBodega = 2, Stock = 7, ProductoId = 2 },
+                new TablaBodega { Id = 3, TipoBodega = 1, Stock = 9, ProductoId = 3 },
+                new TablaBodega { Id = 4, TipoBodega = 1, Stock = 5, ProductoId = 4 },
+                new TablaBodega { Id = 5, TipoBodega = 2, Stock = 7, ProductoId = 5 },
+                new TablaBodega { Id = 6, TipoBodega = 1, Stock = 9, ProductoId = 6 },
+                new TablaBodega { Id = 7, TipoBodega = 1, Stock = 5, ProductoId = 7 },
+                new TablaBodega { Id = 8, TipoBodega = 2, Stock = 7, ProductoId = 8 },
+                new TablaBodega { Id = 9, TipoBodega = 1, Stock = 9, ProductoId = 9 }
+                );
+            context.SaveChanges();
 
             //proveedor
             context.Proveedores.AddOrUpdate(
@@ -100,10 +113,32 @@ namespace Delphos.Migrations
             //Traspasos
             context.Traspasos.AddOrUpdate(
                 t => t.Id,
-                new Traspaso { Id = 1, FechaTraspaso = DateTime.Today, BodegaOrigen = "Central", BodegaDestino = "Sala de Ventas" },
-                new Traspaso { Id = 2, FechaTraspaso = DateTime.Today, BodegaOrigen = "Sala de Ventas", BodegaDestino = "Central" },
-                new Traspaso { Id = 3, FechaTraspaso = DateTime.Today, BodegaOrigen = "Central", BodegaDestino = "Sala de Ventas" },
-                new Traspaso { Id = 4, FechaTraspaso = DateTime.Today, BodegaOrigen = "Sala de Ventas", BodegaDestino = "Central" }
+                new Traspaso { Id = 1, FechaTraspaso = DateTime.Today, BodegaOrigen = 1, BodegaDestino = 2 },
+                new Traspaso { Id = 2, FechaTraspaso = DateTime.Today, BodegaOrigen = 2, BodegaDestino = 1 },
+                new Traspaso { Id = 3, FechaTraspaso = DateTime.Today, BodegaOrigen = 1, BodegaDestino = 2 },
+                new Traspaso { Id = 4, FechaTraspaso = DateTime.Today, BodegaOrigen = 2, BodegaDestino = 1 }
+                );
+            context.SaveChanges();
+
+            //Traspasos detalles
+            context.TraspasoDetalles.AddOrUpdate(
+                t => t.Id,
+                new TraspasoDetalle { Id = 1, IdTraspaso = 1, IdProducto = 1, Cantidad = 2 },
+                new TraspasoDetalle { Id = 2, IdTraspaso = 1, IdProducto = 3, Cantidad = 3 },
+                new TraspasoDetalle { Id = 3, IdTraspaso = 1, IdProducto = 5, Cantidad = 2 },
+                new TraspasoDetalle { Id = 4, IdTraspaso = 1, IdProducto = 7, Cantidad = 4 },
+                new TraspasoDetalle { Id = 5, IdTraspaso = 2, IdProducto = 1, Cantidad = 2 },
+                new TraspasoDetalle { Id = 6, IdTraspaso = 2, IdProducto = 3, Cantidad = 3 },
+                new TraspasoDetalle { Id = 7, IdTraspaso = 2, IdProducto = 5, Cantidad = 2 },
+                new TraspasoDetalle { Id = 8, IdTraspaso = 2, IdProducto = 7, Cantidad = 4 },
+                new TraspasoDetalle { Id = 9, IdTraspaso = 3, IdProducto = 1, Cantidad = 2 },
+                new TraspasoDetalle { Id = 10, IdTraspaso = 3, IdProducto = 3, Cantidad = 3 },
+                new TraspasoDetalle { Id = 11, IdTraspaso = 3, IdProducto = 5, Cantidad = 2 },
+                new TraspasoDetalle { Id = 12, IdTraspaso = 3, IdProducto = 7, Cantidad = 4 },
+                new TraspasoDetalle { Id = 13, IdTraspaso = 4, IdProducto = 1, Cantidad = 2 },
+                new TraspasoDetalle { Id = 14, IdTraspaso = 4, IdProducto = 3, Cantidad = 3 },
+                new TraspasoDetalle { Id = 15, IdTraspaso = 4, IdProducto = 5, Cantidad = 2 },
+                new TraspasoDetalle { Id = 16, IdTraspaso = 4, IdProducto = 7, Cantidad = 4 }
                 );
             context.SaveChanges();
 

@@ -11,12 +11,38 @@ namespace Delphos.Areas.Bodega.Controllers
     {
         // GET: Bodega/TipoBodega
         private bdSupermercado _db;
-        public ActionResult Index()
+        public ActionResult Origen()
         {
             IEnumerable<TablaBodega> bodegas = null;
             _db = new bdSupermercado();
             bodegas = _db.Bodegas.ToList();
-            return View(bodegas);
+
+            List<BodegaTipo> b = _db.BodegaTipos.ToList();
+            ViewBag.b = b;
+
+
+                var Lista = from u in _db.Bodegas
+                            where u.TipoBodega == 1
+                            select u;
+                return View(Lista);
+
+        }
+
+        public ActionResult Destino()
+        {
+            IEnumerable<TablaBodega> bodegas = null;
+            _db = new bdSupermercado();
+            bodegas = _db.Bodegas.ToList();
+
+            List<BodegaTipo> b = _db.BodegaTipos.ToList();
+            ViewBag.b = b;
+
+
+            var Lista = from u in _db.Bodegas
+                        where u.TipoBodega == 2
+                        select u;
+            return View(Lista);
+
         }
     }
 }

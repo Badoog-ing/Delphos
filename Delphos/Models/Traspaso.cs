@@ -9,8 +9,9 @@ namespace Delphos.Models
     {
         public int Id { get; set; }
         public DateTime FechaTraspaso { get; set; }
-        public string BodegaOrigen { get; set; }
-        public string BodegaDestino { get; set; }
-
+        public int BodegaOrigen { get; set; }
+        public int BodegaDestino { get; set; }
+        public virtual BodegaTipo BodegaTipo { get; set; }
+        public virtual TraspasoDetalle TraspasoDetalle { get; set; }
     }
 }
