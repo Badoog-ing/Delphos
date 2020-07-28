@@ -35,7 +35,21 @@
                     <th scope="row">@u.Id</th>
                     <td>@u.NumeroBoleta</td>
                     <td>@u.FechaVenta</td>
-                    <td>@u.IdVendedor</td>
+                    <td>
+                        @foreach (Delphos.Models.Usuario user in ViewBag.usuarios)
+                        {
+                            if (user.Id == u.IdVendedor)
+                            {
+
+                            <p>@user.Nombre  @user.ApellidoP @user.ApellidoM </p> 
+                                                           
+                            }
+                        }
+
+
+
+
+                    </td>
                     <td align="center"><a class="fa fa-eye" href="@Url.Action("DetalleBoleta","Venta", new { id = u.Id })"></a></td>
                 </tr>
                  }
