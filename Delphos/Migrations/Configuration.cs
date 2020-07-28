@@ -84,9 +84,9 @@ namespace Delphos.Migrations
             //OrdenCompra
             context.OrdenCompras.AddOrUpdate(
                 p => p.Id,
-                new OrdenCompra { Id = 1, NOrdenDeCompra = 1, FechaEmision = "2020-07-21", Usuario = "Comercial", Proveedor = "Comercial Ruver" },
-                new OrdenCompra { Id = 2, NOrdenDeCompra = 2, FechaEmision = "2020-07-22", Usuario = "Comercial", Proveedor = "Comercial Yolanda" },
-                new OrdenCompra { Id = 3, NOrdenDeCompra = 5, FechaEmision = "2020-07-25", Usuario = "Comercial", Proveedor = "Comercial CCU" }
+                new OrdenCompra { Id = 1, NOrdenDeCompra = 1, FechaEmision = "2020-07-21", Usuario = "Fernando" , Proveedor = "Comercial Ruver" },
+                new OrdenCompra { Id = 2, NOrdenDeCompra = 2, FechaEmision = "2020-07-22", Usuario = "Felipe", Proveedor = "Comercial Yolanda" },
+                new OrdenCompra { Id = 3, NOrdenDeCompra = 5, FechaEmision = "2020-07-25", Usuario = "Jesus", Proveedor = "Comercial Yolanda" }
                 );
             context.SaveChanges();
 
@@ -105,8 +105,12 @@ namespace Delphos.Migrations
                 p => p.Id,
                 new DetalleBoleta { Id = 1, IdNumeroBoleta = 123, IdProducto = 101, Cantidad = 1, Total = 100 },
                 new DetalleBoleta { Id = 2, IdNumeroBoleta = 123, IdProducto = 104, Cantidad = 2, Total = 3000 },
-                new DetalleBoleta { Id = 3, IdNumeroBoleta = 123, IdProducto = 103, Cantidad = 3, Total = 4000 },
-                new DetalleBoleta { Id = 4, IdNumeroBoleta = 123, IdProducto = 107, Cantidad = 2, Total = 5000 }
+                new DetalleBoleta { Id = 3, IdNumeroBoleta = 124, IdProducto = 103, Cantidad = 3, Total = 4000 },
+                new DetalleBoleta { Id = 4, IdNumeroBoleta = 124, IdProducto = 107, Cantidad = 5, Total = 5000 },
+                 new DetalleBoleta { Id = 5, IdNumeroBoleta = 125, IdProducto = 101, Cantidad = 7, Total = 4000 },
+                  new DetalleBoleta { Id = 6, IdNumeroBoleta = 125, IdProducto = 107, Cantidad = 6, Total = 4000 },
+                   new DetalleBoleta { Id = 7, IdNumeroBoleta = 126, IdProducto = 103, Cantidad = 5, Total = 4000 },
+                    new DetalleBoleta { Id = 8, IdNumeroBoleta = 126, IdProducto = 101, Cantidad = 2, Total = 4000 }
                 );
             context.SaveChanges();
 

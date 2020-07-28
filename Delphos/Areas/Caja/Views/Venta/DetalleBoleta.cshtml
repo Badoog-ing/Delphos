@@ -49,20 +49,26 @@
         <tbody>
             @foreach (var u in ViewBag.detalles)
             {
-                <tr class="Search">
-                    <th>@u.Id</th>
-                    <th>@u.IdProducto</th>
+                if (Model.NumeroBoleta == u.IdNumeroBoleta)
+                {
 
-                    @foreach (var p in ViewBag.productos)
-                    {
-                        if (u.IdProducto == p.Sku)
+                    <tr class="Search">
+                        <th>@u.Id</th>
+                        <th>@u.IdProducto</th>
+
+                        @foreach (var p in ViewBag.productos)
                         {
-                            <th>@p.Nombre</th>
-                            <th>@p.Precio</th>
-                        }
+                            if (u.IdProducto == p.Sku)
+                            {
+                                <th>@p.Nombre</th>
+                                <th>@p.Precio</th>
+                            }
 
-                    }
-                </tr>
+                        }
+                    </tr>
+
+                }
+
             }
 
 

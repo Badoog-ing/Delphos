@@ -15,7 +15,7 @@ namespace Delphos.Models
         //public DateTime FechaCreacion { get; set; }
         public string FechaEmision { get; set; }
         //fk usuario
-        public String Usuario { get; set; }
+        public string Usuario { get; set; }
         //FK de proveedor
         public String Proveedor { get; set; }
 

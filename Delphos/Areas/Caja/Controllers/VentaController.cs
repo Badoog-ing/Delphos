@@ -21,6 +21,8 @@ namespace Delphos.Areas.Caja.Controllers
         public ActionResult VentaDelDia()
         {
             bdSupermercado _db = new bdSupermercado();
+            List<Usuario> usuarios = _db.Usuarios.ToList();
+            ViewBag.usuarios = usuarios;
             return View(_db.Ventas.ToList());
         }
 
