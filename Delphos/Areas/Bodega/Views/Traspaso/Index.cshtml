@@ -43,7 +43,7 @@
                     <td>@t.FechaTraspaso.ToString("dd-MM-yy")</td>
                     <td style="text-align:center; color:coral">|</td>
                     <td style="text-align:center">
-                        <a class="fas fa-list-ul" href="@Url.Action("TraspasoDetalle", "Traspaso", new { id = 1 })"></a>
+                        <a class="fas fa-list-ul" href="@Url.Action("TraspasoDetalle", "Traspaso", new { id = t.Id })"></a>
                     </td>
                 </tr>
             }

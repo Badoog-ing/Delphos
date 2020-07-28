@@ -10,7 +10,7 @@ namespace Delphos.Areas.Bodega.Controllers
 {
     public class TraspasoController : Controller
     {
-        private bdSupermercado _db;
+        bdSupermercado _db = new bdSupermercado();
 
         // GET: Traspaso
         public ActionResult Index()
@@ -25,8 +25,17 @@ namespace Delphos.Areas.Bodega.Controllers
 
         public ActionResult TraspasoDetalle(int id)
         {
+            Traspaso t = _db.Traspasos.Find(id);
+            if (t == null)
+            {
+                return new HttpNotFoundResult();
+            }
+            List<TraspasoDetalle> detalles = _db.TraspasoDetalles.ToList();
+            ViewBag.detalles = detalles;
 
-            return View();
+            List<Producto> productos = _db.Productos.ToList();
+            ViewBag.productos = productos;
+            return View(t);
         }
 
         public ActionResult Crear(string searchString)

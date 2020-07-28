@@ -13,5 +13,6 @@ namespace Delphos.Models
         public int BodegaDestino { get; set; }
         public virtual BodegaTipo BodegaTipo { get; set; }
         public virtual TraspasoDetalle TraspasoDetalle { get; set; }
+        public virtual Producto Producto { get; set; }
     }
 }

@@ -127,22 +127,22 @@ namespace Delphos.Migrations
             //Traspasos detalles
             context.TraspasoDetalles.AddOrUpdate(
                 t => t.Id,
-                new TraspasoDetalle { Id = 1, IdTraspaso = 1, IdProducto = 1, Cantidad = 2 },
-                new TraspasoDetalle { Id = 2, IdTraspaso = 1, IdProducto = 3, Cantidad = 3 },
-                new TraspasoDetalle { Id = 3, IdTraspaso = 1, IdProducto = 5, Cantidad = 2 },
-                new TraspasoDetalle { Id = 4, IdTraspaso = 1, IdProducto = 7, Cantidad = 4 },
-                new TraspasoDetalle { Id = 5, IdTraspaso = 2, IdProducto = 1, Cantidad = 2 },
-                new TraspasoDetalle { Id = 6, IdTraspaso = 2, IdProducto = 3, Cantidad = 3 },
-                new TraspasoDetalle { Id = 7, IdTraspaso = 2, IdProducto = 5, Cantidad = 2 },
-                new TraspasoDetalle { Id = 8, IdTraspaso = 2, IdProducto = 7, Cantidad = 4 },
-                new TraspasoDetalle { Id = 9, IdTraspaso = 3, IdProducto = 1, Cantidad = 2 },
-                new TraspasoDetalle { Id = 10, IdTraspaso = 3, IdProducto = 3, Cantidad = 3 },
-                new TraspasoDetalle { Id = 11, IdTraspaso = 3, IdProducto = 5, Cantidad = 2 },
-                new TraspasoDetalle { Id = 12, IdTraspaso = 3, IdProducto = 7, Cantidad = 4 },
-                new TraspasoDetalle { Id = 13, IdTraspaso = 4, IdProducto = 1, Cantidad = 2 },
-                new TraspasoDetalle { Id = 14, IdTraspaso = 4, IdProducto = 3, Cantidad = 3 },
-                new TraspasoDetalle { Id = 15, IdTraspaso = 4, IdProducto = 5, Cantidad = 2 },
-                new TraspasoDetalle { Id = 16, IdTraspaso = 4, IdProducto = 7, Cantidad = 4 }
+                new TraspasoDetalle { Id = 1, IdTraspaso = 1, IdProducto = 101, Cantidad = 2 },
+                new TraspasoDetalle { Id = 2, IdTraspaso = 1, IdProducto = 104, Cantidad = 3 },
+                new TraspasoDetalle { Id = 3, IdTraspaso = 1, IdProducto = 102, Cantidad = 2 },
+                new TraspasoDetalle { Id = 4, IdTraspaso = 1, IdProducto = 103, Cantidad = 4 },
+                new TraspasoDetalle { Id = 5, IdTraspaso = 2, IdProducto = 108, Cantidad = 2 },
+                new TraspasoDetalle { Id = 6, IdTraspaso = 2, IdProducto = 107, Cantidad = 3 },
+                new TraspasoDetalle { Id = 7, IdTraspaso = 2, IdProducto = 106, Cantidad = 2 },
+                new TraspasoDetalle { Id = 8, IdTraspaso = 2, IdProducto = 105, Cantidad = 4 },
+                new TraspasoDetalle { Id = 9, IdTraspaso = 3, IdProducto = 101, Cantidad = 2 },
+                new TraspasoDetalle { Id = 10, IdTraspaso = 3, IdProducto = 109, Cantidad = 3 },
+                new TraspasoDetalle { Id = 11, IdTraspaso = 3, IdProducto = 108, Cantidad = 2 },
+                new TraspasoDetalle { Id = 12, IdTraspaso = 3, IdProducto = 102, Cantidad = 4 },
+                new TraspasoDetalle { Id = 13, IdTraspaso = 4, IdProducto = 101, Cantidad = 2 },
+                new TraspasoDetalle { Id = 14, IdTraspaso = 4, IdProducto = 109, Cantidad = 3 },
+                new TraspasoDetalle { Id = 15, IdTraspaso = 4, IdProducto = 104, Cantidad = 2 },
+                new TraspasoDetalle { Id = 16, IdTraspaso = 4, IdProducto = 107, Cantidad = 4 }
                 );
             context.SaveChanges();
 

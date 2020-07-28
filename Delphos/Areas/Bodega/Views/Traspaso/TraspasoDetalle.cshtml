@@ -18,11 +18,26 @@
         <tbody>
             @foreach (var u in ViewBag.detalles)
             {
-                <tr >
-                    <th>@u.Id</th>
+                if (Model.Id == u.IdTraspaso)
+                {
 
-                 
-                </tr>
+                    <tr>
+                        <td>@u.Id</td>
+                        <td>@u.IdProducto</td>
+
+                        @foreach (var p in ViewBag.productos)
+                        {
+                            if (u.IdProducto == p.Sku)
+                            {
+                                <td>@p.Nombre</td>
+                                <td>@p.Precio</td>
+                            }
+
+                        }
+                    </tr>
+
+                }
+
             }
 
         </tbody>
