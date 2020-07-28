@@ -20,9 +20,29 @@
                 <tr>
                     <th scope="row">@ordenCompra.Id</th>
                     <td>@ordenCompra.NOrdenDeCompra</td>
-                    <td>@ordenCompra.Proveedor</td>
+                    <td>
+                        @foreach (Delphos.Models.Proveedor prov in ViewBag.proveedores)
+                        {
+                            if (prov.Nombre == ordenCompra.Proveedor)
+                            {
+
+                                <p>@prov.Nombre </p>
+
+                            }
+                        }
+                    </td>
                     <td>@ordenCompra.FechaEmision</td>
-                    <td>@ordenCompra.Usuario</td>
+                    <td>
+                        @foreach (Delphos.Models.Usuario user in ViewBag.usuarios)
+                        {
+                            if (user.Nombre == ordenCompra.Usuario)
+                            {
+
+                                <p>@user.Nombre  @user.ApellidoP @user.ApellidoM </p>
+
+                            }
+                        }
+                    </td>
                     <td>#</td>
                     <td>
                         <a href="#">Anular</a>|

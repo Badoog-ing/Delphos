@@ -71,9 +71,9 @@ namespace Delphos.Migrations
             //OrdenCompra
             context.OrdenCompras.AddOrUpdate(
                 p => p.Id,
-                new OrdenCompra { Id = 1, NOrdenDeCompra = 1, FechaEmision = "2020-07-21", Usuario = "Comercial", Proveedor = "Comercial Ruver" },
-                new OrdenCompra { Id = 2, NOrdenDeCompra = 2, FechaEmision = "2020-07-22", Usuario = "Comercial", Proveedor = "Comercial Yolanda" },
-                new OrdenCompra { Id = 3, NOrdenDeCompra = 5, FechaEmision = "2020-07-25", Usuario = "Comercial", Proveedor = "Comercial CCU" }
+                new OrdenCompra { Id = 1, NOrdenDeCompra = 1, FechaEmision = "2020-07-21", Usuario = "Fernando" , Proveedor = "Comercial Ruver" },
+                new OrdenCompra { Id = 2, NOrdenDeCompra = 2, FechaEmision = "2020-07-22", Usuario = "Felipe", Proveedor = "Comercial Yolanda" },
+                new OrdenCompra { Id = 3, NOrdenDeCompra = 5, FechaEmision = "2020-07-25", Usuario = "Jesus", Proveedor = "Comercial Yolanda" }
                 );
             context.SaveChanges();
 

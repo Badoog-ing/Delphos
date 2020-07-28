@@ -16,6 +16,10 @@ namespace Delphos.Areas.Comercial.Controllers
         public ActionResult Index()
         {
             List<OrdenCompra> ordenCompras = _db.OrdenCompras.ToList();
+            List<Proveedor> proveedores = _db.Proveedores.ToList();
+            ViewBag.proveedores = proveedores;
+            List<Usuario> usuarios = _db.Usuarios.ToList();
+            ViewBag.usuarios = usuarios;
             return View(ordenCompras);
         }
         [HttpGet]
