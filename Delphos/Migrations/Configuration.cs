@@ -92,8 +92,12 @@ namespace Delphos.Migrations
                 p => p.Id,
                 new DetalleBoleta { Id = 1, IdNumeroBoleta = 123, IdProducto = 101, Cantidad = 1, Total = 100 },
                 new DetalleBoleta { Id = 2, IdNumeroBoleta = 123, IdProducto = 104, Cantidad = 2, Total = 3000 },
-                new DetalleBoleta { Id = 3, IdNumeroBoleta = 123, IdProducto = 103, Cantidad = 3, Total = 4000 },
-                new DetalleBoleta { Id = 4, IdNumeroBoleta = 123, IdProducto = 107, Cantidad = 2, Total = 5000 }
+                new DetalleBoleta { Id = 3, IdNumeroBoleta = 124, IdProducto = 103, Cantidad = 3, Total = 4000 },
+                new DetalleBoleta { Id = 4, IdNumeroBoleta = 124, IdProducto = 107, Cantidad = 5, Total = 5000 },
+                 new DetalleBoleta { Id = 3, IdNumeroBoleta = 125, IdProducto = 101, Cantidad = 7, Total = 4000 },
+                  new DetalleBoleta { Id = 3, IdNumeroBoleta = 125, IdProducto = 107, Cantidad = 6, Total = 4000 },
+                   new DetalleBoleta { Id = 3, IdNumeroBoleta = 126, IdProducto = 103, Cantidad = 5, Total = 4000 },
+                    new DetalleBoleta { Id = 3, IdNumeroBoleta = 126, IdProducto = 101, Cantidad = 2, Total = 4000 }
                 );
             context.SaveChanges();
 
