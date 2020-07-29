@@ -157,7 +157,7 @@ namespace Delphos.Migrations
             context.Metodosdepago.AddOrUpdate(
           r => r.Id,
           new MetodoPago { Id = 1, MetododePago=" Efectivo" },
-          new MetodoPago { Id = 2, MetododePago = " Debito" },
+          new MetodoPago { Id = 2, MetododePago = " Debito" }
           
           );
             context.SaveChanges();
