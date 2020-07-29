@@ -15,6 +15,8 @@ namespace Delphos.Areas.Caja.Controllers
 
         public ActionResult Index()
         {
+            List<MetodoPago> MetPago = _db.Metodosdepago.ToList();
+            ViewBag.MetoPago = MetPago;
             return View();
         }
 

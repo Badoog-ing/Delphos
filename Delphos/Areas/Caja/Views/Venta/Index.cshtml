@@ -94,10 +94,11 @@
     <div class="col">
         <label for="pago">Forma de pago</label>
         <div>
-            <select class="form-control" id="pago" name="">
-                <option>Debito</option>
-                <option>Efectivo</option>
-
+            <select class="form-control" name="Metodopago">
+                @foreach (Delphos.Models.MetodoPago m in ViewBag.MetoPago)
+                {
+                    <option value="@m.Id">@m.MetododePago</option>
+                }
             </select>
         </div>
     </div>
