@@ -9,20 +9,22 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">1</th>
-                <th scope="col">2</th>
-                <th scope="col">3</th>
+                <th></th>
+                <th scope="col">Sku</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
             </tr>
         </thead>
         <tbody>
+
             @foreach (var u in ViewBag.detalles)
             {
                 if (Model.Id == u.IdTraspaso)
                 {
 
                     <tr>
-                        <td>@u.Id</td>
+                        <td></td>
                         <td>@u.IdProducto</td>
 
                         @foreach (var p in ViewBag.productos)
@@ -31,9 +33,10 @@
                             {
                                 <td>@p.Nombre</td>
                                 <td>@p.Precio</td>
-                            }
 
+                            }
                         }
+                        <td>@u.Cantidad</td>
                     </tr>
 
                 }
