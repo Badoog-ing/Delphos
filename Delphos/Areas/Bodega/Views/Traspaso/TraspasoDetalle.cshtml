@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Delphos.Models.ViewModels.ViewTraspDetalles>
+﻿@model Delphos.Models.TraspasoDetalle
 
 
 <h1>Productos que contiene el traspaso</h1>
@@ -16,18 +16,18 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (Delphos.Models.ViewModels.ViewTraspDetalles u in Model)
+            @foreach (var d in ViewBag.detalles)
             {
                 <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <th scope="row">@d.Id</th>
+                    <td>@d.IdProducto</td>
+                    <td>@d.IdTraspaso</td>
+                    <td>@d.Cantidad</td>
                     <td></td>
 
                 </tr>
             }
-            </tbody>
+        </tbody>
     </table>
 
 </div>
