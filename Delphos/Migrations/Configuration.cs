@@ -38,16 +38,16 @@ namespace Delphos.Migrations
             // Productos
             context.Productos.AddOrUpdate(
                 P => P.Sku,
-                new Producto { Id = 1, Sku = 100, Nombre = "Leche", Descripcion = "Caja 1 litro", CategoriaId = 1, Precio = 800, FechaCreacion = DateTime.Today },
-                new Producto { Id = 2, Sku = 101, Nombre = "Yogurt", Descripcion = "Soprole", CategoriaId = 1, Precio = 200, FechaCreacion = DateTime.Today },
-                new Producto { Id = 3, Sku = 102, Nombre = "Gaseosa", Descripcion = "3 litros ddesechable", CategoriaId = 2, Precio = 1700, FechaCreacion = DateTime.Today },
-                new Producto { Id = 4, Sku = 103, Nombre = "Agua Mineral", Descripcion = "1.6 litros mineral", CategoriaId = 2, Precio = 600, FechaCreacion = DateTime.Today },
-                new Producto { Id = 5, Sku = 104, Nombre = "Chocolate", Descripcion = "Trencito", CategoriaId = 3, Precio = 1200, FechaCreacion = DateTime.Today },
-                new Producto { Id = 6, Sku = 105, Nombre = "Alfajor", Descripcion = "Calaf", CategoriaId = 3, Precio = 300, FechaCreacion = DateTime.Today },
-                new Producto { Id = 7, Sku = 106, Nombre = "Carne", Descripcion = "Posta paleta 1 kilo", CategoriaId = 4, Precio = 8000, FechaCreacion = DateTime.Today },
-                new Producto { Id = 8, Sku = 107, Nombre = "Pollo", Descripcion = "Entero superpollo", CategoriaId = 4, Precio = 7000, FechaCreacion = DateTime.Today },
-                new Producto { Id = 9, Sku = 108, Nombre = "Tallarines", Descripcion = "Espirales Carozzi 1 kilo", CategoriaId = 5, Precio = 700, FechaCreacion = DateTime.Today },
-                new Producto { Id = 10, Sku = 109, Nombre = "Arroz", Descripcion = "1 kilo Miraflores", CategoriaId = 5, Precio = 1000, FechaCreacion = DateTime.Today }
+                new Producto { Id = 1, Sku = 100, Nombre = "Leche", Descripcion = "Caja 1 litro", Precio = 800, FechaCreacion = DateTime.Today },
+                new Producto { Id = 2, Sku = 101, Nombre = "Yogurt", Descripcion = "Soprole", Precio = 200, FechaCreacion = DateTime.Today },
+                new Producto { Id = 3, Sku = 102, Nombre = "Gaseosa", Descripcion = "3 litros ddesechable", Precio = 1700, FechaCreacion = DateTime.Today },
+                new Producto { Id = 4, Sku = 103, Nombre = "Agua Mineral", Descripcion = "1.6 litros mineral", Precio = 600, FechaCreacion = DateTime.Today },
+                new Producto { Id = 5, Sku = 104, Nombre = "Chocolate", Descripcion = "Trencito", Precio = 1200, FechaCreacion = DateTime.Today },
+                new Producto { Id = 6, Sku = 105, Nombre = "Alfajor", Descripcion = "Calaf", Precio = 300, FechaCreacion = DateTime.Today },
+                new Producto { Id = 7, Sku = 106, Nombre = "Carne", Descripcion = "Posta paleta 1 kilo", Precio = 8000, FechaCreacion = DateTime.Today },
+                new Producto { Id = 8, Sku = 107, Nombre = "Pollo", Descripcion = "Entero superpollo", Precio = 7000, FechaCreacion = DateTime.Today },
+                new Producto { Id = 9, Sku = 108, Nombre = "Tallarines", Descripcion = "Espirales Carozzi 1 kilo", Precio = 700, FechaCreacion = DateTime.Today },
+                new Producto { Id = 10, Sku = 109, Nombre = "Arroz", Descripcion = "1 kilo Miraflores", Precio = 1000, FechaCreacion = DateTime.Today }
                 );
             context.SaveChanges();
 
