@@ -93,10 +93,9 @@ namespace Delphos.Migrations
             //VentadelDia
             context.Ventas.AddOrUpdate(
                 p => p.Id,
-                new Venta { Id = 1, NumeroBoleta = 123, FechaVenta = "2020-07-11", IdVendedor = 1, IdProducto = 2 },
-                new Venta { Id = 2, NumeroBoleta = 124, FechaVenta = "2020-07-11", IdVendedor = 2, IdProducto = 3 },
-                new Venta { Id = 3, NumeroBoleta = 125, FechaVenta = "2020-07-12", IdVendedor = 1, IdProducto = 4 },
-                new Venta { Id = 4, NumeroBoleta = 126, FechaVenta = "2020-07-13", IdVendedor = 2, IdProducto = 5 }
+                new Venta { Id = 1, NumeroBoleta = 123, FechaVenta = new DateTime(2020, 7, 11, 09, 30, 00), IdVendedor = 2, IdProducto = 3 },
+                new Venta { Id = 3, NumeroBoleta = 125, FechaVenta = new DateTime(2020, 7, 10, 13, 30, 00), IdVendedor = 1, IdProducto = 4 },
+                new Venta { Id = 4, NumeroBoleta = 126, FechaVenta = new DateTime(2020, 7, 12, 17, 45, 00), IdVendedor = 2, IdProducto = 5 }
                 );
             context.SaveChanges();
 
