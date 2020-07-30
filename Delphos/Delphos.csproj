@@ -170,6 +170,8 @@
     <Compile Include="Models\TraspasoDetalle.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\Venta.cs" />
+    <Compile Include="Models\ViewModels\ViewResumenBoleta.cs" />
+    <Compile Include="Models\ViewModels\ViewTraspDetalles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -265,7 +267,6 @@
     <Folder Include="Areas\Comercial\Data\" />
     <Folder Include="Areas\Inicio\Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Models\ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

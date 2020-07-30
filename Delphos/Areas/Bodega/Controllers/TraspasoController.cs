@@ -1,4 +1,5 @@
 ﻿using Delphos.Models;
+using Delphos.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,8 @@ namespace Delphos.Areas.Bodega.Controllers
             {
                 return new HttpNotFoundResult();
             }
-            List<TraspasoDetalle> detalles = _db.TraspasoDetalles
+            List<ViewTraspDetalles> detalles = _db.TraspasoDetalles
+                .
                                                 .Where(tras => tras.IdTraspaso == id)
                                                 .ToList();
             ViewBag.detalles = detalles;

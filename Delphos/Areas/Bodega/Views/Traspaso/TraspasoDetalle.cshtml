@@ -1,5 +1,4 @@
-﻿@model Delphos.Models.Traspaso
-
+﻿@model Delphos.Models.ViewModels.ViewTraspDetalles
 
 
 <h1>Productos que contiene el traspaso</h1>
@@ -18,38 +17,13 @@
         </thead>
         <tbody>
 
-            @foreach (var u in ViewBag.detalles)
-            {
-                if (Model.Id == u.IdTraspaso)
-                {
 
-            <tr>
-                <td></td>
-                <td>@u.IdProducto</td>
+        </table>
 
-                @foreach (var p in ViewBag.productos)
-                {
-                    if (u.IdProducto == p.Sku)
-                    {
-                        <td>@p.Nombre</td>
-                        <td>@p.Precio</td>
-                    }
-
-                }
-                <td>@u.Cantidad</td>
-            </tr>
-
-                }
-
-            }
-
-        </tbody>
-    </table>
-
-</div>
-
-<div class="row">
-    <div class="col" style="text-align:right">
-        <a class="btn btn-sm colorBoton col-sm-2" href="@Url.Action("Index", "Traspaso")"><i class="fas fa-arrow-left" style="padding-right:10px"></i>Volver</a>
     </div>
-</div>
+
+    <div class="row">
+        <div class="col" style="text-align:right">
+            <a class="btn btn-sm colorBoton col-sm-2" href="@Url.Action("Index", "Traspaso")"><i class="fas fa-arrow-left" style="padding-right:10px"></i>Volver</a>
+        </div>
+    </div>
