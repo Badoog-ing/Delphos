@@ -265,6 +265,7 @@
     <Folder Include="Areas\Comercial\Data\" />
     <Folder Include="Areas\Inicio\Data\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Models\ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
