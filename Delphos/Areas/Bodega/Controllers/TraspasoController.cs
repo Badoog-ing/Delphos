@@ -32,6 +32,10 @@ namespace Delphos.Areas.Bodega.Controllers
                 return new HttpNotFoundResult();
             }
 
+            List<TraspasoDetalle> detalles = _db.TraspasoDetalles
+                                                .Where(d => d.IdTraspaso == id)
+                                                .ToList();
+
             return View(t);
         }
 
