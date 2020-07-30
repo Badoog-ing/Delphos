@@ -1,4 +1,4 @@
-﻿@model Delphos.Models.ViewModels.ViewTraspDetalles
+﻿@model IEnumerable<Delphos.Models.ViewModels.ViewTraspDetalles>
 
 
 <h1>Productos que contiene el traspaso</h1>
@@ -16,14 +16,24 @@
             </tr>
         </thead>
         <tbody>
+            @foreach (Delphos.Models.ViewModels.ViewTraspDetalles u in Model)
+            {
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
 
+                </tr>
+            }
+            </tbody>
+    </table>
 
-        </table>
+</div>
 
+<div class="row">
+    <div class="col" style="text-align:right">
+        <a class="btn btn-sm colorBoton col-sm-2" href="@Url.Action("Index", "Traspaso")"><i class="fas fa-arrow-left" style="padding-right:10px"></i>Volver</a>
     </div>
-
-    <div class="row">
-        <div class="col" style="text-align:right">
-            <a class="btn btn-sm colorBoton col-sm-2" href="@Url.Action("Index", "Traspaso")"><i class="fas fa-arrow-left" style="padding-right:10px"></i>Volver</a>
-        </div>
-    </div>
+</div>

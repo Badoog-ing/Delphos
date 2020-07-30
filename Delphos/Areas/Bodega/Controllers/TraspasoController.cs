@@ -31,15 +31,7 @@ namespace Delphos.Areas.Bodega.Controllers
             {
                 return new HttpNotFoundResult();
             }
-            List<ViewTraspDetalles> detalles = _db.TraspasoDetalles
-                .
-                                                .Where(tras => tras.IdTraspaso == id)
-                                                .ToList();
-            ViewBag.detalles = detalles;
 
-            List<Producto> productos = _db.Productos.ToList();
-
-            ViewBag.productos = productos;
             return View(t);
         }
 
