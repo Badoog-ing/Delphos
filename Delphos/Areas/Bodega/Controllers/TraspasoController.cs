@@ -34,7 +34,12 @@ namespace Delphos.Areas.Bodega.Controllers
 
             List<TraspasoDetalle> detalles = _db.TraspasoDetalles
                                                 .Where(d => d.IdTraspaso == id)
-                                                .ToList();
+                                                .ToList();                                                                                              
+            ViewBag.detalles = detalles;
+
+            List<Producto> productos = _db.Productos.ToList();
+
+            ViewBag.productos = productos;
 
             return View(t);
         }

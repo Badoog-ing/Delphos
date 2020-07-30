@@ -1,4 +1,4 @@
-﻿@model Delphos.Models.TraspasoDetalle
+﻿@model Delphos.Models.Traspaso
 
 
 <h1>Productos que contiene el traspaso</h1>
@@ -18,14 +18,22 @@
         <tbody>
             @foreach (var d in ViewBag.detalles)
             {
-                <tr>
-                    <th scope="row">@d.Id</th>
-                    <td>@d.IdProducto</td>
-                    <td>@d.IdTraspaso</td>
-                    <td>@d.Cantidad</td>
-                    <td></td>
+            <tr>
+                <th scope="row"></th>
 
-                </tr>
+                @foreach (var p in ViewBag.productos)
+                {
+                    if (d.IdProducto == p.Sku)
+                    {
+                        <td>@p.Sku</td> 
+                        <td>@p.Nombre</td>
+                        <td>@p.Precio</td>
+                    }
+
+                }
+
+                <td>@d.Cantidad</td>
+            </tr>
             }
         </tbody>
     </table>
