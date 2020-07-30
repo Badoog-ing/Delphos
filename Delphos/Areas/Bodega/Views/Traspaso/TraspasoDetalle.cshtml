@@ -23,21 +23,21 @@
                 if (Model.Id == u.IdTraspaso)
                 {
 
-                    <tr>
-                        <td></td>
-                        <td>@u.IdProducto</td>
+            <tr>
+                <td></td>
+                <td>@u.IdProducto</td>
 
-                        @foreach (var p in ViewBag.productos)
-                        {
-                            if (u.IdProducto == p.Sku)
-                            {
-                                <td>@p.Nombre</td>
-                                <td>@p.Precio</td>
+                @foreach (var p in ViewBag.productos)
+                {
+                    if (u.IdProducto == p.Sku)
+                    {
+                        <td>@p.Nombre</td>
+                        <td>@p.Precio</td>
+                    }
 
-                            }
-                        }
-                        <td>@u.Cantidad</td>
-                    </tr>
+                }
+                <td>@u.Cantidad</td>
+            </tr>
 
                 }
 
