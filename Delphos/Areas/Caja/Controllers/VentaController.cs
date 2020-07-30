@@ -60,7 +60,9 @@ namespace Delphos.Areas.Caja.Controllers
             {
                 return new HttpNotFoundResult();
             }
-            List<DetalleBoleta> detalles = _db.DetalleBoletas.ToList();
+            List<DetalleBoleta> detalles = _db.DetalleBoletas
+                                                .Where(b => b.IdNumeroBoleta == v.NumeroBoleta)
+                                                .ToList();
             ViewBag.detalles = detalles;
 
             List<Producto> productos = _db.Productos.ToList();

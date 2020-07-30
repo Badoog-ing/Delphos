@@ -107,10 +107,10 @@ namespace Delphos.Migrations
                 new DetalleBoleta { Id = 2, IdNumeroBoleta = 123, IdProducto = 104, Cantidad = 2, Total = 3000 },
                 new DetalleBoleta { Id = 3, IdNumeroBoleta = 124, IdProducto = 103, Cantidad = 3, Total = 4000 },
                 new DetalleBoleta { Id = 4, IdNumeroBoleta = 124, IdProducto = 107, Cantidad = 5, Total = 5000 },
-                 new DetalleBoleta { Id = 5, IdNumeroBoleta = 125, IdProducto = 101, Cantidad = 7, Total = 4000 },
-                  new DetalleBoleta { Id = 6, IdNumeroBoleta = 125, IdProducto = 107, Cantidad = 6, Total = 4000 },
-                   new DetalleBoleta { Id = 7, IdNumeroBoleta = 126, IdProducto = 103, Cantidad = 5, Total = 4000 },
-                    new DetalleBoleta { Id = 8, IdNumeroBoleta = 126, IdProducto = 101, Cantidad = 2, Total = 4000 }
+                new DetalleBoleta { Id = 5, IdNumeroBoleta = 125, IdProducto = 101, Cantidad = 7, Total = 4000 },
+                new DetalleBoleta { Id = 6, IdNumeroBoleta = 125, IdProducto = 107, Cantidad = 6, Total = 4000 },
+                new DetalleBoleta { Id = 7, IdNumeroBoleta = 126, IdProducto = 103, Cantidad = 5, Total = 4000 },
+                new DetalleBoleta { Id = 8, IdNumeroBoleta = 126, IdProducto = 101, Cantidad = 2, Total = 4000 }
                 );
             context.SaveChanges();
 
