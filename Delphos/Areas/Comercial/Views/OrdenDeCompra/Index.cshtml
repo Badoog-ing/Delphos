@@ -10,49 +10,50 @@
                 <th scope="col">Proveedor</th>
                 <th scope="col">Fecha de Emision</th>
                 <th scope="col">Realizado Por</th>
-                <th scope="col">Detalle</th>
-                <th scope="col">Opciones</th>
+                <th style="text-align:center">|</th>
+                <th scope="col" style="text-align:center">Opciones</th>
             </tr>
         </thead>
         <tbody>
             @foreach (Delphos.Models.OrdenCompra ordenCompra in Model)
             {
-                <tr>
-                    <th scope="row">@ordenCompra.Id</th>
-                    <td>@ordenCompra.NOrdenDeCompra</td>
-                    <td>
-                        @foreach (Delphos.Models.Proveedor prov in ViewBag.proveedores)
+            <tr>
+                <th scope="row">@ordenCompra.Id</th>
+                <td>@ordenCompra.NOrdenDeCompra</td>
+                <td>
+                    @foreach (Delphos.Models.Proveedor prov in ViewBag.proveedores)
+                    {
+                        if (prov.Nombre == ordenCompra.Proveedor)
                         {
-                            if (prov.Nombre == ordenCompra.Proveedor)
-                            {
 
-                                <p>@prov.Nombre </p>
+                            <p>@prov.Nombre </p>
 
-                            }
                         }
-                    </td>
-                    <td>@ordenCompra.FechaEmision</td>
-                    <td>
-                        @foreach (Delphos.Models.Usuario user in ViewBag.usuarios)
+                    }
+                </td>
+                <td>@ordenCompra.FechaEmision</td>
+                <td>
+                    @foreach (Delphos.Models.Usuario user in ViewBag.usuarios)
+                    {
+                        if (user.Nombre == ordenCompra.Usuario)
                         {
-                            if (user.Nombre == ordenCompra.Usuario)
-                            {
 
-                                <p>@user.Nombre  @user.ApellidoP @user.ApellidoM </p>
+                            <p>@user.Nombre  @user.ApellidoP @user.ApellidoM </p>
 
-                            }
                         }
-                    </td>
-                    <td>#</td>
-                    <td>
-                        <a href="#">Anular</a>|
-                        <a href="@Url.Action("Ver","OrdenDeCompra", new { id = ordenCompra.Id})">Ver</a>
-                    </td>
-                </tr>
+                    }
+                </td>
+                <td style="text-align:center; color:coral">|</td>
+                <td style="text-align:center">
+                    <a href="#"><i class="fas fa-trash"></i></a> |
+                    <a href="@Url.Action("Ver","OrdenDeCompra", new { id = ordenCompra.Id})"><i class="fas fa-eye"></i></a>
+                </td>
+
+            </tr>
             }
 
         </tbody>
     </table>
 </div>
 
-<a class="btn colorBoton col-sm-3" href="@Url.Action("Nuevo", "OrdenDeCompra")"><i class="fas fa-plus" style="margin-right:10px"></i>Agregar</a>
+<a class="btn colorBoton col-sm-3" href="@Url.Action("Nuevo", "OrdenDeCompra")"><i class="fas fa-plus" style="margin-right:10px"></i>Agregar O. de Compra</a>

@@ -15,29 +15,31 @@
                 <th scope="col">Razon Social</th>
                 <th scope="col">Email</th>
                 <th scope="col">Telefono</th>
-                <th scope="col">Opciones</th>
+                <th style="text-align:center">|</th>
+                <th scope="col" style="text-align:center">Opciones</th>
             </tr>
         </thead>
         <tbody>
             @foreach (Delphos.Models.Proveedor proveedor in Model)
             {
-                <tr>
-                    <th scope="row">@proveedor.Id</th>
-                    <td>@proveedor.Rut</td>
-                    <td>@proveedor.Nombre</td>
-                    <td>@proveedor.Giro</td>
-                    <td>@proveedor.RazonSocial</td>
-                    <td>@proveedor.Email</td>
-                    <td>@proveedor.Telefono</td>
-                    <td>
-                        <a href="@Url.Action("Editar","Proveedor", new { id=proveedor.Id})">Editar</a>|
-                        <a href="@Url.Action("Ver","Proveedor", new { id=proveedor.Id})">Ver</a>
-                    </td>
-                </tr>
+            <tr>
+                <th scope="row">@proveedor.Id</th>
+                <td>@proveedor.Rut</td>
+                <td>@proveedor.Nombre</td>
+                <td>@proveedor.Giro</td>
+                <td>@proveedor.RazonSocial</td>
+                <td>@proveedor.Email</td>
+                <td>@proveedor.Telefono</td>
+                <td style="text-align:center; color:coral">|</td>
+                <td style="text-align:center">
+                    <a class="far fa-edit" href="@Url.Action("Editar","Proveedor", new { id=proveedor.Id})"></a> |
+                    <a class="far fa-eye" href="@Url.Action("Ver","Proveedor", new { id=proveedor.Id})"></a>
+                </td>
+            </tr>
             }
         </tbody>
     </table>
 </div>
 
-<a class="btn colorBoton col-sm-3" href="@Url.Action("Nuevo", "Proveedor")"><i class="fas fa-plus" style="margin-right:10px"></i>Agregar</a>
+<a class="btn colorBoton col-sm-3" href="@Url.Action("Nuevo", "Proveedor")"><i class="fas fa-plus" style="margin-right:10px"></i>Agregar Proveedor</a>
 

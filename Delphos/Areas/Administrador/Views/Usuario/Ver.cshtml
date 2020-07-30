@@ -7,10 +7,10 @@
         <div class="col"></div>
         <div class="card mb-3">
             <div class="row no-gutters">
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <img src="~/Otros/guest.png" class="card-img" alt="...">
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-5">
                     <div class="card-body">
                         <h5 class="card-title">@Model.Nombre @Model.ApellidoP @Model.ApellidoM</h5>
                         <ul style="padding-top:10px">
@@ -36,5 +36,13 @@
             </div>
         </div>
         <div class="col"></div>
+    </div>
+</div>
+
+<br /><br />
+
+<div class="row">
+    <div class="col" style="text-align:right">
+        <a class="btn btn-sm colorBoton col-sm-2" href="@Url.Action("Index", "Usuario")"><i class="fas fa-arrow-left" style="padding-right:10px"></i>Volver</a>
     </div>
 </div>

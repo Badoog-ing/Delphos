@@ -15,7 +15,7 @@
         
         <form method="post" action="@Url.Action("Editar", "Proveedor")">
             <input type="text" class="form-control" id="Rut" name="Rut" hidden value="@Model.Rut">
-           
+
 
             <div class="form-group row">
                 <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
@@ -49,14 +49,13 @@
                     <input type="text" class="form-control" id="Telefono" name="Telefono" value="@Model.Telefono">
                 </div>
             </div>
-            <br /><br />
-            <div class="row">
-                <div class="col">
-                    <a class="btn colorBoton" href="@Url.Action("Index", "Proveedor")">Volver</a>
-                </div>
 
+            <br /><br />
+
+            <div class="row">
                 <div class="col" style="text-align:right">
-                    <button type="submit" class="btn colorBoton">Confirmar</button>
+                    <a class="btn btn-sm colorBoton col-sm-3" href="@Url.Action("Index", "Proveedor")"><i class="fas fa-arrow-left" style="padding-right:10px"></i>Volver</a>
+                    <button type="submit" class="btn btn-sm colorBoton col-sm-3"><i class="fas fa-angle-double-up" style="padding-right:10px"></i>Actualizar</button>
                 </div>
             </div>
 

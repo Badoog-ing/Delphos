@@ -31,6 +31,7 @@ namespace Delphos.Models
         public int Telefono { get; set; }
         [Required]
         public string Password { get; set; }
+        public byte Foto { get; set; }
         [Required]
         public string Estado { get; set; }
         [Required]
