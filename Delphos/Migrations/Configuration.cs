@@ -76,17 +76,17 @@ namespace Delphos.Migrations
             //proveedor
             context.Proveedores.AddOrUpdate(
                 p => p.Rut,
-                new Proveedor { Id = 1, Rut = "87765000-6", Nombre = "Comercial Ruver", Giro = "Fabrica de Masas", RazonSocial = "Versluys", Email = "jtoledo@versluys.cl", Telefono = 99266273,UsuarioId=4 },
-                new Proveedor { Id = 2, Rut = "78129870-0", Nombre = "Comercial Yolanda", Giro = "Fabrica de Masas", RazonSocial = "Versluys", Email = "jtoledo@versluys.cl", Telefono = 99266273, UsuarioId = 1 }
+                new Proveedor { Id = 1, Rut = "87765000-6", Nombre = "Comercial Ruver", Giro = "Fabrica de Masas", RazonSocial = "Versluys", Email = "jtoledo@versluys.cl", Telefono = 99266273, UsuarioId_FK = 4 },
+                new Proveedor { Id = 2, Rut = "78129870-0", Nombre = "Comercial Yolanda", Giro = "Fabrica de Masas", RazonSocial = "Versluys", Email = "jtoledo@versluys.cl", Telefono = 99266273, UsuarioId_FK = 1 }
                 );
                 context.SaveChanges();
 
             //OrdenCompra
             context.OrdenCompras.AddOrUpdate(
                 p => p.Id,
-                new OrdenCompra { Id = 1, NOrdenDeCompra = 1, FechaEmision = "2020-07-21", Usuario = "Fernando" , Proveedor = "Comercial Ruver" },
-                new OrdenCompra { Id = 2, NOrdenDeCompra = 2, FechaEmision = "2020-07-22", Usuario = "Felipe", Proveedor = "Comercial Yolanda" },
-                new OrdenCompra { Id = 3, NOrdenDeCompra = 5, FechaEmision = "2020-07-25", Usuario = "Jesus", Proveedor = "Comercial Yolanda" }
+                new OrdenCompra { Id = 1, NOrdenDeCompra = 1, FechaEmision = "2020-07-21", UsuarioId = 3, ProveedorId = 1 },
+                new OrdenCompra { Id = 2, NOrdenDeCompra = 2, FechaEmision = "2020-07-22", UsuarioId = 1, ProveedorId = 2 },
+                new OrdenCompra { Id = 3, NOrdenDeCompra = 5, FechaEmision = "2020-07-25", UsuarioId = 4, ProveedorId = 2 }
                 );
             context.SaveChanges();
 

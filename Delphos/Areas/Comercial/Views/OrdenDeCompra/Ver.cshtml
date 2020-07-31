@@ -7,14 +7,24 @@
     <div class="row">
         <div class="col-4">
             <!--<p>NOrdenDeCompra</p>-->
+            <p>NumeroOrden: </p>
             <p>@Model.NOrdenDeCompra</p>
         </div>
         <div class="col-6">
             <!--<p>Proveedor</p>-->
-            <p>@Model.Proveedor</p>
+            <!--<p>@Model.ProveedorId</p>-->
+            @foreach (Delphos.Models.Proveedor p in ViewBag.proveedores)
+            {<!--u.id = id de usuario guardado en usuarios bd, UsuarioId= el usuario que esta guardado en proveedor kf-->
+                if (p.Id == Model.ProveedorId)
+                {
+                    <p>Proveedor: </p>
+                    <p class="card-text">@p.Nombre</p>
+                }
+            }
         </div>
         <div class="col-2">
             <!--<p>Fecha Creacion</p>-->
+            <p>Fecha de Emision OC: </p>
             <p>@Model.FechaEmision</p>
         </div>
     </div>

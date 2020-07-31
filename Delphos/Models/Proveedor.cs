@@ -35,8 +35,9 @@ namespace Delphos.Models
 
       //fk
 
-        public int UsuarioId { get; set; }
+        public int UsuarioId_FK { get; set; }
         public virtual Usuario Usuario { get; set; }
+        public virtual ICollection<OrdenCompra> OrdenCompras { get; set; }
 
     }
 }

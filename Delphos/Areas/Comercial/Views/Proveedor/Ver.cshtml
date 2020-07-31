@@ -19,12 +19,12 @@
                             <li type="disc"><p class="card-text">RazonSocial: @Model.RazonSocial</p></li>
                             <li type="disc"><p class="card-text">Correo: @Model.Email</p></li>
                             <li type="disc"><p class="card-text">Telefono: @Model.Telefono</p></li>
-                            <!--<li type="disc"><p class="card-text">Usuario Creador: @Model.UsuarioId</p></li>-->
-                            <!--Traigo desde el ProveedorCOntroller Ver, la lista de usuarios y comparo id del formulario con el id del usuario-->
+                            <!--<li type="disc"><p class="card-text">Usuario Creador: @Model.UsuarioId_FK</p></li>-->
+                            <!--Traigo desde el ProveedorCOntroller Ver, la lista de usuarios y comparo id del usuario con el id del usuario guardado  en formulario(el que me trajo en el formulario)-->
                             <li type="disc">
                                 @foreach (Delphos.Models.Usuario u in ViewBag.usuarios)
-                                {
-                                    if (u.Id == Model.UsuarioId)
+                                {<!--u.id = id de usuario guardado en usuarios bd, UsuarioId= el usuario que esta guardado en proveedor kf-->
+                                    if (u.Id == Model.UsuarioId_FK)
                                     {
                                         <p class="card-text">Usuario Creador: @u.Nombre</p>
                                     }

@@ -35,8 +35,11 @@ namespace Delphos.Areas.Comercial.Controllers
             {
                 return new HttpNotFoundResult();
             }
-
+            //Paso lista de proveedores al Ver
+            List<Proveedor> proveedores = _db.Proveedores.ToList();
+            ViewBag.proveedores = proveedores;
             return View(orden);
+            
         }
         [HttpGet]
         public ActionResult Editar(int id)
