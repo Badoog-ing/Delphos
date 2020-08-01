@@ -71,11 +71,17 @@ namespace Delphos.Areas.Comercial.Controllers
             return View(proveedor);
         }
         [HttpPost]
-        public ActionResult Editar(Proveedor p)
+        public ActionResult Editar(int id, Proveedor p)
         {
+            Proveedor prov = _db.Proveedores.Find(id);
+            if (prov == null)
+            {
+                return new HttpNotFoundResult();
+            }
             if (ModelState.IsValid)
             {
                 _db = new bdSupermercado();
+                _db.Entry(prov).State = EntityState.Detached;
                 _db.Entry(p).State = EntityState.Modified;
                 _db.SaveChanges();
                 Request.Flash("success", "Datos Actualizados");
