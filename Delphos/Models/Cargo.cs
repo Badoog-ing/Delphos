@@ -13,3 +13,8 @@ namespace Delphos.Models
         public virtual ICollection<Usuario> Usuarios { get; set; }
     }
 }
+
+
+
+
+public virtual ICollection<Boleta> Boletas { get; set; }
