@@ -14,7 +14,3 @@ namespace Delphos.Models
     }
 }
 
-
-
-
-public virtual ICollection<Boleta> Boletas { get; set; }
