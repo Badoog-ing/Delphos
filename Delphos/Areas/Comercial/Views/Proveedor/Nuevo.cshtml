@@ -10,8 +10,9 @@
     <div class="col-3"></div>
     <div class="col-6"> <!--ACtion controlador nuevo de proveedor-->
         <form method="post" action="@Url.Action("Nuevo", "Proveedor")">
-            <!--Agregado usuario en duro-->
-            <input type="text" class="form-control" id="UsuarioId" hidden name="UsuarioId" value=4>
+
+            <!--Se trae user.Id de la sesion de usuario-->       
+            <input type="text" class="form-control" id="UsuarioId" hidden name="UsuarioId" value=@ViewBag.user.Id>
 
             <div class="form-group row">
                 <label for="Rut" class="col-sm-2 col-form-label">Rut</label>
