@@ -51,6 +51,9 @@ namespace Delphos.Areas.Comercial.Controllers
             {
                 return new HttpNotFoundResult();
             }
+            //list de Usuarios y se lo paso a ver View
+            List<Usuario> usuarios = _db.Usuarios.ToList();
+            ViewBag.usuarios = usuarios;
             return View(proveedor);
         }
         [HttpGet]

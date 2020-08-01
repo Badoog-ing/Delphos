@@ -32,11 +32,12 @@ namespace Delphos.Models
         /*[Range(8, 10)]//0412252626 - 99266273*/
         [Required]
         public int Telefono { get; set; }
-/*
+
       //fk
-        [Required]
-        public int UsuarioId { get; set; }
-        public virtual Usuario Usuarios { get; set; }*/
+
+        public int UsuarioId_FK { get; set; }
+        public virtual Usuario Usuario { get; set; }
+        public virtual ICollection<OrdenCompra> OrdenCompras { get; set; }
 
     }
 }

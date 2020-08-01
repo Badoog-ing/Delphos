@@ -43,5 +43,6 @@ namespace Delphos.Models
 
         //de donde sera referenciado
         public virtual ICollection<Proveedor> Proveedores { get; set; }
+        public virtual ICollection<OrdenCompra> OrdenCompras { get; set; }
     }
 }

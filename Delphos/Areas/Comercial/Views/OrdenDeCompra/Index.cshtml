@@ -23,7 +23,7 @@
                 <td>
                     @foreach (Delphos.Models.Proveedor prov in ViewBag.proveedores)
                     {
-                        if (prov.Nombre == ordenCompra.Proveedor)
+                        if (prov.Id == ordenCompra.ProveedorId)
                         {
 
                             <p>@prov.Nombre </p>
@@ -35,7 +35,7 @@
                 <td>
                     @foreach (Delphos.Models.Usuario user in ViewBag.usuarios)
                     {
-                        if (user.Nombre == ordenCompra.Usuario)
+                        if (user.Id == ordenCompra.UsuarioId)
                         {
 
                             <p>@user.Nombre  @user.ApellidoP @user.ApellidoM </p>
