@@ -68,11 +68,17 @@ namespace Delphos.Areas.Administrador.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(Usuario u)
+        public ActionResult Editar(int id, Usuario u)
         {
+            Usuario usuario = _db.Usuarios.Find(id);
+            if (u == null)
+            {
+                return new HttpNotFoundResult();
+            }
             if (ModelState.IsValid)
             {
                 _db = new bdSupermercado();
+                _db.Entry(usuario).State = EntityState.Detached;
                 _db.Entry(u).State = EntityState.Modified;
                 _db.SaveChanges();
                 Request.Flash("success", "Datos Actualizados");

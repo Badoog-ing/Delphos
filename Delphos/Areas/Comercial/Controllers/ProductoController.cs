@@ -76,11 +76,17 @@ namespace Delphos.Areas.Comercial.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(Producto p)
+        public ActionResult Editar(int id, Producto p)
         {
+            Producto prod = _db.Productos.Find(id);
+            if (prod == null)
+            {
+                return new HttpNotFoundResult();
+            }
             if (ModelState.IsValid)
             {
                 _db = new bdSupermercado();
+                _db.Entry(prod).State = EntityState.Detached;
                 _db.Entry(p).State = EntityState.Modified;
                 _db.SaveChanges();
                 Request.Flash("success", "Datos Actualizados");
