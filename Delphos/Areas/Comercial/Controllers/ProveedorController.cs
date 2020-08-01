@@ -26,6 +26,10 @@ namespace Delphos.Areas.Comercial.Controllers
         {
             //objeto pro de la clase Proveedor
             Proveedor pro = new Proveedor();
+
+            Usuario u = (Usuario)Session["Usuario"];
+            ViewBag.user = u;
+
             return View(pro);
         }
         public ActionResult Nuevo(Proveedor pro)
