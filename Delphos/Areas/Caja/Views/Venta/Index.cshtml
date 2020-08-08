@@ -4,6 +4,7 @@
 
 <div class="row">
     <div class="col-8">
+
         @using (Html.BeginForm("Index", "Venta", FormMethod.Post))
         {
             <div class="row">
@@ -16,6 +17,7 @@
                 <div class="col-3"></div>
             </div>
         }
+
     </div>
 
     <div class="col">
@@ -127,7 +129,7 @@
 <br />
 <br />
 
-<div class="caja">
+@*<div class="caja">
     <div class="container">
         <form>
             <div class="form-group">
@@ -144,6 +146,10 @@
                         <label>Precio:</label> <br>
                         <input id="cedula" class="form-control" type="text" placeholder="Cedúla" value="@ViewBag.Precio"> <br>
                     </p>
+                    <p>
+                        <label>Cantidad:</label> <br>
+                        <input id="cantidad" class="form-control" type="text" placeholder="cantidad" value=""> <br>
+                    </p>
                 </div>
 
                 <button id="adicionar" class="btn btn-success" type="button">Adicionar a la tabla</button>
@@ -159,10 +165,11 @@
                 <th>Nobmre</th>
                 <th>Sku</th>
                 <th>Precio</th>
+                <th>Cantidad</th>
                 <th>Eliminar</th>
 
             </tr>
         </table>
 
     </div>
-</div>
+</div>*@

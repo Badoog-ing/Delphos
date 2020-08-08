@@ -34,7 +34,7 @@
                 <tr class="Search">
                     <th scope="row">@u.Id</th>
                     <td>@u.NumeroBoleta</td>
-                    <td>@u.FechaVenta</td>
+                    <td>@u.FechaVenta.ToString("dd-MM-yy")</td>
                     <td>
                         @foreach (Delphos.Models.Usuario user in ViewBag.usuarios)
                         {

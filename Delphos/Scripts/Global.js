@@ -44,8 +44,9 @@ $(document).ready(function () {
         var nombre = document.getElementById("nombre").value;
         var apellido = document.getElementById("apellido").value;
         var cedula = document.getElementById("cedula").value;
+        var cantidad = document.getElementById("cantidad").value;
         var i = 1; //contador para asignar id al boton que borrara la fila
-        var fila = '<tr id="row' + i + '"><td>' + nombre + '</td><td>' + apellido + '</td><td>' + cedula + '</td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">Quitar</button></td></tr>'; //esto seria lo que contendria la fila
+        var fila = '<tr id="row' + i + '"><td>' + nombre + '</td><td>' + apellido + '</td><td>' + cedula + '</td><td>' + cantidad + '</td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">Quitar</button></td></tr>'; //esto seria lo que contendria la fila
 
         i++;
 
@@ -57,6 +58,7 @@ $(document).ready(function () {
         document.getElementById("apellido").value = "";
         document.getElementById("cedula").value = "";
         document.getElementById("nombre").value = "";
+        document.getElementById("cantidad").value = "";
         document.getElementById("nombre").focus();
     });
     $(document).on('click', '.btn_remove', function () {
