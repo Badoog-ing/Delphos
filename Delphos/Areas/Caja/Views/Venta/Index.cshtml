@@ -1,4 +1,5 @@
 ﻿
+
 <h1>Vista Caja</h1>
 <hr />
 
@@ -58,118 +59,137 @@
 <br />
 <br />
 
-<div class="table">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Sku</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Descripcion</th>
-                <th scope="col">Categoria</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Fecha</th>
-
-            </tr>
-        </thead>
-        <tbody>
-@*            @foreach (var p in Model)
-            {
-                <tr>
-                    <th scope="row">@p.Id</th>
-                    <td>@p.Sku</td>
-                    <td>@p.Nombre</td>
-                    <td>@p.Descripcion</td>
-                    <td>@p.CategoriaId</td>
-                    <td>@string.Format("{0:C}", @p.Precio)</td>
-                    <td>@p.FechaCreacion.ToString("dd-MM-yy")</td>
-                </tr>
-            }*@
-
-        </tbody>
-    </table>
+<div>
+    <h4>Con ajax</h4>
+    @using (Ajax.BeginForm("Index", "Venta",
+        new AjaxOptions()
+        {
+            HttpMethod = "POST",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "resultado"
+        }
+        ))
+    {
+      <span>Buscar</span><input type="text" name="SearchString" />
+      <input class="btn btn-primary" type="submit" />
+      <div>Resultado : <span id="resultado"></span></div>
+    }
 </div>
+<br /><br />
+    <div class="table">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Sku</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
 
+                </tr>
+            </thead>
+            <tbody>
 
-<br />
-<div class="row">
-    <div class="col">
-        <label for="pago">Forma de pago</label>
-@*        <div>
-            <select class="form-control" name="Metodopago">
-                @foreach (Delphos.Models.MetodoPago m in ViewBag.MetoPago)
-                {
-                    <option value="@m.Id">@m.MetododePago</option>
-                }
-            </select>
-        </div>*@
+                <tr>
+                    <th scope="row"></th>
+                    <td><input type="text" name="Nombre" value="" /></td>
+                    <td><input type="text" name="Nombre" value="" /></td>
+                    <td><input type="text" name="Nombre" value="" /></td>
+                    <td><input type="text" name="Nombre" value="" /></td>
+                </tr>
+
+                <tr>
+                    <th scope="row"></th>
+                    <td><input type="text" name="Nombre" value="" /></td>
+                    <td><input type="text" name="Nombre" value="" /></td>
+                    <td><input type="text" name="Nombre" value="" /></td>
+                    <td><input type="text" name="Nombre" value="" /></td>
+                </tr>
+
+            </tbody>
+        </table>
     </div>
 
-    <div class="col">
-        <br />
-        <div class="input-group input-group-lg">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="total">Total</span>
+
+    <br />
+    <div class="row">
+        <div class="col">
+            <label for="pago">Forma de pago</label>
+            @*        <div>
+                    <select class="form-control" name="Metodopago">
+                        @foreach (Delphos.Models.MetodoPago m in ViewBag.MetoPago)
+                        {
+                            <option value="@m.Id">@m.MetododePago</option>
+                        }
+                    </select>
+                </div>*@
+        </div>
+
+        <div class="col">
+            <br />
+            <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="total">Total</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
             </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
         </div>
     </div>
-</div>
-<br />
+    <br />
 
-<div class="row">
-    <div class="col" style="text-align:center">
-        <button class="btn colorBoton col-sm-3"><i class="fas fa-cash-register" style="margin-right: 10px"></i>Aprobar</button>
+    <div class="row">
+        <div class="col" style="text-align:center">
+            <button class="btn colorBoton col-sm-3"><i class="fas fa-cash-register" style="margin-right: 10px"></i>Aprobar</button>
+        </div>
+        <div class="col" style="text-align:center">
+            <button class="btn colorBoton col-sm-3"><i class="far fa-window-close" style="margin-right: 10px"></i>Rechazar</button>
+        </div>
     </div>
-    <div class="col" style="text-align:center">
-        <button class="btn colorBoton col-sm-3"><i class="far fa-window-close" style="margin-right: 10px"></i>Rechazar</button>
-    </div>
-</div>
 
-<br />
-<br />
+    <br />
+    <br />
 
-@*<div class="caja">
-    <div class="container">
-        <form>
-            <div class="form-group">
-                <div hidden>
-                    <p>
-                        <label>Nombre:</label> <br>
-                        <input id="nombre" class="form-control" type="text" placeholder="Nombre..." value="@ViewBag.Nombre"><br>
-                    </p>
-                    <p>
-                        <label>Sku:</label> <br>
-                        <input id="apellido" class="form-control" type="text" placeholder="Apellido..." value="@ViewBag.Sku"><br>
-                    </p>
-                    <p>
-                        <label>Precio:</label> <br>
-                        <input id="cedula" class="form-control" type="text" placeholder="Cedúla" value="@ViewBag.Precio"> <br>
-                    </p>
-                    <p>
-                        <label>Cantidad:</label> <br>
-                        <input id="cantidad" class="form-control" type="text" placeholder="cantidad" value=""> <br>
-                    </p>
+    <div class="caja">
+        <div class="container">
+            <form>
+                <div class="form-group">
+                    <div hidden>
+                        <p>
+                            <label>Nombre:</label> <br>
+                            <input id="nombre" class="form-control" type="text" placeholder="Nombre..." value="@ViewBag.Nombre"><br>
+                        </p>
+                        <p>
+                            <label>Sku:</label> <br>
+                            <input id="apellido" class="form-control" type="text" placeholder="Apellido..." value="@ViewBag.Sku"><br>
+                        </p>
+                        <p>
+                            <label>Precio:</label> <br>
+                            <input id="cedula" class="form-control" type="text" placeholder="Cedúla" value="@ViewBag.Precio"> <br>
+                        </p>
+                        <p>
+                            <label>Cantidad:</label> <br>
+                            <input id="cantidad" class="form-control" type="text" placeholder="cantidad" value=""> <br>
+                        </p>
+                    </div>
+
+                    <button id="adicionar" class="btn btn-success" type="button">Adicionar a la tabla</button>
                 </div>
+            </form>
 
-                <button id="adicionar" class="btn btn-success" type="button">Adicionar a la tabla</button>
-            </div>
-        </form>
+            <p>
+                Elementos en la Tabla:
+                <div id="adicionados"></div>
+            </p>
+            <table id="mytable" class="table table-bordered table-hover ">
+                <tr>
+                    <th>Nobmre</th>
+                    <th>Sku</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Eliminar</th>
 
-        <p>
-            Elementos en la Tabla:
-            <div id="adicionados"></div>
-        </p>
-        <table id="mytable" class="table table-bordered table-hover ">
-            <tr>
-                <th>Nobmre</th>
-                <th>Sku</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Eliminar</th>
+                </tr>
+            </table>
 
-            </tr>
-        </table>
-
+        </div>
     </div>
-</div>*@

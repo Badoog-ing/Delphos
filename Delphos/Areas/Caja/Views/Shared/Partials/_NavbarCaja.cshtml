@@ -12,10 +12,10 @@
     <!-- Links -->
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" " href="@Url.Action("Index","Venta")">Ventas</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" href="@Url.Action("Index","Venta")">Ventas</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "VentaDelDia" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "VentaDelDia" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" " href="@Url.Action("VentaDelDia","Venta")">Ventas del dia</a>
+            <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "VentaDelDia" ? "active" : "")" style="@(ViewContext.RouteData.Values["Action"].ToString() == "VentaDelDia" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" href="@Url.Action("VentaDelDia","Venta")">Ventas del dia</a>
         </li>
     </ul>
     <ul class="navbar-nav ml-auto">

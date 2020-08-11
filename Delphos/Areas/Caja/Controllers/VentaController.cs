@@ -17,6 +17,10 @@ namespace Delphos.Areas.Caja.Controllers
         {
             List<MetodoPago> MetPago = _db.Metodosdepago.ToList();
             ViewBag.MetoPago = MetPago;
+
+            List<Producto> productos = _db.Productos.ToList();
+            ViewBag.productos = productos;
+
             return View();
         }
 
@@ -29,7 +33,7 @@ namespace Delphos.Areas.Caja.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string searchString)
+        public ContentResult Index(string searchString)
         {
             _db = new bdSupermercado();
             var productos = from b in _db.Productos
@@ -50,7 +54,7 @@ namespace Delphos.Areas.Caja.Controllers
                     /*return Content("El producto no se encuentra");*/
                 }
             }
-            return View(productos);
+            return Content(ViewBag.Nombre);
         }
 
         public ActionResult DetalleBoleta(int id)
@@ -67,6 +71,7 @@ namespace Delphos.Areas.Caja.Controllers
             ViewBag.productos = productos;
             return View(v);
         }
+
 
     }
 }
