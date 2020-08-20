@@ -44,13 +44,13 @@
 </div>
 <div class="row">
     <div class="col">
-        <input style="text-align:center" class="form-control" type="text" name="Nombre" id="Nombre" value="@ViewBag.Nombre" disabled />
+        <input style="text-align:center" class="form-control" type="text" name="nombre" id="nombre" value="@ViewBag.Nombre" disabled />
     </div>
     <div class="col">
-        <input style="text-align:center" class="form-control" type="text" name="SKU" id="Sku" value="@ViewBag.Sku" disabled />
+        <input style="text-align:center" class="form-control" type="text" name="SKU" id="2" value="@ViewBag.Sku" disabled />
     </div>
     <div class="col">
-        <input style="text-align:center" class="form-control" type="text" name="Precio" id="" value="@ViewBag.Precio" disabled />
+        <input style="text-align:center" class="form-control" type="text" name="Precio" id="3" value="@ViewBag.Precio" disabled />
     </div>
     <div class="col">
         <input style="text-align:center" class="form-control" type="text" name="Cantidad" value="" />
@@ -61,135 +61,157 @@
 
 <div>
     <h4>Con ajax</h4>
-    @using (Ajax.BeginForm("Index", "Venta",
-        new AjaxOptions()
-        {
-            HttpMethod = "POST",
-            InsertionMode = InsertionMode.Replace,
-            UpdateTargetId = "resultado"
-        }
+    @using (Ajax.BeginForm("ObtenerProducto", "Venta",
+            new AjaxOptions()
+            {
+                HttpMethod = "POST",
+                InsertionMode = InsertionMode.Replace,
+                UpdateTargetId = "resultado",
+
+
+            }
         ))
     {
-      <span>Buscar</span><input type="text" name="SearchString" />
-      <input class="btn btn-primary" type="submit" />
-      <div>Resultado : <span id="resultado"></span></div>
+       @* <span>Buscar</span><input type="text" name="SearchString" />*@
+        <span>Buscar</span><input type="text" name="Sku" />
+        <input class="btn btn-primary" type="submit" value="buscar" />
+        @*<div><span id="resultado"></span></div>*@
+        <div id="resultado"></div>
     }
 </div>
-<br /><br />
-    <div class="table">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Sku</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Precio</th>
+<br />
+<br />
+<div class="table">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Sku</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio</th>
 
-                </tr>
-            </thead>
-            <tbody>
+            </tr>
+        </thead>
+        <tbody>
 
-                <tr>
-                    <th scope="row"></th>
-                    <td><input type="text" name="Nombre" value="" /></td>
-                    <td><input type="text" name="Nombre" value="" /></td>
-                    <td><input type="text" name="Nombre" value="" /></td>
-                    <td><input type="text" name="Nombre" value="" /></td>
-                </tr>
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td><input type="text" name="Nombre" value="" /></td>
+                <td><input type="text" name="Nombre" value="" /></td>
+                <td><input type="text" name="Nombre" value="" /></td>
+            </tr>
 
-                <tr>
-                    <th scope="row"></th>
-                    <td><input type="text" name="Nombre" value="" /></td>
-                    <td><input type="text" name="Nombre" value="" /></td>
-                    <td><input type="text" name="Nombre" value="" /></td>
-                    <td><input type="text" name="Nombre" value="" /></td>
-                </tr>
+            <tr>
+                <th scope="row"></th>
+                <td><input type="text" name="Nombre" value="" /></td>
+                <td><input type="text" name="Nombre" value="" /></td>
+                <td><input type="text" name="Nombre" value="" /></td>
+                <td><input type="text" name="Nombre" value="" /></td>
+            </tr>
 
-            </tbody>
-        </table>
+        </tbody>
+    </table>
+</div>
+
+
+<br />
+<div class="row">
+    <div class="col">
+        <label for="pago">Forma de pago</label>
+        @*        <div>
+                <select class="form-control" name="Metodopago">
+                    @foreach (Delphos.Models.MetodoPago m in ViewBag.MetoPago)
+                    {
+                        <option value="@m.Id">@m.MetododePago</option>
+                    }
+                </select>
+            </div>*@
     </div>
 
-
-    <br />
-    <div class="row">
-        <div class="col">
-            <label for="pago">Forma de pago</label>
-            @*        <div>
-                    <select class="form-control" name="Metodopago">
-                        @foreach (Delphos.Models.MetodoPago m in ViewBag.MetoPago)
-                        {
-                            <option value="@m.Id">@m.MetododePago</option>
-                        }
-                    </select>
-                </div>*@
-        </div>
-
-        <div class="col">
-            <br />
-            <div class="input-group input-group-lg">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="total">Total</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+    <div class="col">
+        <br />
+        <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="total">Total</span>
             </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
         </div>
     </div>
-    <br />
+</div>
+<br />
 
-    <div class="row">
-        <div class="col" style="text-align:center">
-            <button class="btn colorBoton col-sm-3"><i class="fas fa-cash-register" style="margin-right: 10px"></i>Aprobar</button>
-        </div>
-        <div class="col" style="text-align:center">
-            <button class="btn colorBoton col-sm-3"><i class="far fa-window-close" style="margin-right: 10px"></i>Rechazar</button>
-        </div>
+<div class="row">
+    <div class="col" style="text-align:center">
+        <button class="btn colorBoton col-sm-3"><i class="fas fa-cash-register" style="margin-right: 10px"></i>Aprobar</button>
     </div>
+    <div class="col" style="text-align:center">
+        <button class="btn colorBoton col-sm-3"><i class="far fa-window-close" style="margin-right: 10px"></i>Rechazar</button>
+    </div>
+</div>
 
-    <br />
-    <br />
+<br />
+<br />
 
-    <div class="caja">
-        <div class="container">
-            <form>
-                <div class="form-group">
-                    <div hidden>
-                        <p>
-                            <label>Nombre:</label> <br>
-                            <input id="nombre" class="form-control" type="text" placeholder="Nombre..." value="@ViewBag.Nombre"><br>
-                        </p>
-                        <p>
-                            <label>Sku:</label> <br>
-                            <input id="apellido" class="form-control" type="text" placeholder="Apellido..." value="@ViewBag.Sku"><br>
-                        </p>
-                        <p>
-                            <label>Precio:</label> <br>
-                            <input id="cedula" class="form-control" type="text" placeholder="Cedúla" value="@ViewBag.Precio"> <br>
-                        </p>
-                        <p>
-                            <label>Cantidad:</label> <br>
-                            <input id="cantidad" class="form-control" type="text" placeholder="cantidad" value=""> <br>
-                        </p>
-                    </div>
-
-                    <button id="adicionar" class="btn btn-success" type="button">Adicionar a la tabla</button>
+<div class="caja">
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <div hidden>
+                    <p>
+                        <label>Nombre:</label> <br>
+                        <input id="nombre" class="form-control" type="text" placeholder="Nombre..." value="@ViewBag.Nombre"><br>
+                    </p>
+                    <p>
+                        <label>Sku:</label> <br>
+                        <input id="apellido" class="form-control" type="text" placeholder="Apellido..." value="@ViewBag.Sku"><br>
+                    </p>
+                    <p>
+                        <label>Precio:</label> <br>
+                        <input id="cedula" class="form-control" type="text" placeholder="Cedúla" value="@ViewBag.Precio"> <br>
+                    </p>
+                    <p>
+                        <label>Cantidad:</label> <br>
+                        <input id="cantidad" class="form-control" type="text" placeholder="cantidad" value=""> <br>
+                    </p>
                 </div>
-            </form>
 
-            <p>
-                Elementos en la Tabla:
-                <div id="adicionados"></div>
-            </p>
-            <table id="mytable" class="table table-bordered table-hover ">
-                <tr>
-                    <th>Nobmre</th>
-                    <th>Sku</th>
-                    <th>Precio</th>
-                    <th>Cantidad</th>
-                    <th>Eliminar</th>
+                <button id="adicionar" class="btn btn-success" type="button">Adicionar a la tabla</button>
+            </div>
+        </form>
 
-                </tr>
-            </table>
+        <p>
+            Elementos en la Tabla:
+            <div id="adicionados"></div>
+        </p>
+        <table id="mytable" class="table table-bordered table-hover ">
+            <tr>
+                <th>Nombre</th>
+                <th>Sku</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Eliminar</th>
 
-        </div>
+            </tr>
+        </table>
+
     </div>
+</div>
+<br />
+
+<div class="caja">
+    <form>
+        <div class="col-sm-4">
+            <select class="form-control" id="pro">
+                @foreach (Delphos.Models.Producto p in ViewBag.productos)
+                {
+                    <option value="@p.Precio">@p.Sku - @p.Nombre</option>
+                }
+            </select>
+            <br />
+            Precio : <input type="text" id="precio" />
+        </div>
+    </form>
+
+</div>

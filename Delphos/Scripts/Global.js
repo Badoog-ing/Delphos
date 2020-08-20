@@ -71,3 +71,9 @@ $(document).ready(function () {
         $("#adicionados").append(nFilas - 1);
     });
 });
+
+
+//Mostrar seleccionado
+$('select#pro').change(function () {
+    $('input#precio').val($(this).val());
+});
