@@ -61,7 +61,7 @@
 
 <div>
     <h4>Con ajax</h4>
-    @using (Ajax.BeginForm("ObtenerProducto", "Venta",
+    @using (Ajax.BeginForm("busqueda", "Venta",
             new AjaxOptions()
             {
                 HttpMethod = "POST",
@@ -73,8 +73,8 @@
         ))
     {
         <span>Buscar</span><input type="text" name="SearchString" />
-        @*<span>Buscar</span><input type="text" name="Sku" />
-            <input class="btn btn-primary" type="submit" value="buscar" />*@
+        @*<span>Buscar</span><input type="text" name="Sku" />*@
+            <input class="btn btn-primary" type="submit" value="buscar" />
         <div><span id="resultado"></span></div>
         
     }
