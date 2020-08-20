@@ -28,7 +28,7 @@ namespace Delphos.Areas.Comercial.Controllers
             Proveedor pro = new Proveedor();
 
             Usuario u = (Usuario)Session["Usuario"];
-            ViewBag.user = u;
+            ViewBag.user = u.Id;
 
             return View(pro);
         }
@@ -36,6 +36,9 @@ namespace Delphos.Areas.Comercial.Controllers
         {
             if (ModelState.IsValid)
             {
+                Usuario u = (Usuario)Session["Usuario"];
+                ViewBag.user = u;
+
                 _db = new bdSupermercado();
                 _db.Proveedores.Add(pro);
                 _db.SaveChanges();

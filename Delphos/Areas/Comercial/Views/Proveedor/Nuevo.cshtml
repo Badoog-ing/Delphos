@@ -12,7 +12,7 @@
         <form method="post" action="@Url.Action("Nuevo", "Proveedor")">
 
             <!--Se trae user.Id de la sesion de usuario-->       
-            <input type="text" class="form-control" id="UsuarioId" hidden name="UsuarioId" value=@ViewBag.user.Id>
+            <input type="text" class="form-control" id="UsuarioId_FK" hidden  name="UsuarioId_FK" value=@ViewBag.user>
 
             <div class="form-group row">
                 <label for="Rut" class="col-sm-2 col-form-label">Rut</label>
