@@ -22,6 +22,10 @@ namespace Delphos.Areas.Caja.Controllers
             List<Producto> productos = _db.Productos.ToList();
             ViewBag.productos = productos;
 
+            List<Producto> data = _db.Productos.ToList();
+            SelectList lista = new SelectList(data, "Id", "Nombre");
+            ViewBag.ListaProducto = lista;
+
             return View();
         }
 
@@ -61,8 +65,8 @@ namespace Delphos.Areas.Caja.Controllers
                 }
             }
 
+           /* return Json(productos, JsonRequestBehavior.AllowGet);*/
             return Json(ViewBag.Nombre);
-
         }
 
         public ActionResult DetalleBoleta(int id)
@@ -85,6 +89,23 @@ namespace Delphos.Areas.Caja.Controllers
         {
             List<Producto> p = _db.Productos.Where(pr => pr.Sku == Sku).ToList();
                 
+            return Json(p, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult Seleccionar(string idProducto)
+        {
+            int id = Int32.Parse(idProducto);
+            Producto objProducto = _db.Productos.Find(id);
+            _db.Productos.Find(objProducto);
+            return Json(objProducto, JsonRequestBehavior.AllowGet);
+
+        }
+
+        public JsonResult List()
+        {
+            List<Producto> p = _db.Productos.ToList();
+
             return Json(p, JsonRequestBehavior.AllowGet);
         }
 

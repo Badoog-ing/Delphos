@@ -81,15 +81,15 @@ div {
     background-color: white
 }
 
+
 .footer {
     box-shadow: 2px 2px 5px #999;
     border-top: 2px initial;
     border-radius: .20rem;
     position: absolute;
-    bottom: 0px;
     width: 100%;
-    color: black;
 }
+
 
 hr {
     height: 30px;

@@ -77,3 +77,13 @@ $(document).ready(function () {
 $('select#pro').change(function () {
     $('input#precio').val($(this).val());
 });
+
+
+$.ajax({
+    url: "List",
+    type: "get",
+    dataType: 'json',
+    success: function (data) {
+        console.log(data.Id);
+    }
+});

@@ -40,7 +40,7 @@ namespace Delphos.Areas.Inicio.Controllers
                     }
                     else
                     {
-                        return Content("No se encuentra el user");
+                        return Content("TRABAJADOR NO REGISTRADO");
                     }
                 }
 

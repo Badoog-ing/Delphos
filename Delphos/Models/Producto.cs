@@ -3,10 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Web;
+using System.Web.Script.Serialization;
 
 namespace Delphos.Models
 {
+    [DataContract(IsReference = true)]
     public class Producto
     {
         public int Id { get; set; }
@@ -29,8 +32,11 @@ namespace Delphos.Models
         [Required]
         public DateTime FechaCreacion { get; set; }
 
+        [ScriptIgnore]
         public virtual DetalleBoleta DetalleBoleta { get; set; }
+        [ScriptIgnore]
         public virtual ICollection<Venta> Ventas { get; set; }
+        [ScriptIgnore]
         public virtual ICollection<TablaBodega> Bodegas { get; set; }
     }
 
