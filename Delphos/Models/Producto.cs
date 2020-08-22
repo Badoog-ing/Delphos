@@ -15,7 +15,7 @@ namespace Delphos.Models
         public int Id { get; set; }
 
         [Required]
-        [Range(0, 999.99)]
+        [Range(0, 999)]
         public int Sku { get; set; }
 
         [Required]

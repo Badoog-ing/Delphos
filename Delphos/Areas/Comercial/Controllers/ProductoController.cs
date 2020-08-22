@@ -12,14 +12,8 @@ namespace Delphos.Areas.Comercial.Controllers
     public class ProductoController : Controller
     {
         // GET: Producto
-        private bdSupermercado _db;
-        /*            public ActionResult Index()
-                    {
-                        IEnumerable<Producto> productos = null;
-                        _db = new bdSupermercado();
-                        productos = _db.Productos.ToList();
-                        return View(productos);
-                    }*/
+        bdSupermercado _db = new bdSupermercado();
+
         public ActionResult Nuevo()
         {
             Producto p = new Producto();
@@ -67,10 +61,10 @@ namespace Delphos.Areas.Comercial.Controllers
 
         public ActionResult Editar(int id)
         {
-            Producto p = null;
-            using (_db = new bdSupermercado())
+            Producto p = _db.Productos.Find(id);
+            if (p == null)
             {
-                p = _db.Productos.Find(id);
+                return new HttpNotFoundResult();
             }
             return View(p);
         }
@@ -79,7 +73,7 @@ namespace Delphos.Areas.Comercial.Controllers
         public ActionResult Editar(int id, Producto p)
         {
             Producto prod = _db.Productos.Find(id);
-            if (prod == null)
+            if (p == null)
             {
                 return new HttpNotFoundResult();
             }
