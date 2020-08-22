@@ -159,6 +159,7 @@
     <Compile Include="Models\bdSupermercado.cs" />
     <Compile Include="Models\BodegaTipo.cs" />
     <Compile Include="Models\DetalleBoleta.cs" />
+    <Compile Include="Models\Gmail.cs" />
     <Compile Include="Models\MetodoPago.cs" />
     <Compile Include="Models\OrdenCompra.cs" />
     <Compile Include="Models\TablaBodega.cs" />

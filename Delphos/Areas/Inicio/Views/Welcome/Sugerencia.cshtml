@@ -1,13 +1,67 @@
-﻿<h1>Sugerencias</h1>
+﻿@model Delphos.Models.Gmail
+
+<h1>Sugerencias</h1>
 <hr />
 
 <div class="caja">
     <div class="container">
-        <form>
+        @using (Html.BeginForm("Sugerencia", "Welcome", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
             <div class="form-group">
-                <textarea class="form-control" id="comentario" rows="10" style="resize:none"></textarea>
+                @*<input type="text" class="form-control" name="name" value="@Model.Subject" placeholder="Asunto" />*@
+                @Html.TextBoxFor(model => model.Subject, new { @class = "form-control", @placeholder = "Asunto" })
+                <br />
+                @*<textarea class="form-control" id="comentario" rows="10" style="resize:none" placeholder="Deje su mensaje ..."></textarea>*@
+                @Html.TextAreaFor(model => model.Body, new { rows = "10", cols = "137", @placeholder = "Deje su mensaje..." })
             </div>
             <button type="submit" class="btn colorBoton btn-block"><i class="fas fa-envelope-open-text" style="margin-right:10px"></i>Enviar</button>
-        </form>
+
+            <br />
+            <span style="color:green">@ViewBag.Message</span>
+        }
     </div>
-</div>
+        
+    </div>
+
+@*<div class="caja">
+
+    @using (Html.BeginForm("Sugerencia", "Welcome", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        <center>
+
+            <h1>Enviar Correo</h1>
+            <hr />
+
+            <table>
+
+                <tr>
+                    <td>
+                        Subject:
+                    </td>
+                    <td>@Html.TextBoxFor(model => model.Subject, new { @class ="form-control" })</td>
+                </tr>
+
+                <tr>
+                    <td valign="top">
+                        Body:
+                    </td>
+                    <td>@Html.TextAreaFor(model => model.Body, new { rows = "15", cols = "25" })</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="submit" value="Send" />
+                    </td>
+                </tr>
+
+            </table>
+
+            <br />
+            <span style="color:green">@ViewBag.Message</span>
+
+        </center>
+
+    }
+
+</div>*@

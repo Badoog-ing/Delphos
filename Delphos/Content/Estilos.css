@@ -86,6 +86,7 @@ div {
     box-shadow: 2px 2px 5px #999;
     border-top: 2px initial;
     border-radius: .20rem;
+    bottom: 0;
     position: absolute;
     width: 100%;
 }

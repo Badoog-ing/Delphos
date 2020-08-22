@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Net;
+using System.Net.Mail;
 
 namespace Delphos.Areas.Inicio.Controllers
 {
@@ -40,11 +42,13 @@ namespace Delphos.Areas.Inicio.Controllers
                     }
                     else
                     {
-                        return Content("TRABAJADOR NO REGISTRADO");
+                        /*return Content("TRABAJADOR NO REGISTRADO");*/
+                        Request.Flash("danger", "Trabajador no Registrado");
+                        return RedirectToAction("Index", "Welcome");
                     }
                 }
 
-                return Content("Hola");
+                return Content("");
             }
             catch (Exception ex)
             {
@@ -54,6 +58,29 @@ namespace Delphos.Areas.Inicio.Controllers
         }
         public ActionResult Sugerencia()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Sugerencia(Gmail model)
+        {
+            model.To = "delphosproyecto@gmail.com";
+            MailMessage mm = new MailMessage("delphosproyecto@gmail.com", model.To);
+            mm.Subject = model.Subject;
+            mm.Body = model.Body;
+            mm.IsBodyHtml = false;
+
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+
+            NetworkCredential nc = new NetworkCredential("delphosproyecto@gmail.com", "delphos2020");
+            smtp.UseDefaultCredentials = true;
+            smtp.Credentials = nc;
+            smtp.Send(mm);
+            ViewBag.Message = "Correo enviado con exito !!!";
+
             return View();
         }
     }
