@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col"></div>
         <div class="col-10">
-            <form method="post" action="@Url.Action("Nuevo", "Usuario")">
+            <form method="post" action="@Url.Action("Nuevo", "Usuario")" enctype="multipart/form-data">
 
                 <input type="hidden" value="@Model.Id" name="Id" />
 
@@ -15,13 +15,13 @@
                     <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
                     <div class="col-sm-4">
                         @*@Html.TextBoxFor(@Model => @Model.Nombre, new { @class = "form-control is-invalid", autofocus = "autofocus" })*@
-                        <input type="text" class="form-control" id="nombre" name="Nombre" value="@Model.Nombre">
+                        <input type="text" class="form-control" id="nombre" name="Nombre" value="@Model.Nombre" required>
                         @Html.ValidationMessageFor(Model => Model.Nombre, null, new { @class = "error" })
 
                     </div>
                     <label for="Rut" class="col-sm-2 col-form-label">Rut</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" id="Rut" name="Rut" value="@Model.Rut">
+                        <input type="text" class="form-control" id="Rut" name="Rut" value="@Model.Rut" required>
                         @Html.ValidationMessageFor(Model => Model.Rut, null, new { @class = "error" })
                     </div>
                 </div>
@@ -29,12 +29,12 @@
                 <div class="form-group row">
                     <label for="ApellidoP" class="col-sm-2 col-form-label">Ap. Paterno</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" id="ApellidoP" name="ApellidoP" value="@Model.ApellidoP">
+                        <input type="text" class="form-control" id="ApellidoP" name="ApellidoP" value="@Model.ApellidoP" required>
                         @Html.ValidationMessageFor(Model => Model.ApellidoP, null, new { @class = "error" })
                     </div>
                     <label for="ApellidoM" class="col-sm-2 col-form-label">Ap. Materno</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" id="ApellidoM" name="ApellidoM" value="@Model.ApellidoM">
+                        <input type="text" class="form-control" id="ApellidoM" name="ApellidoM" value="@Model.ApellidoM" required>
                         @Html.ValidationMessageFor(Model => Model.ApellidoM, null, new { @class = "error" })
                     </div>
                 </div>
@@ -42,12 +42,12 @@
                 <div class="form-group row">
                     <label for="Direccion" class="col-sm-2 col-form-label">Direccion</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" id="Direccion" name="Direccion" value="@Model.Direccion">
+                        <input type="text" class="form-control" id="Direccion" name="Direccion" value="@Model.Direccion" required>
                         @Html.ValidationMessageFor(Model => Model.Direccion, null, new { @class = "error" })
                     </div>
                     <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" id="Telefono" name="Telefono" value="@Model.Telefono">
+                        <input type="text" class="form-control" id="Telefono" name="Telefono" value="@Model.Telefono" required>
                         @Html.ValidationMessageFor(Model => Model.Telefono, null, new { @class = "error" })
                     </div>
                 </div>
@@ -55,12 +55,12 @@
                 <div class="form-group row">
                     <label for="Email" class="col-sm-2 col-form-label">Correo</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" id="Email" name="Email" value="@Model.Email">
+                        <input type="text" class="form-control" id="Email" name="Email" value="@Model.Email" required>
                         @Html.ValidationMessageFor(Model => Model.Email, null, new { @class = "error" })
                     </div>
                     <label for="pass" class="col-sm-2 col-form-label">Password</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" id="Password" name="Password" value="@Model.Password">                       
+                        <input type="text" class="form-control" id="Password" name="Password" value="@Model.Password" required>                       
                         @Html.ValidationMessageFor(Model => Model.Password, null, new { @class = "error" })
                     </div>
                 </div>
@@ -68,7 +68,7 @@
 @*                <div class="form-group row">
                     <label for="Foto" class="col-sm-2 col-form-label">Imagen</label>
                     <div class="col-sm-4">
-                        <input type="file" class="" id="Foto" name="Foto" value="@Model.Foto">
+                        <input type="file" class="" id="Foto" name="Foto" value="@Model.Foto" required>
                         @Html.ValidationMessageFor(Model => Model.Foto, null, new { @class = "error" })
                     </div>
                 </div>*@

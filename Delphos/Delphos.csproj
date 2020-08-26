@@ -195,6 +195,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Otros\Admin.png" />
+    <Content Include="Otros\Bodega.jpg" />
+    <Content Include="Otros\Caja.jpg" />
+    <Content Include="Otros\Comercial.jpg" />
     <Content Include="Otros\guest.png" />
     <Content Include="Otros\slogan.png" />
     <Content Include="Otros\V.jpg" />

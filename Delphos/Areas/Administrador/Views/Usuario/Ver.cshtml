@@ -8,7 +8,22 @@
         <div class="card mb-3">
             <div class="row no-gutters">
                 <div class="col-md-5">
-                    <img src="~/Otros/guest.png" class="card-img" alt="...">
+                    @if (Model.CargoId == 1)
+                    {
+                        <img src="~/Otros/Admin.png" class="card-img" alt="...">
+                    }
+                    @if (Model.CargoId == 2)
+                    {
+                        <img src="~/Otros/Bodega.jpg" class="card-img" alt="...">
+                    }
+                    @if (Model.CargoId == 3)
+                    {
+                        <img src="~/Otros/Caja.jpg" class="card-img" alt="...">
+                    }
+                    @if (Model.CargoId == 4)
+                    {
+                        <img src="~/Otros/Comercial.jpg" class="card-img" alt="...">
+                    }
                 </div>
                 <div class="col-md-7">
                     <div class="card-body">
