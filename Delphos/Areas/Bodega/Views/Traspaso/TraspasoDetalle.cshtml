@@ -1,7 +1,7 @@
 ﻿@model Delphos.Models.Traspaso
 
 
-<h1>Productos que contiene el traspaso</h1>
+<h1>Detalles del Producto Traspasado</h1>
 <hr />
 
 <div class="table">
@@ -23,7 +23,7 @@
 
                 @foreach (var p in ViewBag.productos)
                 {
-                    if (d.IdProducto == p.Sku)
+                    if (d.SkuProducto == p.Sku)
                     {
                         <td>@p.Sku</td> 
                         <td>@p.Nombre</td>

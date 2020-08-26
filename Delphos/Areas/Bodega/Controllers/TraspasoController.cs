@@ -2,6 +2,7 @@
 using Delphos.Models.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -32,42 +33,55 @@ namespace Delphos.Areas.Bodega.Controllers
                 return new HttpNotFoundResult();
             }
 
-            List<TraspasoDetalle> detalles = _db.TraspasoDetalles
-                                                .Where(d => d.IdTraspaso == id)
-                                                .ToList();                                                                                              
-            ViewBag.detalles = detalles;
+            ViewBag.detalles = from tr in _db.Traspasos
+                        where tr.Id == id
+                        select tr;
 
             List<Producto> productos = _db.Productos.ToList();
-
             ViewBag.productos = productos;
 
             return View(t);
         }
 
-        public ActionResult Crear(string searchString)
+        public ActionResult Nuevo()
         {
-            _db = new bdSupermercado();
-            Producto p = new Producto();
-            var productos = from b in _db.Productos
-                            select b;
+            Traspaso t = new Traspaso();
 
-            if (!string.IsNullOrEmpty(searchString))
-            {
-                productos = productos.Where(b => b.Sku.ToString().Contains(searchString));
-                    foreach (var d in productos)
-                    {
-                        ViewBag.Id = d.Id;
-                        ViewBag.Nombre = d.Nombre;
-                        ViewBag.Sku = d.Sku;
-                        ViewBag.Precio = d.Precio;
-                    }
-                    if(productos.Count() == 0)
-                    {
-                        /*falta mostrar un mensaje de que no se encontro el producto*/
-            return Content("El producto no se encuentra");                    
-                }
+            List<BodegaTipo> tipobodega = _db.BodegaTipos.ToList();
+            ViewBag.tipobodega = tipobodega;
+
+            List<Producto> productos = _db.Productos.ToList();
+            ViewBag.productos = productos;
+            return View(t);
         }
-        return View(productos);
+
+        [HttpPost]
+        public ActionResult Nuevo(Traspaso t)
+        {
+            if (ModelState.IsValid)
+            {
+                _db = new bdSupermercado();
+                _db.Traspasos.Add(t);
+                if(t.BodegaOrigen == 1)
+                {
+                    t.BodegaDestino = 2;
+                }
+                else
+                {
+                    t.BodegaDestino = 1;
+                }
+                t.FechaTraspaso = DateTime.Today;
+                _db.SaveChanges();
+                Request.Flash("success", "Registrado con exito !!!");
+                return RedirectToAction("Index", "Traspaso");
+            }
+            List<BodegaTipo> tipobodega = _db.BodegaTipos.ToList();
+            ViewBag.tipobodega = tipobodega;
+
+            List<Producto> productos = _db.Productos.ToList();
+            ViewBag.productos = productos;
+
+            return View(t);
         }
 
 

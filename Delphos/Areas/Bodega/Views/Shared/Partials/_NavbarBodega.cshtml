@@ -11,9 +11,9 @@
 
     <!-- Links -->
     <ul class="nav nav-tabs">
-        <li class="nav-item">
+@*        <li class="nav-item">
             <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Recepcion" ? "active" : "")" style="@(ViewContext.RouteData.Values["Controller"].ToString() == "Recepcion" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" href="@Url.Action("Index","Recepcion")">Recepcion</a>
-        </li>
+        </li>*@
         <li class="nav-item">
             <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Traspaso" ? "active" : "")" style="@(ViewContext.RouteData.Values["Controller"].ToString() == "Traspaso" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")" href="@Url.Action("Index","Traspaso")">Traspasos</a>
         </li>

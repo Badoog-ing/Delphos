@@ -8,6 +8,8 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
+                <th scope="col">Sku</th>
+                <th scope="col">Cantidad</th>
                 <th scope="col">Bodega Origen</th>
                 <th scope="col">Bodega Destino</th>
                 <th scope="col">Fecha</th>
@@ -18,34 +20,36 @@
         <tbody>
             @foreach (var t in Model)
             {
-                <tr>
-                    <th scope="row">@t.Id</th>
-                    <td>
-                        @if (t.BodegaOrigen == ViewBag.bodegas[0].Id)
-                        {
-                            @ViewBag.bodegas[0].Nombre;
-                        }
-                        else
-                        {
-                            @ViewBag.bodegas[1].Nombre;
-                        }
-                    </td>
-                    <td>
-                        @if (t.BodegaOrigen == ViewBag.bodegas[1].Id)
-                        {
-                            @ViewBag.bodegas[1].Nombre;
-                        }
-                        else
-                        {
-                            @ViewBag.bodegas[0].Nombre;
-                        }
-                    </td>
-                    <td>@t.FechaTraspaso.ToString("dd-MM-yy")</td>
-                    <td style="text-align:center; color:coral">|</td>
-                    <td style="text-align:center">
-                        <a class="fas fa-list-ul" href="@Url.Action("TraspasoDetalle", "Traspaso", new { id = t.Id })"></a>
-                    </td>
-                </tr>
+            <tr>
+                <th scope="row">@t.Id</th>
+                <td>@t.SkuProducto</td>
+                <td>@t.Cantidad</td>
+                <td>
+                    @if (t.BodegaOrigen == 1)
+                    {
+                        <p>Bodega Principal</p>;
+                    }
+                    else
+                    {
+                        <p>Bodega Secundaria</p>;
+                    }
+                </td>
+                <td>
+                    @if (t.BodegaDestino == 1)
+                    {
+                        <p>Bodega Principal</p>;
+                    }
+                    else
+                    {
+                        <p>Bodega Secundaria</p>;
+                    }
+                </td>
+                <td>@t.FechaTraspaso.ToString("dd-MM-yy")</td>
+                <td style="text-align:center; color:coral">|</td>
+                <td style="text-align:center">
+                    <a class="fas fa-list-ul" href="@Url.Action("TraspasoDetalle", "Traspaso", new { id = t.Id })"></a>
+                </td>
+            </tr>
             }
         </tbody>
     </table>
@@ -54,6 +58,6 @@
 
 <div class="row">
     <div class="col" style="text-align:right">
-        <a class="btn btn-sm colorBoton col-sm-2" href="@Url.Action("Crear", "Traspaso")"><i class="far fa-save" style="padding-right:10px"></i>Crear Traspaso</a>
+        <a class="btn btn-sm colorBoton col-sm-2" href="@Url.Action("Nuevo", "Traspaso")"><i class="far fa-save" style="padding-right:10px"></i>Crear Traspaso</a>
     </div>
 </div>

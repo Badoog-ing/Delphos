@@ -58,9 +58,9 @@
                         <input type="text" class="form-control" id="Email" name="Email" value="@Model.Email">
                         @Html.ValidationMessageFor(Model => Model.Email, null, new { @class = "error" })
                     </div>
-                    <label for="Password" class="col-sm-2 col-form-label">Password</label>
+                    <label for="pass" class="col-sm-2 col-form-label">Password</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" id="Password" name="Password" value="@Model.Password">
+                        <input type="text" class="form-control" id="Password" name="Password" value="@Model.Password">                       
                         @Html.ValidationMessageFor(Model => Model.Password, null, new { @class = "error" })
                     </div>
                 </div>

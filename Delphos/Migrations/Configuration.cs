@@ -29,9 +29,9 @@ namespace Delphos.Migrations
             context.Usuarios.AddOrUpdate(
                 u => u.Rut,
                 new Usuario { Id = 1, Nombre = "Felipe", Rut = "16186571-0", ApellidoP = "Villa", ApellidoM = "Molina", Direccion = "Casa 0000", Email = "a@a.cl", Telefono = 123456789, Password = "123", CargoId = 1, Estado = "Activo", FechasCreacion = new DateTime(2020, 5, 10, 12, 30, 00) },
-                new Usuario { Id = 2, Nombre = "Bodega", Rut = "17186571-5", ApellidoP = "AP", ApellidoM = "AM", Direccion = "Casa 0000", Email = "a@a.cl", Telefono = 123456789, Password = "123", CargoId = 2, Estado = "Activo", FechasCreacion = new DateTime(2020, 4, 10, 12, 30, 00) },
-                new Usuario { Id = 3, Nombre = "Fernando", Rut = "18186571-2", ApellidoP = "Orellana", ApellidoM = "Cadiz", Direccion = "Casa 0000", Email = "a@a.cl", Telefono = 123456789, Password = "123", CargoId = 3, Estado = "Activo", FechasCreacion = new DateTime(2020, 3, 10, 12, 30, 00) },
-                new Usuario { Id = 4, Nombre = "Jesus", Rut = "19186571-k", ApellidoP = "Toledo", ApellidoM = "Nazaret", Direccion = "Casa 0000", Email = "a@a.cl", Telefono = 123456789, Password = "123", CargoId = 4, Estado = "Activo", FechasCreacion = new DateTime(2020, 2, 10, 12, 30, 00) }
+                new Usuario { Id = 2, Nombre = "Bodega", Rut = "17444527-3", ApellidoP = "AP", ApellidoM = "AM", Direccion = "Casa 0000", Email = "a@a.cl", Telefono = 123456789, Password = "123", CargoId = 2, Estado = "Activo", FechasCreacion = new DateTime(2020, 4, 10, 12, 30, 00) },
+                new Usuario { Id = 3, Nombre = "Fernando", Rut = "9750220-k", ApellidoP = "Orellana", ApellidoM = "Cadiz", Direccion = "Casa 0000", Email = "a@a.cl", Telefono = 123456789, Password = "123", CargoId = 3, Estado = "Activo", FechasCreacion = new DateTime(2020, 3, 10, 12, 30, 00) },
+                new Usuario { Id = 4, Nombre = "Jesus", Rut = "10011267-1", ApellidoP = "Toledo", ApellidoM = "Nazaret", Direccion = "Casa 0000", Email = "a@a.cl", Telefono = 123456789, Password = "123", CargoId = 4, Estado = "Activo", FechasCreacion = new DateTime(2020, 2, 10, 12, 30, 00) }
                 );
             context.SaveChanges();
 
@@ -76,19 +76,19 @@ namespace Delphos.Migrations
             //proveedor
             context.Proveedores.AddOrUpdate(
                 p => p.Rut,
-                new Proveedor { Id = 1, Rut = "87765000-6", Nombre = "Comercial Ruver", Giro = "Fabrica de Masas", RazonSocial = "Versluys", Email = "jtoledo@versluys.cl", Telefono = 99266273, UsuarioId_FK = 4 },
-                new Proveedor { Id = 2, Rut = "78129870-0", Nombre = "Comercial Yolanda", Giro = "Fabrica de Masas", RazonSocial = "Versluys", Email = "jtoledo@versluys.cl", Telefono = 99266273, UsuarioId_FK = 1 }
-                );
-                context.SaveChanges();
-
-            //OrdenCompra
-            context.OrdenCompras.AddOrUpdate(
-                p => p.Id,
-                new OrdenCompra { Id = 1, NOrdenDeCompra = 1, FechaEmision = "2020-07-21", UsuarioId = 3, ProveedorId = 1 },
-                new OrdenCompra { Id = 2, NOrdenDeCompra = 2, FechaEmision = "2020-07-22", UsuarioId = 1, ProveedorId = 2 },
-                new OrdenCompra { Id = 3, NOrdenDeCompra = 5, FechaEmision = "2020-07-25", UsuarioId = 4, ProveedorId = 2 }
+                new Proveedor { Id = 1, Rut = "16186571-0", Nombre = "Comercial Ruver", Giro = "Fabrica de Masas", RazonSocial = "Versluys", Email = "jtoledo@gmail.com", Telefono = 99266273, UsuarioId_FK = 4 },
+                new Proveedor { Id = 2, Rut = "87765000-6", Nombre = "Comercial Yolanda", Giro = "Fabrica", RazonSocial = "Versluys", Email = "jtoledo@gmail.com", Telefono = 99266273, UsuarioId_FK = 1 }
                 );
             context.SaveChanges();
+
+            //OrdenCompra
+            /*            context.OrdenCompras.AddOrUpdate(
+                            p => p.Id,
+                            new OrdenCompra { Id = 1, NOrdenDeCompra = 1, FechaEmision = "2020-07-21", UsuarioId = 3, ProveedorId = 1 },
+                            new OrdenCompra { Id = 2, NOrdenDeCompra = 2, FechaEmision = "2020-07-22", UsuarioId = 1, ProveedorId = 2 },
+                            new OrdenCompra { Id = 3, NOrdenDeCompra = 5, FechaEmision = "2020-07-25", UsuarioId = 4, ProveedorId = 2 }
+                            );
+                        context.SaveChanges();*/
 
             //VentadelDia
             context.Ventas.AddOrUpdate(
@@ -116,15 +116,13 @@ namespace Delphos.Migrations
             //Traspasos
             context.Traspasos.AddOrUpdate(
                 t => t.Id,
-                new Traspaso { Id = 1, FechaTraspaso = DateTime.Today, BodegaOrigen = 1, BodegaDestino = 2 },
-                new Traspaso { Id = 2, FechaTraspaso = DateTime.Today, BodegaOrigen = 2, BodegaDestino = 1 },
-                new Traspaso { Id = 3, FechaTraspaso = DateTime.Today, BodegaOrigen = 1, BodegaDestino = 2 },
-                new Traspaso { Id = 4, FechaTraspaso = DateTime.Today, BodegaOrigen = 2, BodegaDestino = 1 }
+                new Traspaso { Id = 1, SkuProducto = 101, Cantidad = 2, BodegaOrigen = 1, BodegaDestino = 2, FechaTraspaso = DateTime.Today },
+                new Traspaso { Id = 2, SkuProducto = 102, Cantidad = 1, BodegaOrigen = 2, BodegaDestino = 1, FechaTraspaso = DateTime.Today }
                 );
             context.SaveChanges();
 
             //Traspasos detalles
-            context.TraspasoDetalles.AddOrUpdate(
+/*            context.TraspasoDetalles.AddOrUpdate(
                 t => t.Id,
                 new TraspasoDetalle { Id = 1, IdTraspaso = 1, IdProducto = 101, Cantidad = 2 },
                 new TraspasoDetalle { Id = 2, IdTraspaso = 1, IdProducto = 104, Cantidad = 3 },
@@ -143,23 +141,23 @@ namespace Delphos.Migrations
                 new TraspasoDetalle { Id = 15, IdTraspaso = 4, IdProducto = 104, Cantidad = 2 },
                 new TraspasoDetalle { Id = 16, IdTraspaso = 4, IdProducto = 107, Cantidad = 4 }
                 );
-            context.SaveChanges();
+            context.SaveChanges();*/
 
             //Recepcion
-            context.Recepciones.AddOrUpdate(
+/*            context.Recepciones.AddOrUpdate(
                 r => r.Id,
                 new Recepcion { Id = 1, Factura = 000005, OrdenDeCompra = 1, FechasCreacion = DateTime.Today }
                 );
-            context.SaveChanges();
+            context.SaveChanges();*/
 
             //Metodo de pago
-            context.Metodosdepago.AddOrUpdate(
+/*            context.Metodosdepago.AddOrUpdate(
           r => r.Id,
           new MetodoPago { Id = 1, MetododePago=" Efectivo" },
           new MetodoPago { Id = 2, MetododePago = " Debito" }
           
           );
-            context.SaveChanges();
+            context.SaveChanges();*/
 
 
         }

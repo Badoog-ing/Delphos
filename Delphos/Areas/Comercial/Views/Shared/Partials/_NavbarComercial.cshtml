@@ -14,9 +14,9 @@
             <li class="nav-item">
                 <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Producto" ? "active" : "")" style="@(ViewContext.RouteData.Values["Controller"].ToString() == "Producto" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")"" href="@Url.Action("Index","Producto")">Productos</a>
             </li>
-            <li class="nav-item">
+@*            <li class="nav-item">
                 <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "OrdenDeCompra" ? "active" : "")" style="@(ViewContext.RouteData.Values["Controller"].ToString() == "OrdenDeCompra" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")"" href="@Url.Action("Index","OrdenDeCompra")">Orden de Compra</a>
-            </li>
+            </li>*@
             <li class="nav-item">
                 <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Proveedor" ? "active" : "")" style="@(ViewContext.RouteData.Values["Controller"].ToString() == "Proveedor" ? "color:red; background-color: cornsilk; font-weight:bold" : "color:Black")"" href="@Url.Action("Index","Proveedor")">Proveedores</a>
             </li>

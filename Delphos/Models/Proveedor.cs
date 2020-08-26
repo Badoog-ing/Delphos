@@ -10,23 +10,25 @@ namespace Delphos.Models
     {
         public int Id { get; set; }
 
+        [RutP(ErrorMessage = "Rut no valido")]
         [Required]
         public string Rut { get; set; }
-
+       
+        [StringLength(30, MinimumLength = 5)]
         [Required]
-        /*[StringLength(30, MinimumLength = 5)]*/
         public string Nombre { get; set; }
 
-       [Required]
-        /*[StringLength(30, MinimumLength = 5)]*/
+        [StringLength(30, MinimumLength = 5)]
+        [Required]
         public string Giro { get; set; }
 
+        [StringLength(30, MinimumLength = 5)]
         [Required]
-        /*[StringLength(30, MinimumLength = 5)]*/
         public string RazonSocial { get; set; }
 
+        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*",
+            ErrorMessage = "Dirección de Correo electrónico incorrecta.")]
         [Required]
-        /*[RegularExpression(@"^[0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@(ua)\.(es)$")]*/
         public string Email { get; set; }
 
         /*[Range(8, 10)]//0412252626 - 99266273*/
@@ -39,5 +41,35 @@ namespace Delphos.Models
         public virtual Usuario Usuario { get; set; }
         public virtual ICollection<OrdenCompra> OrdenCompras { get; set; }
 
+    }
+
+    public class RutPAttribute : ValidationAttribute
+    {
+        public override bool IsValid(object value)
+        {
+            var rut = Convert.ToString(value);
+
+
+
+            rut = rut.ToUpper();
+            rut = rut.Replace(".", "");
+            rut = rut.Replace("-", "");
+
+            int rutAux = int.Parse(rut.Substring(0, rut.Length - 1));
+
+            char dv = char.Parse(rut.Substring(rut.Length - 1, 1));
+
+            int m = 0, s = 1;
+            for (; rutAux != 0; rutAux /= 10)
+            {
+                s = (s + rutAux % 10 * (9 - m++ % 6)) % 11;
+            }
+            if (dv == (char)(s != 0 ? s + 47 : 75))
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

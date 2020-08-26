@@ -36,7 +36,7 @@ namespace Delphos.Filtros
                             filterContext.HttpContext.Response.Redirect("~/Administrador/Usuario/Index");
                             break;
                         case 2:
-                            filterContext.HttpContext.Response.Redirect("~/Bodega/Recepcion/Index");
+                            filterContext.HttpContext.Response.Redirect("~/Bodega/Traspaso/Index");
                             break;
                         case 3:
                             filterContext.HttpContext.Response.Redirect("~/Caja/Venta/Index");
