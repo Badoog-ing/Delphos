@@ -10,19 +10,19 @@ namespace Delphos.Models
     {
         public int Id { get; set; }
 
-        [RutP(ErrorMessage = "Rut no valido")]
+        [RutP(ErrorMessage = "Ingrese un RUT valido")]
         [Required]
         public string Rut { get; set; }
        
-        [StringLength(30, MinimumLength = 5)]
+        [StringLength(30, MinimumLength = 5, ErrorMessage = "Nombre no cumple con los requisitos")]
         [Required]
         public string Nombre { get; set; }
 
-        [StringLength(30, MinimumLength = 5)]
+        [StringLength(30, MinimumLength = 5, ErrorMessage = "Giro no cumple con los requisitos")]
         [Required]
         public string Giro { get; set; }
 
-        [StringLength(30, MinimumLength = 5)]
+        [StringLength(30, MinimumLength = 5, ErrorMessage = "Razon Social no cumple con los requisitos")]
         [Required]
         public string RazonSocial { get; set; }
 

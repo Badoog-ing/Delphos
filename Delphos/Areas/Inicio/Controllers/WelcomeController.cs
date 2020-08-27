@@ -43,7 +43,8 @@ namespace Delphos.Areas.Inicio.Controllers
                     else
                     {
                         /*return Content("TRABAJADOR NO REGISTRADO");*/
-                        Request.Flash("danger", "Trabajador no Registrado");
+/*                        Request.Flash("danger", "Trabajador no Registrado");
+                        ViewBag.Message = "Trabajador no Registrado";*/
                         return RedirectToAction("Index", "Welcome");
                     }
                 }
@@ -81,6 +82,7 @@ namespace Delphos.Areas.Inicio.Controllers
             smtp.Send(mm);
             ViewBag.Message = "Correo enviado con exito !!!";
 
+            /*return Content("<script language='javascript' type='text/javascript'>alert('Thanks for Feedback!');</script>");*/
             return View();
         }
     }

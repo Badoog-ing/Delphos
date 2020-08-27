@@ -5,12 +5,15 @@
 
 <div class="row">
     <div class="col">
-        <input class="form-control" type="search" name="buscarboletafecha" value="" />
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"><i class="fab fa-searchengin"></i></span>
+            </div>
+            <input type="search" class="form-control col-sm-4" placeholder="Buscar..." aria-label="Username" aria-describedby="basic-addon1" name="Search" Id="Search">
+            <label style="padding-left:10px; padding-top:4px" for="Search">Busqueda rapida</label>
+        </div>
     </div>
-    <div class="col">
-        <button class="btn colorBoton">Buscar Fecha</button>
-    </div>
-    <div class="col"></div>
+
 </div>
 
 
@@ -41,8 +44,8 @@
                             if (user.Id == u.IdVendedor)
                             {
 
-                            <p>@user.Nombre  @user.ApellidoP @user.ApellidoM </p> 
-                                                           
+                                <p>@user.Nombre  @user.ApellidoP @user.ApellidoM </p>
+
                             }
                         }
 
@@ -52,7 +55,7 @@
                     </td>
                     <td align="center"><a class="fa fa-eye" href="@Url.Action("DetalleBoleta","Venta", new { id = u.Id })"></a></td>
                 </tr>
-                 }
+            }
         </tbody>
     </table>
 </div>

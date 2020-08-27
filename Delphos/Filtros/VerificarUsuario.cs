@@ -19,8 +19,7 @@ namespace Delphos.Filtros
             {
 
                 if (filterContext.Controller is WelcomeController == false)
-                {
-
+                {                  
                     filterContext.HttpContext.Response.Redirect("~/Inicio/Welcome/Login");
                 }
 

@@ -200,6 +200,8 @@
     <Content Include="Otros\Caja.jpg" />
     <Content Include="Otros\Comercial.jpg" />
     <Content Include="Otros\guest.png" />
+    <Content Include="Otros\Producto.png" />
+    <Content Include="Otros\proveedor.jpg" />
     <Content Include="Otros\slogan.png" />
     <Content Include="Otros\V.jpg" />
     <Content Include="Otros\versluys.png" />

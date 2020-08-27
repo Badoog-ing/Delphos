@@ -11,17 +11,17 @@ namespace Delphos.Models
     public class Usuario
     {
         public int Id { get; set; }
-        [Rut(ErrorMessage = "Rut no valido")]
+        [Rut(ErrorMessage = "Ingrese un RUT valido")]
         [Required]
         public string Rut { get; set; }
         [Required]
-        [StringLength(12)]
+        [StringLength(12, ErrorMessage = "Max. 12 letras para el nombre")]
         public string Nombre { get; set; }  
         
-        [Display(Name = "Ap. Paterno")][Required]
+        [Display(Name = "Ap. Paterno")][Required(ErrorMessage = "Ingrese Apellido Paterno")]
         public string ApellidoP { get; set; }
         
-        [Display(Name = "Ap. Materno")][Required]
+        [Display(Name = "Ap. Materno")][Required(ErrorMessage = "Ingrese Apellido Materno")]
         public string ApellidoM { get; set; }
         [Required]
         public string Direccion { get; set; }
