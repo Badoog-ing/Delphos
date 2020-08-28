@@ -47,9 +47,8 @@ namespace Delphos.Models
     {
         public override bool IsValid(object value)
         {
+
             var rut = Convert.ToString(value);
-
-
 
             rut = rut.ToUpper();
             rut = rut.Replace(".", "");

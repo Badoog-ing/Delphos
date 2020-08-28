@@ -82,7 +82,7 @@ namespace Delphos.Areas.Inicio.Controllers
             smtp.Send(mm);
             ViewBag.Message = "Correo enviado con exito !!!";
 
-            /*return Content("<script language='javascript' type='text/javascript'>alert('Thanks for Feedback!');</script>");*/
+            /*return Content("<script language='javascript' type='text/javascript'>alert('Correo enviado con exito !!!');</script>");*/
             return View();
         }
     }
