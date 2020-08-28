@@ -54,43 +54,35 @@ namespace Delphos.Models
         {
             var rut = Convert.ToString(value);
 
-            /*            if (String.IsNullOrEmpty(rut))
-                        {
-                            return true;
-                        }
-
-                        if (rut.Length > 10 || rut.Length < 9)
-                        {
-                            return false;
-                        }
-
-                        for (int i = 0; i < rut.Length - 2; i++)
-                        {
-                            if (Char.IsNumber(rut[i]) == false)
-                            {
-                                return false;
-                            }
-                        }
-                        if (Char.IsNumber(rut[rut.Length - 1]) == true || rut[rut.Length - 1] == 'K' || rut[rut.Length - 1] == 'k')
-                        {
-
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                        if (rut[rut.Length - 2] != '-')
-                        {
-                            return false;
-                        }
-
-                        return true;*/
-
             rut = rut.ToUpper();
             rut = rut.Replace(".", "");
             rut = rut.Replace("-", "");
 
-            int rutAux = int.Parse(rut.Substring(0, rut.Length - 1));
+            string RutP = rut.Substring(0, rut.Length - 1);
+            string specialChar = @"\|!#$%&/()=?»«@£§€{}.-;'<>_,";
+            int rutAux = 0;
+
+            foreach (var item in specialChar)
+            {
+                if (RutP.Contains(item))
+                {
+                    return false;
+                }
+                else
+                {
+                    for (int i = 0; i < RutP.Length; i++)
+                    {
+                        if (!Char.IsNumber(RutP[i]))
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            rutAux = int.Parse(RutP);
+                        }
+                    }
+                }
+            }
 
             char dv = char.Parse(rut.Substring(rut.Length - 1, 1));
 

@@ -54,7 +54,35 @@ namespace Delphos.Models
             rut = rut.Replace(".", "");
             rut = rut.Replace("-", "");
 
-            int rutAux = int.Parse(rut.Substring(0, rut.Length - 1));
+            string RutP = rut.Substring(0, rut.Length - 1);
+            string specialChar = @"\|!#$%&/()=?»«@£§€{}.-;'<>_,";
+            int rutAux = 0;
+
+            foreach (var item in specialChar)
+            {
+                if (RutP.Contains(item))
+                {
+                    return false;
+                }
+                else
+                {
+                    for (int i = 0; i < RutP.Length; i++)
+                    {
+                        if (!Char.IsNumber(RutP[i]))
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            rutAux = int.Parse(RutP);
+                        }
+                    }
+                }
+            }
+
+
+
+            /*int rutAux = int.Parse(rut.Substring(0, rut.Length - 1));*/
 
             char dv = char.Parse(rut.Substring(rut.Length - 1, 1));
 

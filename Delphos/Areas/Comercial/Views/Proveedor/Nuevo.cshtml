@@ -2,9 +2,11 @@
 
 <h1>Crear Proveedor</h1>
 <hr />
-<div style="color:red">
+
+@*<div style="color:red">
     @Html.ValidationSummary()
-</div>
+</div>*@
+
 <br /><br />
 <div class="row">
     <div class="col-3"></div>
@@ -18,6 +20,7 @@
                 <label for="Rut" class="col-sm-2 col-form-label">Rut</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="Rut" name="Rut" value="@Model.Rut" required>
+                    @Html.ValidationMessageFor(Model => Model.Rut, null, new { @class = "error" })
                 </div>
             </div>
 
@@ -25,6 +28,7 @@
                 <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="Nombre" name="Nombre" value="@Model.Nombre" required>
+                    @Html.ValidationMessageFor(Model => Model.Nombre, null, new { @class = "error" })
                 </div>
             </div>
 
@@ -32,6 +36,7 @@
                 <label for="Giro" class="col-sm-2 col-form-label">Giro</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="Giro" name="Giro" value="@Model.Giro" required>
+                    @Html.ValidationMessageFor(Model => Model.Giro, null, new { @class = "error" })
                 </div>
             </div>
 
@@ -39,18 +44,21 @@
                 <label for="RazonSocial" class="col-sm-2 col-form-label">Razon Social</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="RazonSocial" name="RazonSocial" value="@Model.RazonSocial" required>
+                    @Html.ValidationMessageFor(Model => Model.RazonSocial, null, new { @class = "error" })
                 </div>
             </div>
             <div class="form-group row">
                 <label for="Email" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="Email" name="Email" value="@Model.Email" required>
+                    @Html.ValidationMessageFor(Model => Model.Email, null, new { @class = "error" })
                 </div>
             </div>
             <div class="form-group row">
                 <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="Telefono" name="Telefono" value="@Model.Telefono" required>
+                    @Html.ValidationMessageFor(Model => Model.Telefono, null, new { @class = "error" })
                 </div>
             </div>
 
