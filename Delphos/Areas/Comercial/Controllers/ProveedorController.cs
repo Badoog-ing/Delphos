@@ -36,19 +36,33 @@ namespace Delphos.Areas.Comercial.Controllers
         {
             if (ModelState.IsValid)
             {
-                Usuario u = (Usuario)Session["Usuario"];
-                ViewBag.user = u;
+                using (_db = new bdSupermercado())
+                {
 
-                _db = new bdSupermercado();
-                _db.Proveedores.Add(pro);
-                _db.SaveChanges();
-                Request.Flash("success", "Proveedor agregado con exito !!!");
-                return RedirectToAction("Index", "Proveedor");
+                    var Lista = from p in _db.Proveedores
+                                where p.Rut == pro.Rut
+                                select p;
+
+                    if (Lista.Count() > 0)
+                    {
+                        Request.Flash("danger", "El Rut ya esta registrado");
+                        /*return View("<script language='javascript' type='text/javascript'>alert('El Producto ya esta registrado');</script>");*/
+                        /*return Content("Hola");*/
+                    }
+                    else
+                    {
+                        Usuario u = (Usuario)Session["Usuario"];
+                        ViewBag.user = u;
+
+                        _db = new bdSupermercado();
+                        _db.Proveedores.Add(pro);
+                        _db.SaveChanges();
+                        Request.Flash("success", "Proveedor agregado con exito !!!");
+                        return RedirectToAction("Index", "Proveedor");
+                    }
+                }
             }
-            else
-            {
                 return View(pro);
-            }
         }
         [HttpGet]
         public ActionResult Ver(int id)
