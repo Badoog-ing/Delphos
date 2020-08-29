@@ -32,15 +32,34 @@ namespace Delphos.Areas.Administrador.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db = new bdSupermercado();
-                _db.Usuarios.Add(u);
-                u.FechasCreacion = DateTime.Today;
-                _db.SaveChanges();
-                Request.Flash("success", "Registrado con exito !!!");
-                return RedirectToAction("Index", "Usuario");
+                List<Cargo> cargos = _db.Cargos.ToList();
+                ViewBag.cargos = cargos;
+
+                using (_db = new bdSupermercado())
+                {
+                    var Lista = from p in _db.Proveedores
+                                where p.Rut == u.Rut
+                                select p;
+
+                    if (Lista.Count() > 0)
+                    {
+                        Request.Flash("danger", "El Rut ya esta registrado");
+                        /*return View("<script language='javascript' type='text/javascript'>alert('El Producto ya esta registrado');</script>");*/
+                        /*return Content("Hola");*/
+                    }
+                    else
+                    {
+                        _db = new bdSupermercado();
+                        _db.Usuarios.Add(u);
+                        u.FechasCreacion = DateTime.Today;
+                        _db.SaveChanges();
+                        Request.Flash("success", "Registrado con exito !!!");
+                        return RedirectToAction("Index", "Usuario");
+                    }
+                }
+
             }
-            List<Cargo> cargos = _db.Cargos.ToList();
-            ViewBag.cargos = cargos;
+
             return View(u);
         }
 

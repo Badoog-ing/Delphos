@@ -38,7 +38,6 @@ namespace Delphos.Areas.Comercial.Controllers
             {
                 using (_db = new bdSupermercado())
                 {
-
                     var Lista = from p in _db.Proveedores
                                 where p.Rut == pro.Rut
                                 select p;
@@ -62,7 +61,7 @@ namespace Delphos.Areas.Comercial.Controllers
                     }
                 }
             }
-                return View(pro);
+            return View(pro);
         }
         [HttpGet]
         public ActionResult Ver(int id)
